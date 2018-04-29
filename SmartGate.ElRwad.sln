@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGate.ElRwad.DAL", "SmartGate.ElRwad.DAL\SmartGate.ElRwad.DAL.csproj", "{850F7029-FBB3-4177-B8D1-C3E402A26699}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGate.ElRwad.WebAPI", "SmartGate.ElRwad.WebAPI\SmartGate.ElRwad.WebAPI.csproj", "{AE9FED82-D93A-4F60-B9FB-CE81E2AD5FAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGate.ElRwad.Portal", "SmartGate.ElRwad.Portal\SmartGate.ElRwad.Portal.csproj", "{424B03F5-2944-4702-AF54-C8D4EAE7E914}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{850F7029-FBB3-4177-B8D1-C3E402A26699}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{850F7029-FBB3-4177-B8D1-C3E402A26699}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{850F7029-FBB3-4177-B8D1-C3E402A26699}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE9FED82-D93A-4F60-B9FB-CE81E2AD5FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE9FED82-D93A-4F60-B9FB-CE81E2AD5FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE9FED82-D93A-4F60-B9FB-CE81E2AD5FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE9FED82-D93A-4F60-B9FB-CE81E2AD5FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{424B03F5-2944-4702-AF54-C8D4EAE7E914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{424B03F5-2944-4702-AF54-C8D4EAE7E914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{424B03F5-2944-4702-AF54-C8D4EAE7E914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{424B03F5-2944-4702-AF54-C8D4EAE7E914}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>850f7029-fbb3-4177-b8d1-c3e402a26699</ProjectGuid>
+    <ProjectGuid>{850F7029-FBB3-4177-B8D1-C3E402A26699}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SmartGate.ElRwad.DAL</RootNamespace>
@@ -30,24 +30,285 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accessory.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddingPermission.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bank.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Branch.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Brand.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Car.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CarsCategory.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Color.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Day.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Deduction.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Deputation.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Drivers_Orders.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ElRwadModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ElRwadModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ElRwadModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ElRwadModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ElRwadModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employees_Categories.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emplyees_Qualifications.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDetail.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExportMain.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupsMaster.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Group_Details.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HR_Employee_Deductions.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HR_Leave_Order.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InsuranceCompany.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Job.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Link.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ManufacturingYear.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Message.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mission.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MovementPermission.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Official_Vacation.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderStatu.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionType.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Perm_Absent.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessStatu.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Proj_Month.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Proj_Year.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="purchaseOrder.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseOrderDetail.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseOrder_Accessories.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QualificationType.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RecievedCarPermission.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Region.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sales_PurchaseOrder.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SellBill.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SellOrder.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SellOrder_Details.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet_Details.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Shift.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftDetail.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Showing_Branches.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specialty.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Store.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Storing_Details.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Storing_Master.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SuppliersRepresentative.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="University.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vacations_Orders.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vacations_Types.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vendor_Items.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WithdrawPerm.cs">
+      <DependentUpon>ElRwadModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ElRwadModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ElRwadModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="ElRwadModel.edmx.diagram">
+      <DependentUpon>ElRwadModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ElRwadModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ElRwadModel.edmx</DependentUpon>
+      <LastGenOutput>ElRwadModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ElRwadModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ElRwadModel.edmx</DependentUpon>
+      <LastGenOutput>ElRwadModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -57,5 +318,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>

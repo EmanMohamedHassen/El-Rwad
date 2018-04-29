@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d8f4b5aeb10249c190c293599aaab6ba" Name="Diagram1">
+        <EntityTypeShape EntityType="ElRWADModel.Accessory" Width="1.5" PointX="18.75" PointY="73.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.AddingPermission" Width="1.5" PointX="3" PointY="67.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.AspNetUser" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Bank" Width="1.5" PointX="13.5" PointY="57.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Branch" Width="1.5" PointX="7.5" PointY="80.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Brand" Width="1.5" PointX="3" PointY="63.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Car" Width="1.5" PointX="9.75" PointY="65" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.CarsCategory" Width="1.5" PointX="7.5" PointY="70.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.City" Width="1.5" PointX="3" PointY="75.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Color" Width="1.5" PointX="7.5" PointY="55.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Company" Width="1.5" PointX="25.5" PointY="76.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Day" Width="1.5" PointX="21" PointY="74.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Department" Width="1.5" PointX="14.75" PointY="73.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Deputation" Width="1.5" PointX="21" PointY="77.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Drivers_Orders" Width="1.5" PointX="25.5" PointY="72.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Employee" Width="1.5" PointX="23.25" PointY="70.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Employees_Categories" Width="1.5" PointX="3.75" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Emplyees_Qualifications" Width="1.5" PointX="6" PointY="64.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.ExportDetail" Width="1.5" PointX="12" PointY="63.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.ExportMain" Width="1.5" PointX="30.75" PointY="78.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Faculty" Width="1.5" PointX="21" PointY="79.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Group_Details" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.GroupsMaster" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.HR_Employee_Deductions" Width="1.5" PointX="28.5" PointY="72.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.HR_Leave_Order" Width="1.5" PointX="28.5" PointY="77.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.InsuranceCompany" Width="1.5" PointX="13.5" PointY="54" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Job" Width="1.5" PointX="21" PointY="71.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Link" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.ManufacturingYear" Width="1.5" PointX="7.5" PointY="52.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Message" Width="1.5" PointX="3" PointY="80.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Mission" Width="1.5" PointX="25.5" PointY="66.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Model" Width="1.5" PointX="5.25" PointY="70.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.MovementPermission" Width="1.5" PointX="15" PointY="60.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Official_Vacation" Width="1.5" PointX="6" PointY="60.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.OrderStatu" Width="1.5" PointX="26.25" PointY="63.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Perm_Absent" Width="1.5" PointX="28.5" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.PermissionType" Width="1.5" PointX="3" PointY="84.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.ProcessStatu" Width="1.5" PointX="10.5" PointY="56.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Proj_Month" Width="1.5" PointX="26.25" PointY="59.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Proj_Year" Width="1.5" PointX="3.75" PointY="52.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.purchaseOrder" Width="1.5" PointX="12.5" PointY="74" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.PurchaseOrder_Accessories" Width="1.5" PointX="21" PointY="67.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.PurchaseOrderDetail" Width="1.5" PointX="12.75" PointY="66.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.QualificationType" Width="1.5" PointX="21" PointY="83" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.RecievedCarPermission" Width="1.5" PointX="17.25" PointY="61.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Region" Width="1.5" PointX="5.25" PointY="87.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Sales_PurchaseOrder" Width="1.5" PointX="9.75" PointY="72.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.SellBill" Width="1.5" PointX="20.25" PointY="64.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.SellOrder" Width="1.5" PointX="7.5" PointY="74.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.SellOrder_Details" Width="1.5" PointX="15.75" PointY="65.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Sheet_Details" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.ShiftDetail" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Shift" Width="1.5" PointX="6" PointY="48.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Showing_Branches" Width="1.5" PointX="10.5" PointY="81.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Specialty" Width="1.5" PointX="3.75" PointY="48.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Store" Width="1.5" PointX="25.5" PointY="80.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Storing_Details" Width="1.5" PointX="18" PointY="69.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Storing_Master" Width="1.5" PointX="33.75" PointY="72.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Supplier" Width="1.5" PointX="13.5" PointY="80.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.SuppliersRepresentative" Width="1.5" PointX="15.75" PointY="81" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.sysdiagram" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.University" Width="1.5" PointX="21" PointY="85.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.User" Width="1.5" PointX="0.75" PointY="62.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Vacations_Orders" Width="1.5" PointX="31.5" PointY="68" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Vacations_Types" Width="1.5" PointX="9" PointY="59.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Vendor_Items" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.WithdrawPerm" Width="1.5" PointX="18" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElRWADModel.Deduction" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrder_Accessories_Accessories" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_AddingPermission_Cars" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_AddingPermission_purchaseOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_AddingPermission_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_AddingPermission_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_Banks" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_SellOrder_Details_Banks" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Branches_City" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Branches_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Branches_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Branches_Regions" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Departments_Branches" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Employees_Branches" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Brand_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Cars_Brand" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Model_Brand" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_Brand" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_Brand" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_SellOrder_Details_Brand" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Cars_CarsCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Cars_Color" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Cars_ManufacturingYear" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Cars_Model" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Cars_PurchaseOrderDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Cars_SellOrder_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_ExportDetails_Cars" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_MovementPermission_Cars" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Storing_Details_Storing_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Storing_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_WithdrawPerm_Cars" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_CarsCategories_Model" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_CarsCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_CarsCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_SellOrder_Details_CarsCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_City_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Employees_City" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_purchaseOrder_City" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Regions_City" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_City" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_SellOrder_City" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Showing_Branches_City" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Stores_City" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Suppliers_City" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_Color" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_Color" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_SellOrder_Details_Color" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Company_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Employees_Days" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Departments_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Departments_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Jobs_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Employees_Deputations" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Drivers_Orders_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Drivers_Orders_purchaseOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Drivers_Orders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Employees_Employees_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Employees_Faculties" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Employees_Jobs" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Employees_QualificationType" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Employees_University" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_HR_Employee_Deductions_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_HR_Employee_Deductions_Employees1" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_HR_Leave_Order_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Mission_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Mission_Employees1" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_MovementPermission_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Perm_Absent_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Stores_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Vacations_Orders_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Official_Vacation_Employees_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Vacations_Types_Employees_Categories1" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Emplyees_Qualifications_Faculties" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Emplyees_Qualifications_QualificationType" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Emplyees_Qualifications_Specialties" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Emplyees_Qualifications_University" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Emplyees_Qualifications_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Emplyees_Qualifications_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_ExportDetails_ExportMain" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_ExportMain_SellOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_ExportMain_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_ExportMain_Stores1" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Specialties_Faculties" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Group_Details_GroupsMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Group_Details_Links" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_HR_Employee_Deductions_Proj_Month" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_HR_Employee_Deductions_Proj_Year" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_HR_Employee_Deductions_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_HR_Leave_Order_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_HR_Leave_Order_PermissionType" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_HR_Leave_Order_Proj_Month" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_HR_Leave_Order_Proj_Year" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_HR_Leave_Order_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_HR_Leave_Order_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_InsuranceCompanies" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_SellOrder_Details_InsuranceCompanies" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Jobs_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_DesiredCategory_ManufacturingYear" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Messages_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Messages_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Mission_Proj_Month" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Mission_Proj_Year" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Mission_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_Model" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_Model" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_SellOrder_Details_Model" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_MovementPermission_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_MovementPermission_Stores1" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_MovementPermission_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_RecievedCarPermission_MovementPermission" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Official_Vacation_Proj_Year" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Official_Vacation_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Perm_Absent_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Vacations_Orders_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Perm_Absent_Proj_Month" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Perm_Absent_Proj_Year" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Perm_Absent_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Perm_Absent_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_PermissionType_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_ProcessStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Vacations_Orders_Proj_Month" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Shifts_Proj_Year" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Vacations_Orders_Proj_Year" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_purchaseOrder_Regions" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_purchaseOrder_Showing_Branches" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_purchaseOrder_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_purchaseOrder_SuppliersRepresentative" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_purchaseOrder_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_purchaseOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Storing_Master_purchaseOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrder_Accessories_SellOrder_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Storing_Details_PurchaseOrderDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_Regions" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_SellOrder_Regions" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Showing_Branches_Regions" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Stores_Regions" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Suppliers_Regions" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_SellBill_WithdrawPerm" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_SellOrder_Details_SellOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_SellOrder_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_WithdrawPerm_SellOrder_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Storing_Master_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Storing_Details_Storing_Master1" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Storing_Details_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Storing_Master_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Suppliers_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_SuppliersRepresentative_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Vacations_Orders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Vacations_Orders_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Vacations_Orders_Users2" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Vacations_Types_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_WithdrawPerm_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.FK_Vacations_Orders_Vacations_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="ElRWADModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
