@@ -49,7 +49,6 @@
         <EntityTypeShape EntityType="ElRWADModel.Proj_Month" Width="1.5" PointX="26.25" PointY="59.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ElRWADModel.Proj_Year" Width="1.5" PointX="3.75" PointY="52.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ElRWADModel.purchaseOrder" Width="1.5" PointX="12.5" PointY="74" IsExpanded="true" />
-        <EntityTypeShape EntityType="ElRWADModel.PurchaseOrder_Accessories" Width="1.5" PointX="21" PointY="67.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ElRWADModel.PurchaseOrderDetail" Width="1.5" PointX="12.75" PointY="66.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ElRWADModel.QualificationType" Width="1.5" PointX="21" PointY="83" IsExpanded="true" />
         <EntityTypeShape EntityType="ElRWADModel.RecievedCarPermission" Width="1.5" PointX="17.25" PointY="61.125" IsExpanded="true" />
@@ -76,7 +75,6 @@
         <EntityTypeShape EntityType="ElRWADModel.Vendor_Items" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ElRWADModel.WithdrawPerm" Width="1.5" PointX="18" PointY="65.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ElRWADModel.Deduction" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrder_Accessories_Accessories" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_AddingPermission_Cars" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_AddingPermission_purchaseOrder" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_AddingPermission_Stores" ManuallyRouted="false" />
@@ -207,7 +205,6 @@
         <AssociationConnector Association="ElRWADModel.FK_purchaseOrder_Users" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_purchaseOrder" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Storing_Master_purchaseOrder" ManuallyRouted="false" />
-        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrder_Accessories_SellOrder_Details" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Storing_Details_PurchaseOrderDetails" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_Regions" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_SellOrder_Regions" ManuallyRouted="false" />
@@ -232,6 +229,10 @@
         <AssociationConnector Association="ElRWADModel.FK_WithdrawPerm_Users" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Vacations_Orders_Vacations_Types" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ElRWADModel.PurchaseOrder_Accessories" Width="1.5" PointX="21" PointY="67.25" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrder_Accessories_Accessories" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrder_Accessories_purchaseOrder" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrder_Accessories_SellOrder_Details" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

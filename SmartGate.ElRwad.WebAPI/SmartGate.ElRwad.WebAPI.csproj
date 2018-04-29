@@ -247,6 +247,33 @@
     <Compile Include="Areas\HR\Controllers\VacationOrdersController.cs" />
     <Compile Include="Areas\HR\Controllers\VacationTypeController.cs" />
     <Compile Include="Areas\HR\HRAreaRegistration.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\AccessoriesController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\BanksController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\BranchesController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\BrandsController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\CarCategoriesController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\CityController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\ColorsController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\CompaniesController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\DaysController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\DepartmentController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\DeputationController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\FacultyController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\InsuranceCompaniesController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\JobCategoryController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\JobsController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\ManufacturingYearsController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\ModelsController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\ProjMonthController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\ProjYearController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\RegionsController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\ShowingBranchesController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\SpecialtiesController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\StoresController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\SuppliersController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\SuppliersRepresentativeController.cs" />
+    <Compile Include="Areas\MainCoding\Controllers\universityController.cs" />
+    <Compile Include="Areas\MainCoding\MainCodingAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -294,8 +321,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Areas\Administration\Views\web.config" />
-    <Content Include="Areas\HR\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -325,10 +350,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Models\" />
-    <Folder Include="Areas\Administration\Views\Shared\" />
-    <Folder Include="Areas\HR\Models\" />
-    <Folder Include="Areas\HR\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

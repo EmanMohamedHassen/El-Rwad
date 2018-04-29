@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ElRWADModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ElRWADModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Accessories">
           <Key>
             <PropertyRef Name="Id" />
@@ -601,6 +601,7 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SallesorderDetailsId" Type="int" Nullable="false" />
           <Property Name="Accessories_Id" Type="int" Nullable="false" />
+          <Property Name="PurchaseOrder_Id" Type="int" />
         </EntityType>
         <EntityType Name="PurchaseOrderDetails">
           <Key>
@@ -2026,6 +2027,18 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PurchaseOrder_Accessories_purchaseOrder">
+          <End Role="purchaseOrder" Type="Self.purchaseOrder" Multiplicity="0..1" />
+          <End Role="PurchaseOrder_Accessories" Type="Self.PurchaseOrder_Accessories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purchaseOrder">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PurchaseOrder_Accessories">
+              <PropertyRef Name="PurchaseOrder_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_PurchaseOrder_Accessories_SellOrder_Details">
           <End Role="SellOrder_Details" Type="Self.SellOrder_Details" Multiplicity="1" />
           <End Role="PurchaseOrder_Accessories" Type="Self.PurchaseOrder_Accessories" Multiplicity="*" />
@@ -3273,6 +3286,10 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             <End Role="Accessories" EntitySet="Accessories" />
             <End Role="PurchaseOrder_Accessories" EntitySet="PurchaseOrder_Accessories" />
           </AssociationSet>
+          <AssociationSet Name="FK_PurchaseOrder_Accessories_purchaseOrder" Association="Self.FK_PurchaseOrder_Accessories_purchaseOrder">
+            <End Role="purchaseOrder" EntitySet="purchaseOrder" />
+            <End Role="PurchaseOrder_Accessories" EntitySet="PurchaseOrder_Accessories" />
+          </AssociationSet>
           <AssociationSet Name="FK_PurchaseOrder_Accessories_SellOrder_Details" Association="Self.FK_PurchaseOrder_Accessories_SellOrder_Details">
             <End Role="SellOrder_Details" EntitySet="SellOrder_Details" />
             <End Role="PurchaseOrder_Accessories" EntitySet="PurchaseOrder_Accessories" />
@@ -3542,8 +3559,7 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             <End Role="WithdrawPerm" EntitySet="WithdrawPerm" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ElRWADModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -3555,7 +3571,7 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <Property Name="NameA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NameE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Double" />
-          <NavigationProperty Name="PurchaseOrder_Accessories" Relationship="Self.FK_PurchaseOrder_Accessories_Accessories" FromRole="Accessories" ToRole="PurchaseOrder_Accessories" />
+          <NavigationProperty Name="PurchaseOrder_Accessories" Relationship="ElRWADModel.FK_PurchaseOrder_Accessories_Accessories" FromRole="Accessory" ToRole="PurchaseOrder_Accessories" />
         </EntityType>
         <EntityType Name="AddingPermission">
           <Key>
@@ -4300,16 +4316,7 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <NavigationProperty Name="User" Relationship="Self.FK_purchaseOrder_Users" FromRole="purchaseOrder" ToRole="Users" />
           <NavigationProperty Name="PurchaseOrderDetails" Relationship="Self.FK_PurchaseOrderDetails_purchaseOrder" FromRole="purchaseOrder" ToRole="PurchaseOrderDetails" />
           <NavigationProperty Name="Storing_Master" Relationship="Self.FK_Storing_Master_purchaseOrder" FromRole="purchaseOrder" ToRole="Storing_Master" />
-        </EntityType>
-        <EntityType Name="PurchaseOrder_Accessories">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SallesorderDetailsId" Type="Int32" Nullable="false" />
-          <Property Name="Accessories_Id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Accessory" Relationship="Self.FK_PurchaseOrder_Accessories_Accessories" FromRole="PurchaseOrder_Accessories" ToRole="Accessories" />
-          <NavigationProperty Name="SellOrder_Details" Relationship="Self.FK_PurchaseOrder_Accessories_SellOrder_Details" FromRole="PurchaseOrder_Accessories" ToRole="SellOrder_Details" />
+          <NavigationProperty Name="PurchaseOrder_Accessories" Relationship="ElRWADModel.FK_PurchaseOrder_Accessories_purchaseOrder" FromRole="purchaseOrder" ToRole="PurchaseOrder_Accessories" />
         </EntityType>
         <EntityType Name="PurchaseOrderDetail">
           <Key>
@@ -4467,9 +4474,9 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <NavigationProperty Name="Color" Relationship="Self.FK_SellOrder_Details_Color" FromRole="SellOrder_Details" ToRole="Color" />
           <NavigationProperty Name="InsuranceCompany" Relationship="Self.FK_SellOrder_Details_InsuranceCompanies" FromRole="SellOrder_Details" ToRole="InsuranceCompanies" />
           <NavigationProperty Name="Model" Relationship="Self.FK_SellOrder_Details_Model" FromRole="SellOrder_Details" ToRole="Model" />
-          <NavigationProperty Name="PurchaseOrder_Accessories" Relationship="Self.FK_PurchaseOrder_Accessories_SellOrder_Details" FromRole="SellOrder_Details" ToRole="PurchaseOrder_Accessories" />
           <NavigationProperty Name="SellOrder" Relationship="Self.FK_SellOrder_Details_SellOrder" FromRole="SellOrder_Details" ToRole="SellOrder" />
           <NavigationProperty Name="WithdrawPerms" Relationship="Self.FK_WithdrawPerm_SellOrder_Details" FromRole="SellOrder_Details" ToRole="WithdrawPerm" />
+          <NavigationProperty Name="PurchaseOrder_Accessories" Relationship="ElRWADModel.FK_PurchaseOrder_Accessories_SellOrder_Details" FromRole="SellOrder_Details" ToRole="PurchaseOrder_Accessories" />
         </EntityType>
         <EntityType Name="Sheet_Details">
           <Key>
@@ -4782,18 +4789,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <Property Name="User_ID" Type="Int32" />
           <Property Name="Last_Update" Type="DateTime" Precision="3" />
         </EntityType>
-        <Association Name="FK_PurchaseOrder_Accessories_Accessories">
-          <End Role="Accessories" Type="Self.Accessory" Multiplicity="1" />
-          <End Role="PurchaseOrder_Accessories" Type="Self.PurchaseOrder_Accessories" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Accessories">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PurchaseOrder_Accessories">
-              <PropertyRef Name="Accessories_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_AddingPermission_Cars">
           <End Role="Cars" Type="Self.Car" Multiplicity="1" />
           <End Role="AddingPermission" Type="Self.AddingPermission" Multiplicity="*" />
@@ -6358,18 +6353,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PurchaseOrder_Accessories_SellOrder_Details">
-          <End Role="SellOrder_Details" Type="Self.SellOrder_Details" Multiplicity="1" />
-          <End Role="PurchaseOrder_Accessories" Type="Self.PurchaseOrder_Accessories" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SellOrder_Details">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PurchaseOrder_Accessories">
-              <PropertyRef Name="SallesorderDetailsId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Storing_Details_PurchaseOrderDetails">
           <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetail" Multiplicity="0..1" />
           <End Role="Storing_Details" Type="Self.Storing_Details" Multiplicity="*" />
@@ -6695,7 +6678,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <EntitySet Name="Proj_Month" EntityType="Self.Proj_Month" />
           <EntitySet Name="Proj_Year" EntityType="Self.Proj_Year" />
           <EntitySet Name="purchaseOrders" EntityType="Self.purchaseOrder" />
-          <EntitySet Name="PurchaseOrder_Accessories" EntityType="Self.PurchaseOrder_Accessories" />
           <EntitySet Name="PurchaseOrderDetails" EntityType="Self.PurchaseOrderDetail" />
           <EntitySet Name="QualificationTypes" EntityType="Self.QualificationType" />
           <EntitySet Name="RecievedCarPermissions" EntityType="Self.RecievedCarPermission" />
@@ -6722,10 +6704,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <EntitySet Name="Vendor_Items" EntityType="Self.Vendor_Items" />
           <EntitySet Name="WithdrawPerms" EntityType="Self.WithdrawPerm" />
           <EntitySet Name="Deductions" EntityType="Self.Deduction" />
-          <AssociationSet Name="FK_PurchaseOrder_Accessories_Accessories" Association="Self.FK_PurchaseOrder_Accessories_Accessories">
-            <End Role="Accessories" EntitySet="Accessories" />
-            <End Role="PurchaseOrder_Accessories" EntitySet="PurchaseOrder_Accessories" />
-          </AssociationSet>
           <AssociationSet Name="FK_AddingPermission_Cars" Association="Self.FK_AddingPermission_Cars">
             <End Role="Cars" EntitySet="Cars" />
             <End Role="AddingPermission" EntitySet="AddingPermissions" />
@@ -7246,10 +7224,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             <End Role="purchaseOrder" EntitySet="purchaseOrders" />
             <End Role="Storing_Master" EntitySet="Storing_Master" />
           </AssociationSet>
-          <AssociationSet Name="FK_PurchaseOrder_Accessories_SellOrder_Details" Association="Self.FK_PurchaseOrder_Accessories_SellOrder_Details">
-            <End Role="SellOrder_Details" EntitySet="SellOrder_Details" />
-            <End Role="PurchaseOrder_Accessories" EntitySet="PurchaseOrder_Accessories" />
-          </AssociationSet>
           <AssociationSet Name="FK_Storing_Details_PurchaseOrderDetails" Association="Self.FK_Storing_Details_PurchaseOrderDetails">
             <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
             <End Role="Storing_Details" EntitySet="Storing_Details" />
@@ -7346,7 +7320,68 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             <End Role="AspNetRoles" EntitySet="AspNetRoles" />
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
           </AssociationSet>
+          <EntitySet Name="PurchaseOrder_Accessories" EntityType="ElRWADModel.PurchaseOrder_Accessories" />
+          <AssociationSet Name="FK_PurchaseOrder_Accessories_Accessories" Association="ElRWADModel.FK_PurchaseOrder_Accessories_Accessories">
+            <End Role="Accessory" EntitySet="Accessories" />
+            <End Role="PurchaseOrder_Accessories" EntitySet="PurchaseOrder_Accessories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseOrder_Accessories_purchaseOrder" Association="ElRWADModel.FK_PurchaseOrder_Accessories_purchaseOrder">
+            <End Role="purchaseOrder" EntitySet="purchaseOrders" />
+            <End Role="PurchaseOrder_Accessories" EntitySet="PurchaseOrder_Accessories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseOrder_Accessories_SellOrder_Details" Association="ElRWADModel.FK_PurchaseOrder_Accessories_SellOrder_Details">
+            <End Role="SellOrder_Details" EntitySet="SellOrder_Details" />
+            <End Role="PurchaseOrder_Accessories" EntitySet="PurchaseOrder_Accessories" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="PurchaseOrder_Accessories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SallesorderDetailsId" Type="Int32" Nullable="false" />
+          <Property Name="Accessories_Id" Type="Int32" Nullable="false" />
+          <Property Name="PurchaseOrder_Id" Type="Int32" />
+          <NavigationProperty Name="Accessory" Relationship="ElRWADModel.FK_PurchaseOrder_Accessories_Accessories" FromRole="PurchaseOrder_Accessories" ToRole="Accessory" />
+          <NavigationProperty Name="purchaseOrder" Relationship="ElRWADModel.FK_PurchaseOrder_Accessories_purchaseOrder" FromRole="PurchaseOrder_Accessories" ToRole="purchaseOrder" />
+          <NavigationProperty Name="SellOrder_Details" Relationship="ElRWADModel.FK_PurchaseOrder_Accessories_SellOrder_Details" FromRole="PurchaseOrder_Accessories" ToRole="SellOrder_Details" />
+        </EntityType>
+        <Association Name="FK_PurchaseOrder_Accessories_Accessories">
+          <End Type="ElRWADModel.Accessory" Role="Accessory" Multiplicity="1" />
+          <End Type="ElRWADModel.PurchaseOrder_Accessories" Role="PurchaseOrder_Accessories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accessory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PurchaseOrder_Accessories">
+              <PropertyRef Name="Accessories_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseOrder_Accessories_purchaseOrder">
+          <End Type="ElRWADModel.purchaseOrder" Role="purchaseOrder" Multiplicity="0..1" />
+          <End Type="ElRWADModel.PurchaseOrder_Accessories" Role="PurchaseOrder_Accessories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purchaseOrder">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PurchaseOrder_Accessories">
+              <PropertyRef Name="PurchaseOrder_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseOrder_Accessories_SellOrder_Details">
+          <End Type="ElRWADModel.SellOrder_Details" Role="SellOrder_Details" Multiplicity="1" />
+          <End Type="ElRWADModel.PurchaseOrder_Accessories" Role="PurchaseOrder_Accessories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SellOrder_Details">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PurchaseOrder_Accessories">
+              <PropertyRef Name="SallesorderDetailsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -7962,15 +7997,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PurchaseOrder_Accessories">
-            <EntityTypeMapping TypeName="ElRWADModel.PurchaseOrder_Accessories">
-              <MappingFragment StoreEntitySet="PurchaseOrder_Accessories">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="SallesorderDetailsId" ColumnName="SallesorderDetailsId" />
-                <ScalarProperty Name="Accessories_Id" ColumnName="Accessories_Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PurchaseOrderDetails">
             <EntityTypeMapping TypeName="ElRWADModel.PurchaseOrderDetail">
               <MappingFragment StoreEntitySet="PurchaseOrderDetails">
@@ -8353,6 +8379,16 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
               <ScalarProperty Name="Id" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="PurchaseOrder_Accessories">
+            <EntityTypeMapping TypeName="ElRWADModel.PurchaseOrder_Accessories">
+              <MappingFragment StoreEntitySet="PurchaseOrder_Accessories">
+                <ScalarProperty Name="PurchaseOrder_Id" ColumnName="PurchaseOrder_Id" />
+                <ScalarProperty Name="Accessories_Id" ColumnName="Accessories_Id" />
+                <ScalarProperty Name="SallesorderDetailsId" ColumnName="SallesorderDetailsId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

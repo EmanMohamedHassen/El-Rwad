@@ -18,8 +18,8 @@ namespace SmartGate.ElRwad.DAL
         public SellOrder_Details()
         {
             this.Cars = new HashSet<Car>();
-            this.PurchaseOrder_Accessories = new HashSet<PurchaseOrder_Accessories>();
             this.WithdrawPerms = new HashSet<WithdrawPerm>();
+            this.PurchaseOrder_Accessories = new HashSet<PurchaseOrder_Accessories>();
         }
     
         public int Id { get; set; }
@@ -47,10 +47,10 @@ namespace SmartGate.ElRwad.DAL
         public virtual Color Color { get; set; }
         public virtual InsuranceCompany InsuranceCompany { get; set; }
         public virtual Model Model { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PurchaseOrder_Accessories> PurchaseOrder_Accessories { get; set; }
         public virtual SellOrder SellOrder { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WithdrawPerm> WithdrawPerms { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PurchaseOrder_Accessories> PurchaseOrder_Accessories { get; set; }
     }
 }

@@ -21,6 +21,7 @@ namespace SmartGate.ElRwad.DAL
             this.Drivers_Orders = new HashSet<Drivers_Orders>();
             this.PurchaseOrderDetails = new HashSet<PurchaseOrderDetail>();
             this.Storing_Master = new HashSet<Storing_Master>();
+            this.PurchaseOrder_Accessories = new HashSet<PurchaseOrder_Accessories>();
         }
     
         public int Id { get; set; }
@@ -49,5 +50,7 @@ namespace SmartGate.ElRwad.DAL
         public virtual ICollection<PurchaseOrderDetail> PurchaseOrderDetails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Storing_Master> Storing_Master { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PurchaseOrder_Accessories> PurchaseOrder_Accessories { get; set; }
     }
 }
