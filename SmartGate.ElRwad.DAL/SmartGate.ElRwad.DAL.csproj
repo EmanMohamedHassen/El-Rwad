@@ -87,7 +87,6 @@
     <Compile Include="City.cs">
       <DependentUpon>ElRwadModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Color.cs">
       <DependentUpon>ElRwadModel.tt</DependentUpon>
     </Compile>
