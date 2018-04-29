@@ -274,6 +274,9 @@
     <Compile Include="Areas\MainCoding\Controllers\SuppliersRepresentativeController.cs" />
     <Compile Include="Areas\MainCoding\Controllers\universityController.cs" />
     <Compile Include="Areas\MainCoding\MainCodingAreaRegistration.cs" />
+    <Compile Include="Areas\purchases\Controllers\PurchaseOrderController.cs" />
+    <Compile Include="Areas\purchases\Controllers\PurchaseOrderDetailsController.cs" />
+    <Compile Include="Areas\purchases\purchasesAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
