@@ -69,7 +69,6 @@ namespace SmartGate.ElRwad.DAL
         public virtual DbSet<Proj_Month> Proj_Month { get; set; }
         public virtual DbSet<Proj_Year> Proj_Year { get; set; }
         public virtual DbSet<purchaseOrder> purchaseOrders { get; set; }
-        public virtual DbSet<PurchaseOrderDetail> PurchaseOrderDetails { get; set; }
         public virtual DbSet<QualificationType> QualificationTypes { get; set; }
         public virtual DbSet<RecievedCarPermission> RecievedCarPermissions { get; set; }
         public virtual DbSet<Region> Regions { get; set; }
@@ -96,5 +95,6 @@ namespace SmartGate.ElRwad.DAL
         public virtual DbSet<WithdrawPerm> WithdrawPerms { get; set; }
         public virtual DbSet<Deduction> Deductions { get; set; }
         public virtual DbSet<PurchaseOrder_Accessories> PurchaseOrder_Accessories { get; set; }
+        public virtual DbSet<PurchaseOrderDetail> PurchaseOrderDetails { get; set; }
     }
 }

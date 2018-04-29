@@ -32,6 +32,8 @@ namespace SmartGate.ElRwad.DAL
         public Nullable<int> ProcessStatusId { get; set; }
         public Nullable<int> Count { get; set; }
         public Nullable<double> Price { get; set; }
+        public Nullable<bool> IsBuying { get; set; }
+        public Nullable<bool> IsReceived { get; set; }
     
         public virtual Brand Brand { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

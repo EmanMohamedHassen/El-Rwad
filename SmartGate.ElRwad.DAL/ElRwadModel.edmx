@@ -618,6 +618,8 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <Property Name="ProcessStatusId" Type="int" />
           <Property Name="Count" Type="int" />
           <Property Name="Price" Type="float" />
+          <Property Name="IsBuying" Type="bit" />
+          <Property Name="IsReceived" Type="bit" />
         </EntityType>
         <EntityType Name="QualificationType">
           <Key>
@@ -3685,9 +3687,9 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <NavigationProperty Name="User" Relationship="Self.FK_Brand_Users" FromRole="Brand" ToRole="Users" />
           <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_Brand" FromRole="Brand" ToRole="Cars" />
           <NavigationProperty Name="Models" Relationship="Self.FK_Model_Brand" FromRole="Brand" ToRole="Model" />
-          <NavigationProperty Name="PurchaseOrderDetails" Relationship="Self.FK_PurchaseOrderDetails_Brand" FromRole="Brand" ToRole="PurchaseOrderDetails" />
           <NavigationProperty Name="Sales_PurchaseOrder" Relationship="Self.FK_Sales_PurchaseOrder_Brand" FromRole="Brand" ToRole="Sales_PurchaseOrder" />
           <NavigationProperty Name="SellOrder_Details" Relationship="Self.FK_SellOrder_Details_Brand" FromRole="Brand" ToRole="SellOrder_Details" />
+          <NavigationProperty Name="PurchaseOrderDetails" Relationship="ElRWADModel.FK_PurchaseOrderDetails_Brand" FromRole="Brand" ToRole="PurchaseOrderDetail" />
         </EntityType>
         <EntityType Name="Car">
           <Key>
@@ -3715,13 +3717,13 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <NavigationProperty Name="Color" Relationship="Self.FK_Cars_Color" FromRole="Cars" ToRole="Color" />
           <NavigationProperty Name="ManufacturingYear" Relationship="Self.FK_Cars_ManufacturingYear" FromRole="Cars" ToRole="ManufacturingYear" />
           <NavigationProperty Name="Model" Relationship="Self.FK_Cars_Model" FromRole="Cars" ToRole="Model" />
-          <NavigationProperty Name="PurchaseOrderDetail" Relationship="Self.FK_Cars_PurchaseOrderDetails" FromRole="Cars" ToRole="PurchaseOrderDetails" />
           <NavigationProperty Name="SellOrder_Details" Relationship="Self.FK_Cars_SellOrder_Details" FromRole="Cars" ToRole="SellOrder_Details" />
           <NavigationProperty Name="ExportDetails" Relationship="Self.FK_ExportDetails_Cars" FromRole="Cars" ToRole="ExportDetails" />
           <NavigationProperty Name="MovementPermissions" Relationship="Self.FK_MovementPermission_Cars" FromRole="Cars" ToRole="MovementPermission" />
           <NavigationProperty Name="Storing_Master" Relationship="Self.FK_Storing_Details_Storing_Master" FromRole="Cars" ToRole="Storing_Master" />
           <NavigationProperty Name="User" Relationship="Self.FK_Storing_Users" FromRole="Cars" ToRole="Users" />
           <NavigationProperty Name="WithdrawPerms" Relationship="Self.FK_WithdrawPerm_Cars" FromRole="Cars" ToRole="WithdrawPerm" />
+          <NavigationProperty Name="PurchaseOrderDetail" Relationship="ElRWADModel.FK_Cars_PurchaseOrderDetails" FromRole="Car" ToRole="PurchaseOrderDetail" />
         </EntityType>
         <EntityType Name="CarsCategory">
           <Key>
@@ -3733,9 +3735,9 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <Property Name="ModelId" Type="Int32" />
           <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_CarsCategories" FromRole="CarsCategories" ToRole="Cars" />
           <NavigationProperty Name="Model" Relationship="Self.FK_CarsCategories_Model" FromRole="CarsCategories" ToRole="Model" />
-          <NavigationProperty Name="PurchaseOrderDetails" Relationship="Self.FK_PurchaseOrderDetails_CarsCategories" FromRole="CarsCategories" ToRole="PurchaseOrderDetails" />
           <NavigationProperty Name="Sales_PurchaseOrder" Relationship="Self.FK_Sales_PurchaseOrder_CarsCategories" FromRole="CarsCategories" ToRole="Sales_PurchaseOrder" />
           <NavigationProperty Name="SellOrder_Details" Relationship="Self.FK_SellOrder_Details_CarsCategories" FromRole="CarsCategories" ToRole="SellOrder_Details" />
+          <NavigationProperty Name="PurchaseOrderDetails" Relationship="ElRWADModel.FK_PurchaseOrderDetails_CarsCategories" FromRole="CarsCategory" ToRole="PurchaseOrderDetail" />
         </EntityType>
         <EntityType Name="City">
           <Key>
@@ -3766,9 +3768,9 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <Property Name="NameAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NameEn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_Color" FromRole="Color" ToRole="Cars" />
-          <NavigationProperty Name="PurchaseOrderDetails" Relationship="Self.FK_PurchaseOrderDetails_Color" FromRole="Color" ToRole="PurchaseOrderDetails" />
           <NavigationProperty Name="Sales_PurchaseOrder" Relationship="Self.FK_Sales_PurchaseOrder_Color" FromRole="Color" ToRole="Sales_PurchaseOrder" />
           <NavigationProperty Name="SellOrder_Details" Relationship="Self.FK_SellOrder_Details_Color" FromRole="Color" ToRole="SellOrder_Details" />
+          <NavigationProperty Name="PurchaseOrderDetails" Relationship="ElRWADModel.FK_PurchaseOrderDetails_Color" FromRole="Color" ToRole="PurchaseOrderDetail" />
         </EntityType>
         <EntityType Name="Company">
           <Key>
@@ -4111,7 +4113,7 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Year" Type="Int32" />
           <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_ManufacturingYear" FromRole="ManufacturingYear" ToRole="Cars" />
-          <NavigationProperty Name="PurchaseOrderDetails" Relationship="Self.FK_DesiredCategory_ManufacturingYear" FromRole="ManufacturingYear" ToRole="PurchaseOrderDetails" />
+          <NavigationProperty Name="PurchaseOrderDetails" Relationship="ElRWADModel.FK_DesiredCategory_ManufacturingYear" FromRole="ManufacturingYear" ToRole="PurchaseOrderDetail" />
         </EntityType>
         <EntityType Name="Message">
           <Key>
@@ -4164,9 +4166,9 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <NavigationProperty Name="Brand" Relationship="Self.FK_Model_Brand" FromRole="Model" ToRole="Brand" />
           <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_Model" FromRole="Model" ToRole="Cars" />
           <NavigationProperty Name="CarsCategories" Relationship="Self.FK_CarsCategories_Model" FromRole="Model" ToRole="CarsCategories" />
-          <NavigationProperty Name="PurchaseOrderDetails" Relationship="Self.FK_PurchaseOrderDetails_Model" FromRole="Model" ToRole="PurchaseOrderDetails" />
           <NavigationProperty Name="Sales_PurchaseOrder" Relationship="Self.FK_Sales_PurchaseOrder_Model" FromRole="Model" ToRole="Sales_PurchaseOrder" />
           <NavigationProperty Name="SellOrder_Details" Relationship="Self.FK_SellOrder_Details_Model" FromRole="Model" ToRole="SellOrder_Details" />
+          <NavigationProperty Name="PurchaseOrderDetails" Relationship="ElRWADModel.FK_PurchaseOrderDetails_Model" FromRole="Model" ToRole="PurchaseOrderDetail" />
         </EntityType>
         <EntityType Name="MovementPermission">
           <Key>
@@ -4262,7 +4264,7 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="PurchaseOrderDetails" Relationship="Self.FK_PurchaseOrderDetails_ProcessStatus" FromRole="ProcessStatus" ToRole="PurchaseOrderDetails" />
+          <NavigationProperty Name="PurchaseOrderDetails" Relationship="ElRWADModel.FK_PurchaseOrderDetails_ProcessStatus" FromRole="ProcessStatu" ToRole="PurchaseOrderDetail" />
         </EntityType>
         <EntityType Name="Proj_Month">
           <Key>
@@ -4314,34 +4316,9 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <NavigationProperty Name="Supplier" Relationship="Self.FK_purchaseOrder_Suppliers" FromRole="purchaseOrder" ToRole="Suppliers" />
           <NavigationProperty Name="SuppliersRepresentative" Relationship="Self.FK_purchaseOrder_SuppliersRepresentative" FromRole="purchaseOrder" ToRole="SuppliersRepresentative" />
           <NavigationProperty Name="User" Relationship="Self.FK_purchaseOrder_Users" FromRole="purchaseOrder" ToRole="Users" />
-          <NavigationProperty Name="PurchaseOrderDetails" Relationship="Self.FK_PurchaseOrderDetails_purchaseOrder" FromRole="purchaseOrder" ToRole="PurchaseOrderDetails" />
           <NavigationProperty Name="Storing_Master" Relationship="Self.FK_Storing_Master_purchaseOrder" FromRole="purchaseOrder" ToRole="Storing_Master" />
           <NavigationProperty Name="PurchaseOrder_Accessories" Relationship="ElRWADModel.FK_PurchaseOrder_Accessories_purchaseOrder" FromRole="purchaseOrder" ToRole="PurchaseOrder_Accessories" />
-        </EntityType>
-        <EntityType Name="PurchaseOrderDetail">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PurchaseOrderId" Type="Int32" />
-          <Property Name="BrandId" Type="Int32" />
-          <Property Name="ModelId" Type="Int32" />
-          <Property Name="ManufacturingYearId" Type="Int32" />
-          <Property Name="CategoryId" Type="Int32" />
-          <Property Name="ColorId" Type="Int32" />
-          <Property Name="IsNew" Type="Boolean" />
-          <Property Name="ProcessStatusId" Type="Int32" />
-          <Property Name="Count" Type="Int32" />
-          <Property Name="Price" Type="Double" />
-          <NavigationProperty Name="Brand" Relationship="Self.FK_PurchaseOrderDetails_Brand" FromRole="PurchaseOrderDetails" ToRole="Brand" />
-          <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_PurchaseOrderDetails" FromRole="PurchaseOrderDetails" ToRole="Cars" />
-          <NavigationProperty Name="CarsCategory" Relationship="Self.FK_PurchaseOrderDetails_CarsCategories" FromRole="PurchaseOrderDetails" ToRole="CarsCategories" />
-          <NavigationProperty Name="Color" Relationship="Self.FK_PurchaseOrderDetails_Color" FromRole="PurchaseOrderDetails" ToRole="Color" />
-          <NavigationProperty Name="ManufacturingYear" Relationship="Self.FK_DesiredCategory_ManufacturingYear" FromRole="PurchaseOrderDetails" ToRole="ManufacturingYear" />
-          <NavigationProperty Name="Model" Relationship="Self.FK_PurchaseOrderDetails_Model" FromRole="PurchaseOrderDetails" ToRole="Model" />
-          <NavigationProperty Name="ProcessStatu" Relationship="Self.FK_PurchaseOrderDetails_ProcessStatus" FromRole="PurchaseOrderDetails" ToRole="ProcessStatus" />
-          <NavigationProperty Name="purchaseOrder" Relationship="Self.FK_PurchaseOrderDetails_purchaseOrder" FromRole="PurchaseOrderDetails" ToRole="purchaseOrder" />
-          <NavigationProperty Name="Storing_Details" Relationship="Self.FK_Storing_Details_PurchaseOrderDetails" FromRole="PurchaseOrderDetails" ToRole="Storing_Details" />
+          <NavigationProperty Name="PurchaseOrderDetails" Relationship="ElRWADModel.FK_PurchaseOrderDetails_purchaseOrder" FromRole="purchaseOrder" ToRole="PurchaseOrderDetail" />
         </EntityType>
         <EntityType Name="QualificationType">
           <Key>
@@ -4578,9 +4555,9 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <Property Name="UserId" Type="Int32" />
           <Property Name="Storing_Master_Id" Type="Int32" />
           <Property Name="PurchaseOrderDetail_Id" Type="Int32" />
-          <NavigationProperty Name="PurchaseOrderDetail" Relationship="Self.FK_Storing_Details_PurchaseOrderDetails" FromRole="Storing_Details" ToRole="PurchaseOrderDetails" />
           <NavigationProperty Name="Storing_Master" Relationship="Self.FK_Storing_Details_Storing_Master1" FromRole="Storing_Details" ToRole="Storing_Master" />
           <NavigationProperty Name="User" Relationship="Self.FK_Storing_Details_Users" FromRole="Storing_Details" ToRole="Users" />
+          <NavigationProperty Name="PurchaseOrderDetail" Relationship="ElRWADModel.FK_Storing_Details_PurchaseOrderDetails" FromRole="Storing_Details" ToRole="PurchaseOrderDetail" />
         </EntityType>
         <EntityType Name="Storing_Master">
           <Key>
@@ -4997,18 +4974,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PurchaseOrderDetails_Brand">
-          <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
-          <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Brand">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PurchaseOrderDetails">
-              <PropertyRef Name="BrandId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Sales_PurchaseOrder_Brand">
           <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
           <End Role="Sales_PurchaseOrder" Type="Self.Sales_PurchaseOrder" Multiplicity="*" />
@@ -5078,18 +5043,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             </Principal>
             <Dependent Role="Cars">
               <PropertyRef Name="modelID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cars_PurchaseOrderDetails">
-          <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetail" Multiplicity="0..1" />
-          <End Role="Cars" Type="Self.Car" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PurchaseOrderDetails">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Cars">
-              <PropertyRef Name="purchaseOrderDetailsId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5174,18 +5127,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             </Principal>
             <Dependent Role="CarsCategories">
               <PropertyRef Name="ModelId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PurchaseOrderDetails_CarsCategories">
-          <End Role="CarsCategories" Type="Self.CarsCategory" Multiplicity="0..1" />
-          <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CarsCategories">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PurchaseOrderDetails">
-              <PropertyRef Name="CategoryId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5318,18 +5259,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             </Principal>
             <Dependent Role="Suppliers">
               <PropertyRef Name="CityId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PurchaseOrderDetails_Color">
-          <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
-          <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Color">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PurchaseOrderDetails">
-              <PropertyRef Name="ColorId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5957,18 +5886,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_DesiredCategory_ManufacturingYear">
-          <End Role="ManufacturingYear" Type="Self.ManufacturingYear" Multiplicity="0..1" />
-          <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ManufacturingYear">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PurchaseOrderDetails">
-              <PropertyRef Name="ManufacturingYearId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Messages_Users">
           <End Role="Users" Type="Self.User" Multiplicity="0..1" />
           <End Role="Messages" Type="Self.Message" Multiplicity="*" />
@@ -6026,18 +5943,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             </Principal>
             <Dependent Role="Mission">
               <PropertyRef Name="User_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PurchaseOrderDetails_Model">
-          <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
-          <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Model">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PurchaseOrderDetails">
-              <PropertyRef Name="ModelId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -6221,18 +6126,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PurchaseOrderDetails_ProcessStatus">
-          <End Role="ProcessStatus" Type="Self.ProcessStatu" Multiplicity="0..1" />
-          <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ProcessStatus">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PurchaseOrderDetails">
-              <PropertyRef Name="ProcessStatusId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Vacations_Orders_Proj_Month">
           <End Role="Proj_Month" Type="Self.Proj_Month" Multiplicity="0..1" />
           <End Role="Vacations_Orders" Type="Self.Vacations_Orders" Multiplicity="*" />
@@ -6329,18 +6222,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PurchaseOrderDetails_purchaseOrder">
-          <End Role="purchaseOrder" Type="Self.purchaseOrder" Multiplicity="0..1" />
-          <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="purchaseOrder">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="PurchaseOrderDetails">
-              <PropertyRef Name="PurchaseOrderId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Storing_Master_purchaseOrder">
           <End Role="purchaseOrder" Type="Self.purchaseOrder" Multiplicity="0..1" />
           <End Role="Storing_Master" Type="Self.Storing_Master" Multiplicity="*" />
@@ -6350,18 +6231,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             </Principal>
             <Dependent Role="Storing_Master">
               <PropertyRef Name="PurchaseOrderId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Storing_Details_PurchaseOrderDetails">
-          <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetail" Multiplicity="0..1" />
-          <End Role="Storing_Details" Type="Self.Storing_Details" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PurchaseOrderDetails">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Storing_Details">
-              <PropertyRef Name="PurchaseOrderDetail_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -6678,7 +6547,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <EntitySet Name="Proj_Month" EntityType="Self.Proj_Month" />
           <EntitySet Name="Proj_Year" EntityType="Self.Proj_Year" />
           <EntitySet Name="purchaseOrders" EntityType="Self.purchaseOrder" />
-          <EntitySet Name="PurchaseOrderDetails" EntityType="Self.PurchaseOrderDetail" />
           <EntitySet Name="QualificationTypes" EntityType="Self.QualificationType" />
           <EntitySet Name="RecievedCarPermissions" EntityType="Self.RecievedCarPermission" />
           <EntitySet Name="Regions" EntityType="Self.Region" />
@@ -6772,10 +6640,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             <End Role="Brand" EntitySet="Brands" />
             <End Role="Model" EntitySet="Models" />
           </AssociationSet>
-          <AssociationSet Name="FK_PurchaseOrderDetails_Brand" Association="Self.FK_PurchaseOrderDetails_Brand">
-            <End Role="Brand" EntitySet="Brands" />
-            <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
-          </AssociationSet>
           <AssociationSet Name="FK_Sales_PurchaseOrder_Brand" Association="Self.FK_Sales_PurchaseOrder_Brand">
             <End Role="Brand" EntitySet="Brands" />
             <End Role="Sales_PurchaseOrder" EntitySet="Sales_PurchaseOrder" />
@@ -6798,10 +6662,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           </AssociationSet>
           <AssociationSet Name="FK_Cars_Model" Association="Self.FK_Cars_Model">
             <End Role="Model" EntitySet="Models" />
-            <End Role="Cars" EntitySet="Cars" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cars_PurchaseOrderDetails" Association="Self.FK_Cars_PurchaseOrderDetails">
-            <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
             <End Role="Cars" EntitySet="Cars" />
           </AssociationSet>
           <AssociationSet Name="FK_Cars_SellOrder_Details" Association="Self.FK_Cars_SellOrder_Details">
@@ -6831,10 +6691,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <AssociationSet Name="FK_CarsCategories_Model" Association="Self.FK_CarsCategories_Model">
             <End Role="Model" EntitySet="Models" />
             <End Role="CarsCategories" EntitySet="CarsCategories" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PurchaseOrderDetails_CarsCategories" Association="Self.FK_PurchaseOrderDetails_CarsCategories">
-            <End Role="CarsCategories" EntitySet="CarsCategories" />
-            <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
           </AssociationSet>
           <AssociationSet Name="FK_Sales_PurchaseOrder_CarsCategories" Association="Self.FK_Sales_PurchaseOrder_CarsCategories">
             <End Role="CarsCategories" EntitySet="CarsCategories" />
@@ -6879,10 +6735,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <AssociationSet Name="FK_Suppliers_City" Association="Self.FK_Suppliers_City">
             <End Role="City" EntitySet="Cities" />
             <End Role="Suppliers" EntitySet="Suppliers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PurchaseOrderDetails_Color" Association="Self.FK_PurchaseOrderDetails_Color">
-            <End Role="Color" EntitySet="Colors" />
-            <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
           </AssociationSet>
           <AssociationSet Name="FK_Sales_PurchaseOrder_Color" Association="Self.FK_Sales_PurchaseOrder_Color">
             <End Role="Color" EntitySet="Colors" />
@@ -7092,10 +6944,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             <End Role="Users" EntitySet="Users" />
             <End Role="Jobs" EntitySet="Jobs" />
           </AssociationSet>
-          <AssociationSet Name="FK_DesiredCategory_ManufacturingYear" Association="Self.FK_DesiredCategory_ManufacturingYear">
-            <End Role="ManufacturingYear" EntitySet="ManufacturingYears" />
-            <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
-          </AssociationSet>
           <AssociationSet Name="FK_Messages_Users" Association="Self.FK_Messages_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Messages" EntitySet="Messages" />
@@ -7115,10 +6963,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
           <AssociationSet Name="FK_Mission_Users" Association="Self.FK_Mission_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Mission" EntitySet="Missions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PurchaseOrderDetails_Model" Association="Self.FK_PurchaseOrderDetails_Model">
-            <End Role="Model" EntitySet="Models" />
-            <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
           </AssociationSet>
           <AssociationSet Name="FK_Sales_PurchaseOrder_Model" Association="Self.FK_Sales_PurchaseOrder_Model">
             <End Role="Model" EntitySet="Models" />
@@ -7180,10 +7024,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             <End Role="Users" EntitySet="Users" />
             <End Role="PermissionType" EntitySet="PermissionTypes" />
           </AssociationSet>
-          <AssociationSet Name="FK_PurchaseOrderDetails_ProcessStatus" Association="Self.FK_PurchaseOrderDetails_ProcessStatus">
-            <End Role="ProcessStatus" EntitySet="ProcessStatus" />
-            <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
-          </AssociationSet>
           <AssociationSet Name="FK_Vacations_Orders_Proj_Month" Association="Self.FK_Vacations_Orders_Proj_Month">
             <End Role="Proj_Month" EntitySet="Proj_Month" />
             <End Role="Vacations_Orders" EntitySet="Vacations_Orders" />
@@ -7216,17 +7056,9 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             <End Role="Users" EntitySet="Users" />
             <End Role="purchaseOrder" EntitySet="purchaseOrders" />
           </AssociationSet>
-          <AssociationSet Name="FK_PurchaseOrderDetails_purchaseOrder" Association="Self.FK_PurchaseOrderDetails_purchaseOrder">
-            <End Role="purchaseOrder" EntitySet="purchaseOrders" />
-            <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
-          </AssociationSet>
           <AssociationSet Name="FK_Storing_Master_purchaseOrder" Association="Self.FK_Storing_Master_purchaseOrder">
             <End Role="purchaseOrder" EntitySet="purchaseOrders" />
             <End Role="Storing_Master" EntitySet="Storing_Master" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Storing_Details_PurchaseOrderDetails" Association="Self.FK_Storing_Details_PurchaseOrderDetails">
-            <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
-            <End Role="Storing_Details" EntitySet="Storing_Details" />
           </AssociationSet>
           <AssociationSet Name="FK_Sales_PurchaseOrder_Regions" Association="Self.FK_Sales_PurchaseOrder_Regions">
             <End Role="Regions" EntitySet="Regions" />
@@ -7333,6 +7165,43 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             <End Role="SellOrder_Details" EntitySet="SellOrder_Details" />
             <End Role="PurchaseOrder_Accessories" EntitySet="PurchaseOrder_Accessories" />
           </AssociationSet>
+          <EntitySet Name="PurchaseOrderDetails" EntityType="ElRWADModel.PurchaseOrderDetail" />
+          <AssociationSet Name="FK_PurchaseOrderDetails_Brand" Association="ElRWADModel.FK_PurchaseOrderDetails_Brand">
+            <End Role="Brand" EntitySet="Brands" />
+            <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cars_PurchaseOrderDetails" Association="ElRWADModel.FK_Cars_PurchaseOrderDetails">
+            <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetails" />
+            <End Role="Car" EntitySet="Cars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseOrderDetails_CarsCategories" Association="ElRWADModel.FK_PurchaseOrderDetails_CarsCategories">
+            <End Role="CarsCategory" EntitySet="CarsCategories" />
+            <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseOrderDetails_Color" Association="ElRWADModel.FK_PurchaseOrderDetails_Color">
+            <End Role="Color" EntitySet="Colors" />
+            <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DesiredCategory_ManufacturingYear" Association="ElRWADModel.FK_DesiredCategory_ManufacturingYear">
+            <End Role="ManufacturingYear" EntitySet="ManufacturingYears" />
+            <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseOrderDetails_Model" Association="ElRWADModel.FK_PurchaseOrderDetails_Model">
+            <End Role="Model" EntitySet="Models" />
+            <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseOrderDetails_ProcessStatus" Association="ElRWADModel.FK_PurchaseOrderDetails_ProcessStatus">
+            <End Role="ProcessStatu" EntitySet="ProcessStatus" />
+            <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseOrderDetails_purchaseOrder" Association="ElRWADModel.FK_PurchaseOrderDetails_purchaseOrder">
+            <End Role="purchaseOrder" EntitySet="purchaseOrders" />
+            <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Storing_Details_PurchaseOrderDetails" Association="ElRWADModel.FK_Storing_Details_PurchaseOrderDetails">
+            <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetails" />
+            <End Role="Storing_Details" EntitySet="Storing_Details" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="PurchaseOrder_Accessories">
           <Key>
@@ -7379,6 +7248,141 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
             </Principal>
             <Dependent Role="PurchaseOrder_Accessories">
               <PropertyRef Name="SallesorderDetailsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PurchaseOrderDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PurchaseOrderId" Type="Int32" />
+          <Property Name="BrandId" Type="Int32" />
+          <Property Name="ModelId" Type="Int32" />
+          <Property Name="ManufacturingYearId" Type="Int32" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="ColorId" Type="Int32" />
+          <Property Name="IsNew" Type="Boolean" />
+          <Property Name="ProcessStatusId" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="IsBuying" Type="Boolean" />
+          <Property Name="IsReceived" Type="Boolean" />
+          <NavigationProperty Name="Brand" Relationship="ElRWADModel.FK_PurchaseOrderDetails_Brand" FromRole="PurchaseOrderDetail" ToRole="Brand" />
+          <NavigationProperty Name="Cars" Relationship="ElRWADModel.FK_Cars_PurchaseOrderDetails" FromRole="PurchaseOrderDetail" ToRole="Car" />
+          <NavigationProperty Name="CarsCategory" Relationship="ElRWADModel.FK_PurchaseOrderDetails_CarsCategories" FromRole="PurchaseOrderDetail" ToRole="CarsCategory" />
+          <NavigationProperty Name="Color" Relationship="ElRWADModel.FK_PurchaseOrderDetails_Color" FromRole="PurchaseOrderDetail" ToRole="Color" />
+          <NavigationProperty Name="ManufacturingYear" Relationship="ElRWADModel.FK_DesiredCategory_ManufacturingYear" FromRole="PurchaseOrderDetail" ToRole="ManufacturingYear" />
+          <NavigationProperty Name="Model" Relationship="ElRWADModel.FK_PurchaseOrderDetails_Model" FromRole="PurchaseOrderDetail" ToRole="Model" />
+          <NavigationProperty Name="ProcessStatu" Relationship="ElRWADModel.FK_PurchaseOrderDetails_ProcessStatus" FromRole="PurchaseOrderDetail" ToRole="ProcessStatu" />
+          <NavigationProperty Name="purchaseOrder" Relationship="ElRWADModel.FK_PurchaseOrderDetails_purchaseOrder" FromRole="PurchaseOrderDetail" ToRole="purchaseOrder" />
+          <NavigationProperty Name="Storing_Details" Relationship="ElRWADModel.FK_Storing_Details_PurchaseOrderDetails" FromRole="PurchaseOrderDetail" ToRole="Storing_Details" />
+        </EntityType>
+        <Association Name="FK_PurchaseOrderDetails_Brand">
+          <End Type="ElRWADModel.Brand" Role="Brand" Multiplicity="0..1" />
+          <End Type="ElRWADModel.PurchaseOrderDetail" Role="PurchaseOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PurchaseOrderDetail">
+              <PropertyRef Name="BrandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cars_PurchaseOrderDetails">
+          <End Type="ElRWADModel.PurchaseOrderDetail" Role="PurchaseOrderDetail" Multiplicity="0..1" />
+          <End Type="ElRWADModel.Car" Role="Car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseOrderDetail">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Car">
+              <PropertyRef Name="purchaseOrderDetailsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseOrderDetails_CarsCategories">
+          <End Type="ElRWADModel.CarsCategory" Role="CarsCategory" Multiplicity="0..1" />
+          <End Type="ElRWADModel.PurchaseOrderDetail" Role="PurchaseOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarsCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PurchaseOrderDetail">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseOrderDetails_Color">
+          <End Type="ElRWADModel.Color" Role="Color" Multiplicity="0..1" />
+          <End Type="ElRWADModel.PurchaseOrderDetail" Role="PurchaseOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PurchaseOrderDetail">
+              <PropertyRef Name="ColorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DesiredCategory_ManufacturingYear">
+          <End Type="ElRWADModel.ManufacturingYear" Role="ManufacturingYear" Multiplicity="0..1" />
+          <End Type="ElRWADModel.PurchaseOrderDetail" Role="PurchaseOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ManufacturingYear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PurchaseOrderDetail">
+              <PropertyRef Name="ManufacturingYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseOrderDetails_Model">
+          <End Type="ElRWADModel.Model" Role="Model" Multiplicity="0..1" />
+          <End Type="ElRWADModel.PurchaseOrderDetail" Role="PurchaseOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Model">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PurchaseOrderDetail">
+              <PropertyRef Name="ModelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseOrderDetails_ProcessStatus">
+          <End Type="ElRWADModel.ProcessStatu" Role="ProcessStatu" Multiplicity="0..1" />
+          <End Type="ElRWADModel.PurchaseOrderDetail" Role="PurchaseOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProcessStatu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PurchaseOrderDetail">
+              <PropertyRef Name="ProcessStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseOrderDetails_purchaseOrder">
+          <End Type="ElRWADModel.purchaseOrder" Role="purchaseOrder" Multiplicity="0..1" />
+          <End Type="ElRWADModel.PurchaseOrderDetail" Role="PurchaseOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purchaseOrder">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PurchaseOrderDetail">
+              <PropertyRef Name="PurchaseOrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Storing_Details_PurchaseOrderDetails">
+          <End Type="ElRWADModel.PurchaseOrderDetail" Role="PurchaseOrderDetail" Multiplicity="0..1" />
+          <End Type="ElRWADModel.Storing_Details" Role="Storing_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseOrderDetail">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Storing_Details">
+              <PropertyRef Name="PurchaseOrderDetail_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -7997,23 +8001,6 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PurchaseOrderDetails">
-            <EntityTypeMapping TypeName="ElRWADModel.PurchaseOrderDetail">
-              <MappingFragment StoreEntitySet="PurchaseOrderDetails">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
-                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
-                <ScalarProperty Name="ModelId" ColumnName="ModelId" />
-                <ScalarProperty Name="ManufacturingYearId" ColumnName="ManufacturingYearId" />
-                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
-                <ScalarProperty Name="ColorId" ColumnName="ColorId" />
-                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
-                <ScalarProperty Name="ProcessStatusId" ColumnName="ProcessStatusId" />
-                <ScalarProperty Name="Count" ColumnName="Count" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="QualificationTypes">
             <EntityTypeMapping TypeName="ElRWADModel.QualificationType">
               <MappingFragment StoreEntitySet="QualificationType">
@@ -8385,6 +8372,25 @@ warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key
                 <ScalarProperty Name="PurchaseOrder_Id" ColumnName="PurchaseOrder_Id" />
                 <ScalarProperty Name="Accessories_Id" ColumnName="Accessories_Id" />
                 <ScalarProperty Name="SallesorderDetailsId" ColumnName="SallesorderDetailsId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseOrderDetails">
+            <EntityTypeMapping TypeName="ElRWADModel.PurchaseOrderDetail">
+              <MappingFragment StoreEntitySet="PurchaseOrderDetails">
+                <ScalarProperty Name="IsReceived" ColumnName="IsReceived" />
+                <ScalarProperty Name="IsBuying" ColumnName="IsBuying" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="ProcessStatusId" ColumnName="ProcessStatusId" />
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ManufacturingYearId" ColumnName="ManufacturingYearId" />
+                <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

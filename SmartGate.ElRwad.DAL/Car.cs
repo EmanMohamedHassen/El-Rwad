@@ -47,7 +47,6 @@ namespace SmartGate.ElRwad.DAL
         public virtual Color Color { get; set; }
         public virtual ManufacturingYear ManufacturingYear { get; set; }
         public virtual Model Model { get; set; }
-        public virtual PurchaseOrderDetail PurchaseOrderDetail { get; set; }
         public virtual SellOrder_Details SellOrder_Details { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ExportDetail> ExportDetails { get; set; }
@@ -57,5 +56,6 @@ namespace SmartGate.ElRwad.DAL
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WithdrawPerm> WithdrawPerms { get; set; }
+        public virtual PurchaseOrderDetail PurchaseOrderDetail { get; set; }
     }
 }

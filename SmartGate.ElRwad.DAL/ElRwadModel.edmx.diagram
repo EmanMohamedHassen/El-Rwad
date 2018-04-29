@@ -49,7 +49,6 @@
         <EntityTypeShape EntityType="ElRWADModel.Proj_Month" Width="1.5" PointX="26.25" PointY="59.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ElRWADModel.Proj_Year" Width="1.5" PointX="3.75" PointY="52.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ElRWADModel.purchaseOrder" Width="1.5" PointX="12.5" PointY="74" IsExpanded="true" />
-        <EntityTypeShape EntityType="ElRWADModel.PurchaseOrderDetail" Width="1.5" PointX="12.75" PointY="66.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ElRWADModel.QualificationType" Width="1.5" PointX="21" PointY="83" IsExpanded="true" />
         <EntityTypeShape EntityType="ElRWADModel.RecievedCarPermission" Width="1.5" PointX="17.25" PointY="61.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ElRWADModel.Region" Width="1.5" PointX="5.25" PointY="87.125" IsExpanded="true" />
@@ -92,14 +91,12 @@
         <AssociationConnector Association="ElRWADModel.FK_Brand_Users" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Cars_Brand" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Model_Brand" ManuallyRouted="false" />
-        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_Brand" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_Brand" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_SellOrder_Details_Brand" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Cars_CarsCategories" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Cars_Color" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Cars_ManufacturingYear" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Cars_Model" ManuallyRouted="false" />
-        <AssociationConnector Association="ElRWADModel.FK_Cars_PurchaseOrderDetails" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Cars_SellOrder_Details" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_ExportDetails_Cars" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_MovementPermission_Cars" ManuallyRouted="false" />
@@ -107,7 +104,6 @@
         <AssociationConnector Association="ElRWADModel.FK_Storing_Users" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_WithdrawPerm_Cars" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_CarsCategories_Model" ManuallyRouted="false" />
-        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_CarsCategories" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_CarsCategories" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_SellOrder_Details_CarsCategories" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_City_Users" ManuallyRouted="false" />
@@ -119,7 +115,6 @@
         <AssociationConnector Association="ElRWADModel.FK_Showing_Branches_City" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Stores_City" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Suppliers_City" ManuallyRouted="false" />
-        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_Color" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_Color" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_SellOrder_Details_Color" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Company_Employees" ManuallyRouted="false" />
@@ -172,13 +167,11 @@
         <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_InsuranceCompanies" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_SellOrder_Details_InsuranceCompanies" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Jobs_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="ElRWADModel.FK_DesiredCategory_ManufacturingYear" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Messages_Users" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Messages_Users1" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Mission_Proj_Month" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Mission_Proj_Year" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Mission_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_Model" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_Model" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_SellOrder_Details_Model" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_MovementPermission_Stores" ManuallyRouted="false" />
@@ -194,7 +187,6 @@
         <AssociationConnector Association="ElRWADModel.FK_Perm_Absent_Users" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Perm_Absent_Users1" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_PermissionType_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_ProcessStatus" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Vacations_Orders_Proj_Month" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Shifts_Proj_Year" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Vacations_Orders_Proj_Year" ManuallyRouted="false" />
@@ -203,9 +195,7 @@
         <AssociationConnector Association="ElRWADModel.FK_purchaseOrder_Suppliers" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_purchaseOrder_SuppliersRepresentative" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_purchaseOrder_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_purchaseOrder" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Storing_Master_purchaseOrder" ManuallyRouted="false" />
-        <AssociationConnector Association="ElRWADModel.FK_Storing_Details_PurchaseOrderDetails" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Sales_PurchaseOrder_Regions" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_SellOrder_Regions" ManuallyRouted="false" />
         <AssociationConnector Association="ElRWADModel.FK_Showing_Branches_Regions" ManuallyRouted="false" />
@@ -233,6 +223,16 @@
         <AssociationConnector Association="ElRWADModel.FK_PurchaseOrder_Accessories_Accessories" />
         <AssociationConnector Association="ElRWADModel.FK_PurchaseOrder_Accessories_purchaseOrder" />
         <AssociationConnector Association="ElRWADModel.FK_PurchaseOrder_Accessories_SellOrder_Details" />
+        <EntityTypeShape EntityType="ElRWADModel.PurchaseOrderDetail" Width="1.5" PointX="19.75" PointY="58.125" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_Brand" />
+        <AssociationConnector Association="ElRWADModel.FK_Cars_PurchaseOrderDetails" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_CarsCategories" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_Color" />
+        <AssociationConnector Association="ElRWADModel.FK_DesiredCategory_ManufacturingYear" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_Model" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_ProcessStatus" />
+        <AssociationConnector Association="ElRWADModel.FK_PurchaseOrderDetails_purchaseOrder" />
+        <AssociationConnector Association="ElRWADModel.FK_Storing_Details_PurchaseOrderDetails" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

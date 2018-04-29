@@ -5,9 +5,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SmartGate.ElRwad.WebAPI.Areas.HR.Controllers
 {
+    //[EnableCors(origins: "*", headers: "*", methods: "*", exposedHeaders: "X-My-Header")]
     public class EmployeesController : ApiController
     {
         private elRwadEntities db = new elRwadEntities();

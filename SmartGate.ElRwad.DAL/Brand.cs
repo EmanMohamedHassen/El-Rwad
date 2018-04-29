@@ -19,9 +19,9 @@ namespace SmartGate.ElRwad.DAL
         {
             this.Cars = new HashSet<Car>();
             this.Models = new HashSet<Model>();
-            this.PurchaseOrderDetails = new HashSet<PurchaseOrderDetail>();
             this.Sales_PurchaseOrder = new HashSet<Sales_PurchaseOrder>();
             this.SellOrder_Details = new HashSet<SellOrder_Details>();
+            this.PurchaseOrderDetails = new HashSet<PurchaseOrderDetail>();
         }
     
         public int Id { get; set; }
@@ -36,10 +36,10 @@ namespace SmartGate.ElRwad.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Model> Models { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PurchaseOrderDetail> PurchaseOrderDetails { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sales_PurchaseOrder> Sales_PurchaseOrder { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SellOrder_Details> SellOrder_Details { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PurchaseOrderDetail> PurchaseOrderDetails { get; set; }
     }
 }

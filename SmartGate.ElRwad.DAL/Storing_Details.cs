@@ -23,8 +23,8 @@ namespace SmartGate.ElRwad.DAL
         public Nullable<int> Storing_Master_Id { get; set; }
         public Nullable<int> PurchaseOrderDetail_Id { get; set; }
     
-        public virtual PurchaseOrderDetail PurchaseOrderDetail { get; set; }
         public virtual Storing_Master Storing_Master { get; set; }
         public virtual User User { get; set; }
+        public virtual PurchaseOrderDetail PurchaseOrderDetail { get; set; }
     }
 }
