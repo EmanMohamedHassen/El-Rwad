@@ -5,7 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using SmartGate.ElRwad.BLL;
+using SmartGate.ElRwad.ViewModel;
 namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
 {
     public class CarCategoriesController : ApiController
@@ -19,15 +20,7 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [HttpGet]
         public dynamic GetAllCategories()
         {
-            var category = db.CarsCategories.Select(s => new
-            {
-                categoryId = s.Id,
-                categoryNameAr = s.NameAr,
-                categoryNameEn = s.NameEn,
-                modelId = s.ModelId,
-                categoryModelName = s.Model.NameAr
-            }).ToList();
-            return category;
+            return CarCategoriesManager.Instance.GetAllCategories();
         }
 
         /// <summary>
@@ -38,38 +31,8 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [HttpGet]
         public dynamic GetCategorById(int categoryId)
         {
-            try
-            {
-                var category = db.CarsCategories.Where(e => e.Id == categoryId).FirstOrDefault();
-                if (category != null)
-                {
-                    return new
-                    {
-                        categoryNameAr = category.NameAr,
-                        categoryNameEn = category.NameEn,
-                        modelId = category.ModelId,
-                        categoryModelName = category.Model.NameAr
 
-                    };
-                }
-                else
-                {
-                    return new
-                    {
-                        Id = 0
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                return new
-                {
-                    result = new
-                    {
-                        Id = 0
-                    }
-                };
-            }
+            return CarCategoriesManager.Instance.GetCategorById(categoryId);
         }
 
 
@@ -81,29 +44,7 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [HttpGet]
         public dynamic GetCategoryByModelId(int modelId)
         {
-            try
-            {
-                var category = db.CarsCategories.Where(e => e.ModelId == modelId).Select(s => new
-                {
-
-                    categoryId = s.Id,
-                    categoryNameAr = s.NameAr,
-                    categoryNameEn = s.NameEn,
-                    categoryModelName = s.Model.NameAr
-
-                }).ToList();
-                return category;
-            }
-            catch (Exception ex)
-            {
-                return new
-                {
-                    result = new
-                    {
-                        Id = 0
-                    }
-                };
-            }
+            return CarCategoriesManager.Instance.GetCategoryByModelId(modelId);
         }
         /// <summary>
         /// add new category
@@ -113,20 +54,9 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         /// <param name="modelId"></param>
         /// <returns></returns>
         [HttpPost]
-        public dynamic PostCategory(string categoryNameAr, string categoryNameEn, int modelId)
+        public dynamic PostCategory(CarCategoriesVM C)
         {
-            db.CarsCategories.Add(new CarsCategory
-            {
-                NameAr = categoryNameAr,
-                NameEn = categoryNameEn,
-                ModelId = modelId
-
-            });
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return CarCategoriesManager.Instance.PostCategory(C);
         }
         /// <summary>
         /// update category details
@@ -138,13 +68,13 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         /// <returns></returns>
         [HttpPut]
         [AcceptVerbs("GET", "POST")]
-        public dynamic PutModel(int categoryId, string categoryNameAr, string categoryNameEn, int modelId)
+        public dynamic PutModel(CarCategoriesVM C)
         {
-            var category = db.CarsCategories.Find(categoryId);
+            var category = db.CarsCategories.Find(C.Id);
 
-            category.NameAr = categoryNameAr;
-            category.NameEn = categoryNameEn;
-            category.ModelId = modelId;
+            category.NameAr = C.NameAr;
+            category.NameEn = C.NameEn;
+            category.ModelId = C.ModelId;
             var result = db.SaveChanges() > 0 ? true : false;
             return new
             {

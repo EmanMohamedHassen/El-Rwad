@@ -380,9 +380,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SmartGate.ElRwad.BLL\SmartGate.ElRwad.BLL.csproj">
+      <Project>{173cc09a-97b7-4521-b58c-2a32dbfb6b6d}</Project>
+      <Name>SmartGate.ElRwad.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SmartGate.ElRwad.DAL\SmartGate.ElRwad.DAL.csproj">
       <Project>{850f7029-fbb3-4177-b8d1-c3e402a26699}</Project>
       <Name>SmartGate.ElRwad.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartGate.ElRwad.ViewModel\SmartGate.ElRwad.ViewModel.csproj">
+      <Project>{e3dd2386-da27-4fb0-b17c-cac550782bb6}</Project>
+      <Name>SmartGate.ElRwad.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

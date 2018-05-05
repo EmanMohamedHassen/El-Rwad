@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using SmartGate.ElRwad.BLL;
+using SmartGate.ElRwad.ViewModel;
 
 namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
 {
@@ -15,62 +17,22 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
 
         public dynamic GetAllBanks()
         {
-            var banks = db.Banks.Select(s => new
-            {
-                bankId = s.Id,
-                bankNameA = s.NameA,
-                bankNameE = s.NameE
-            }).ToList();
-            return banks;
+            return BankManager.Instance.GetAllBanks();
         }
 
         [HttpGet]
         public dynamic GetBankById(int bankId)
         {
-            try
-            {
-                var bank = db.Banks.Where(e => e.Id == bankId).FirstOrDefault();
-                if (bank != null)
-                {
-                    return new
-                    {
-                        bankNameA = bank.NameA,
-                        bankNameE = bank.NameE
-                    };
-                }
-                else
-                {
-                    return new
-                    {
-                        Id = 0
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                return new
-                {
-                    result = new
-                    {
-                        Id = 0
-                    }
-                };
-            }
+            return BankManager.Instance.GetBankById(bankId);
         }
 
         public dynamic PostBank(string bankNameA, string bankNameE)
         {
-            db.Banks.Add(new Bank
-            {
-                NameA = bankNameA,
-                NameE = bankNameE
-
-            });
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            BankVM B = new BankVM();
+            B.NameA = bankNameA;
+            B.NameE = bankNameE;
+        
+            return BankManager.Instance.PostBank(B);
         }
 
 
@@ -78,28 +40,18 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [AcceptVerbs("GET", "POST")]
         public dynamic PutBank(int bankId, string bankNameA, string bankNameE)
         {
-            var bank = db.Banks.Find(bankId);
-
-            bank.NameA = bankNameA;
-            bank.NameE = bankNameE;
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            BankVM B = new BankVM();
+            B.Id = bankId;
+            B.NameA = bankNameA;
+            B.NameE = bankNameE;
+            return BankManager.Instance.PutBank(B);
         }
 
         [HttpDelete]
         [AcceptVerbs("GET", "POST")]
         public dynamic DeleteBank(int bankId)
         {
-            var bank = db.Banks.Where(s => s.Id == bankId).FirstOrDefault();
-            db.Banks.Remove(bank);
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return BankManager.Instance.DeleteBank(bankId);
         }
 
     }

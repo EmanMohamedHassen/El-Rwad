@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using SmartGate.ElRwad.BLL;
+using SmartGate.ElRwad.ViewModel;
 
 namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
 {
@@ -14,113 +16,47 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
 
         public dynamic GetAllAccessories()
         {
-            var accessories = db.Accessories.Select(s => new
-            {
-                accessoryId = s.Id,
-                accessoryNameA = s.NameA,
-                accessoryNameE = s.NameE,
-                accessoriePrice = s.Price,
-
-            }).ToList();
-            return accessories;
+            return AccessoriesManager.Instance.GetAllAccessories();
         }
 
 
         [HttpGet]
         public dynamic GetAccessoryById(int accessoryId)
         {
-            try
-            {
-                var accessory = db.Accessories.Where(e => e.Id == accessoryId).FirstOrDefault();
-                if (accessory != null)
-                {
-                    return new
-                    {
-                        accessoryId = accessory.Id,
-                        accessoryNameA = accessory.NameA,
-                        accessoryNameE = accessory.NameE,
-                        accessoriePrice = accessory.Price,
-
-                    };
-                }
-                else
-                {
-                    return new
-                    {
-                        Id = 0
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                return new
-                {
-                    result = new
-                    {
-                        Id = 0
-                    }
-                };
-            }
+           return AccessoriesManager.Instance.GetAccessoryById(accessoryId);
         }
         public dynamic GetAccessoriesByPurchaseOrderId(int purchaseOrderId)
         {
 
-            var accessories = db.PurchaseOrder_Accessories.Where(e => e.PurchaseOrder_Id == purchaseOrderId).Select(s => new
-            {
-                accessoryId = s.Accessory.Id,
-                accessoryNameA = s.Accessory.NameA,
-                accessoryNameE = s.Accessory.NameE,
-                accessoryPrice = s.Accessory.Price
-
-            }).ToList();
-            return accessories;
+            return AccessoriesManager.Instance.GetAccessoriesByPurchaseOrderId(purchaseOrderId);
 
         }
 
-        public dynamic PostAccessory(string accessoryNameA, string accessoryNameE, float price)
-        {
-            db.Accessories.Add(new Accessory
-            {
-                NameA = accessoryNameA,
-                NameE = accessoryNameE,
-                Price = price,
-
-
-            });
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+        public dynamic PostAccessory(AccessoriesVM A)
+        {/*
+            AccessoriesVM A = new AccessoriesVM();
+            A.NameA = accessoryNameA;
+            A.NameE = accessoryNameE;
+            A.Price = price;*/
+            return AccessoriesManager.Instance.PostAccessory(A);
         }
 
         [HttpPut]
         [AcceptVerbs("GET", "POST")]
         public dynamic PutAccessory(int accessoryId, string accessoryNameA, string accessoryNameE, float price)
         {
-            var accessory = db.Accessories.Find(accessoryId);
-
-            accessory.NameA = accessoryNameA;
-            accessory.NameE = accessoryNameE;
-            accessory.Price = price;
-
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            AccessoriesVM A = new AccessoriesVM();
+            A.Id = accessoryId;
+            A.NameA = accessoryNameA;
+            A.NameE = accessoryNameE;
+            A.Price = price;
+            return AccessoriesManager.Instance.PutAccessory(accessoryId, accessoryNameA, accessoryNameE, price);
         }
         [HttpDelete]
         [AcceptVerbs("GET", "POST")]
         public dynamic DeleteAccessory(int accessoryId)
         {
-            var Accessory = db.Accessories.Where(s => s.Id == accessoryId).FirstOrDefault();
-            db.Accessories.Remove(Accessory);
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return AccessoriesManager.Instance.DeleteAccessory(accessoryId);
         }
 
 
@@ -128,27 +64,7 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         ///////////// post&put purchaseorderaccesssories
         public dynamic PostPurchaseOrderAccesssories(int purchaseOrderId, [FromBody] List<int> accessoriesIDs)
         {
-            List<double> TotalCost = new List<double>();
-            foreach (var item in accessoriesIDs)
-            {
-                var a = db.Accessories.Where(s => s.Id == item).FirstOrDefault();
-                var purchaseorderaccessory = db.PurchaseOrder_Accessories.Add(new PurchaseOrder_Accessories
-                {
-                   
-                    PurchaseOrder_Id = purchaseOrderId,
-                    Accessories_Id = item
-
-                });
-                TotalCost.Add(a.Price.Value);
-
-            }
-
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result,
-                totalprice = TotalCost.Sum()
-            };
+            return AccessoriesManager.Instance.PostPurchaseOrderAccesssories(purchaseOrderId, accessoriesIDs);
 
         }
 

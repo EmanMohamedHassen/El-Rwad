@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGate.ElRwad.Portal", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGate.ElRwad.ResaurceManger", "SmartGate.ElRwad.ResaurceManger\SmartGate.ElRwad.ResaurceManger.csproj", "{9804F74C-204C-4A24-98D2-9C4D3D14C5F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGate.ElRwad.ViewModel", "SmartGate.ElRwad.ViewModel\SmartGate.ElRwad.ViewModel.csproj", "{E3DD2386-DA27-4FB0-B17C-CAC550782BB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGate.ElRwad.BLL", "SmartGate.ElRwad.BLL\SmartGate.ElRwad.BLL.csproj", "{173CC09A-97B7-4521-B58C-2A32DBFB6B6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{9804F74C-204C-4A24-98D2-9C4D3D14C5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9804F74C-204C-4A24-98D2-9C4D3D14C5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9804F74C-204C-4A24-98D2-9C4D3D14C5F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3DD2386-DA27-4FB0-B17C-CAC550782BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3DD2386-DA27-4FB0-B17C-CAC550782BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3DD2386-DA27-4FB0-B17C-CAC550782BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3DD2386-DA27-4FB0-B17C-CAC550782BB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{173CC09A-97B7-4521-B58C-2A32DBFB6B6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{173CC09A-97B7-4521-B58C-2A32DBFB6B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{173CC09A-97B7-4521-B58C-2A32DBFB6B6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{173CC09A-97B7-4521-B58C-2A32DBFB6B6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

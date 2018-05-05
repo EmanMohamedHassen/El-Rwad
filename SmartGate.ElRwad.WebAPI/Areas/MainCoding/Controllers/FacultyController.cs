@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using SmartGate.ElRwad.BLL;
+using SmartGate.ElRwad.ViewModel;
 
 namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
 {
@@ -14,51 +16,12 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [HttpGet]
         public dynamic GetFaculties()
         {
-            var faculty = db.Faculties.Select(s => new
-            {
-                facultyId = s.Faculty_ID,
-                facultyArName = s.Faculty_A_Name,
-                facultyEnName = s.Faculty_E_Name,
-                facultyNotes = s.Faculty_Notes
-            }).ToList();
-            return faculty;
+          return FacultyManager.Instance.GetFaculties();
         }
         [HttpGet]
         public dynamic GetFacultyById(int facultyId)
         {
-            try
-            {
-                var s = db.Faculties.Where(e => e.Faculty_ID == facultyId).FirstOrDefault();
-                if (s != null)
-                {
-                    return new
-                    {
-                        facultyId = s.Faculty_ID,
-
-                        facultyArName = s.Faculty_A_Name,
-                        facultyEnName = s.Faculty_E_Name,
-                        facultyNotes = s.Faculty_Notes
-
-                    };
-                }
-                else
-                {
-                    return new
-                    {
-                        Id = 0
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                return new
-                {
-                    result = new
-                    {
-                        Id = 0
-                    }
-                };
-            }
+            return FacultyManager.Instance.GetFacultyById(facultyId);
         }
 
         [HttpPost]
@@ -68,21 +31,8 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
             string facultyNotes
             )
         {
-            var faculty = db.Faculties.Add(new Faculty
-            {
-                Faculty_A_Name = facultyArName,
-                Faculty_E_Name = facultyEnName,
-                Faculty_Notes = facultyNotes
 
-
-
-            });
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result,
-                facultyId = faculty.Faculty_ID
-            };
+            return FacultyManager.Instance.PostFaculty(facultyArName, facultyEnName, facultyNotes);
         }
         [HttpPut]
         [AcceptVerbs("GET", "POST")]
@@ -93,28 +43,20 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
             string facultyNotes
             )
         {
-            var faculty = db.Faculties.Find(facultyId);
-            faculty.Faculty_A_Name = facultyArName;
-            faculty.Faculty_E_Name = facultyEnName;
-            faculty.Faculty_Notes = facultyNotes;
-
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            //FacultyVM object = new FacultyVM
+            //{
+            //    Faculty_ID = facultyId,
+            //    Faculty_A_Name = facultyArName,
+            //    Faculty_E_Name = facultyEnName,
+            //    Faculty_Notes = facultyNotes
+            //};
+            return FacultyManager.Instance.PutFaculty(facultyId, facultyArName, facultyEnName, facultyNotes);
         }
         [HttpDelete]
         [AcceptVerbs("GET", "POST")]
         public dynamic DeleteFaculty(int facultyId)
         {
-            var faculty = db.Faculties.Where(s => s.Faculty_ID == facultyId).FirstOrDefault();
-            db.Faculties.Remove(faculty);
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return FacultyManager.Instance.DeleteFaculty(facultyId);
         }
         [HttpGet]
         private dynamic facultyExists(int facultyId)

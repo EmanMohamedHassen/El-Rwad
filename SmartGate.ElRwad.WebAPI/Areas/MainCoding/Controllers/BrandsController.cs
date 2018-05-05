@@ -5,7 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using SmartGate.ElRwad.ViewModel;
+using SmartGate.ElRwad.BLL;
 namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
 {
     public class BrandsController : ApiController
@@ -19,15 +20,7 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [HttpGet]
         public dynamic GetAllBrands()
         {
-            var brands = db.Brands.Select(s => new
-            {
-                brandId = s.Id,
-                brandNameAr = s.NameAr,
-                brandNameEn = s.NameEn,
-                userId = s.UserId,
-                lastUpdate = s.LastUpdate.Value.Year.ToString() + "-" + s.LastUpdate.Value.Month.ToString() + "-" + s.LastUpdate.Value.Day.ToString()
-            }).ToList();
-            return brands;
+            return BrandsManager.Instance.GetAllBrands();
         }
 
         /// <summary>
@@ -38,37 +31,7 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [HttpGet]
         public dynamic GetBarndById(int brandId)
         {
-            try
-            {
-                var s = db.Brands.Where(e => e.Id == brandId).FirstOrDefault();
-                if (s != null)
-                {
-                    return new
-                    {
-                        brandNameAr = s.NameAr,
-                        brandNAmeEn = s.NameEn,
-                        userId = s.UserId,
-                        lastUpdate = s.LastUpdate.Value.ToString("yyyy-MM-dd")
-                    };
-                }
-                else
-                {
-                    return new
-                    {
-                        Id = 0
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                return new
-                {
-                    result = new
-                    {
-                        Id = 0
-                    }
-                };
-            }
+            return BrandsManager.Instance.GetBarndById(brandId);
         }
 
         /// <summary>
@@ -80,19 +43,11 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [HttpPost]
         public dynamic PostBrand(string brandNameAr, string brandNAmeEn, int userId)
         {
-            db.Brands.Add(new Brand
-            {
-                NameAr = brandNameAr,
-                NameEn = brandNAmeEn,
-                UserId = userId,
-                LastUpdate = DateTime.Now
-
-            });
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            BrandVM B = new BrandVM();
+            B.NameAr = brandNameAr;
+            B.NameEn = brandNAmeEn;
+            B.UserId = userId;
+            return BrandsManager.Instance.PostBrand(B);
         }
 
         /// <summary>
@@ -106,17 +61,12 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [AcceptVerbs("GET", "POST")]
         public dynamic PutBrand(int brandId, string brandNameAr, string brandNAmeEn, int userId)
         {
-            var brand = db.Brands.Find(brandId);
-
-            brand.NameAr = brandNameAr;
-            brand.NameEn = brandNAmeEn;
-            brand.UserId = userId;
-            brand.LastUpdate = DateTime.Now;
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            BrandVM B = new BrandVM();
+            B.Id = brandId;
+            B.NameAr = brandNameAr;
+            B.NameEn = brandNAmeEn;
+            B.UserId = userId;
+            return BrandsManager.Instance.PutBrand(B);
         }
         /// <summary>
         /// delete brand
