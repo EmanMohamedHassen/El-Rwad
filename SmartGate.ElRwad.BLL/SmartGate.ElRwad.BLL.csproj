@@ -62,6 +62,7 @@
     <Compile Include="DeputationManager.cs" />
     <Compile Include="FacultyManager.cs" />
     <Compile Include="HR\DeductionManager.cs" />
+    <Compile Include="HR\EmployeeManager.cs" />
     <Compile Include="InsuranceCompaniesManager.cs" />
     <Compile Include="JobCategoryManager.cs" />
     <Compile Include="JobManager.cs" />

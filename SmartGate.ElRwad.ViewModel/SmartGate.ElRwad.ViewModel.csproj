@@ -53,6 +53,7 @@
     <Compile Include="DeputationVM.cs" />
     <Compile Include="FacultyVM.cs" />
     <Compile Include="HR\DeductionVM.cs" />
+    <Compile Include="HR\EmployeeVM.cs" />
     <Compile Include="InsuranceCompanyVM.cs" />
     <Compile Include="jobCategoryVM.cs" />
     <Compile Include="JobVM.cs" />
