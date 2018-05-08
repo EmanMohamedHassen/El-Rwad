@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace SmartGate.ElRwad.ViewModel
 {
-   public class BrandVM
+   public class MonthVM
     {
-        public int? Id { get; set; }
-
+        public byte Id { get; set; }
         public string NameAr { get; set; }
 
         public string NameEn { get; set; }
 
-        public int? UserId { get; set; }
-
-        public string LastUpdate { get; set; }
     }
+
 }

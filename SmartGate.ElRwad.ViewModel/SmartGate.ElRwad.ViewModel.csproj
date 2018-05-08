@@ -47,8 +47,26 @@
     <Compile Include="CarCategoriesVM.cs" />
     <Compile Include="CityVM.cs" />
     <Compile Include="ColorVMs.cs" />
+    <Compile Include="CompaniesVM.cs" />
+    <Compile Include="DaysVM.cs" />
+    <Compile Include="DepartmentVM.cs" />
+    <Compile Include="DeputationVM.cs" />
     <Compile Include="FacultyVM.cs" />
+    <Compile Include="HR\DeductionVM.cs" />
+    <Compile Include="InsuranceCompanyVM.cs" />
+    <Compile Include="jobCategoryVM.cs" />
+    <Compile Include="JobVM.cs" />
+    <Compile Include="ManufacturingYearVM.cs" />
+    <Compile Include="ModelVM.cs" />
+    <Compile Include="MonthVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegionVM.cs" />
+    <Compile Include="ShowingBranchesVM.cs" />
+    <Compile Include="SpecialtiesVM.cs" />
+    <Compile Include="StoresVM.cs" />
+    <Compile Include="SuppliersVM.cs" />
+    <Compile Include="UniversityVM.cs" />
+    <Compile Include="YearVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmartGate.ElRwad.DAL\SmartGate.ElRwad.DAL.csproj">

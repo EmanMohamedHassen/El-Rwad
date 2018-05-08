@@ -5,14 +5,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using SmartGate.ElRwad.BLL;
+using SmartGate.ElRwad.ViewModel;
 
 namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
 {
     public class SuppliersController : ApiController
     {
-        private elRwadEntities db = new elRwadEntities();
-
-
         /// <summary>
         /// get all suppliers
         /// </summary>
@@ -20,21 +19,8 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [HttpGet]
         public dynamic GetAllSuppliers()
         {
-            var suppliers = db.Suppliers.Select(s => new
-            {
-                supplierId = s.Id,
-                supplierNameAr = s.NameAr,
-                supplierNameEn = s.NameEn,
-                phone = s.Phone,
-                mobile = s.Mobile,
-                email = s.Email,
-                address = s.Address,
-                cityId = s.CityId,
-                cityName = s.City.Name_A,
-                regionId = s.RegionId,
-                regionName = s.Region.NameAr
-            }).ToList();
-            return suppliers;
+            return SupplierManager.Instance.GetAllSuppliers();
+
         }
 
         /// <summary>
@@ -45,43 +31,7 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [HttpGet]
         public dynamic GetSupplierById(int supplierId)
         {
-            try
-            {
-                var supplier = db.Suppliers.Where(e => e.Id == supplierId).FirstOrDefault();
-                if (supplier != null)
-                {
-                    return new
-                    {
-                        supplierNameAr = supplier.NameAr,
-                        supplierNameEn = supplier.NameEn,
-                        phone = supplier.Phone,
-                        mobile = supplier.Mobile,
-                        email = supplier.Email,
-                        address = supplier.Address,
-                        cityId = supplier.CityId,
-                        cityName = supplier.City.Name_A,
-                        regionId = supplier.RegionId,
-                        regionName = supplier.Region.NameAr
-                    };
-                }
-                else
-                {
-                    return new
-                    {
-                        Id = 0
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                return new
-                {
-                    result = new
-                    {
-                        Id = 0
-                    }
-                };
-            }
+            return SupplierManager.Instance.GetSupplierById(supplierId);
         }
 
         /// <summary>
@@ -97,25 +47,9 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         /// <param name="regionId"></param>
         /// <returns></returns>
         [HttpPost]
-        public dynamic PostSupplier(string supplierNameAr, string supplierNameEn, string phone, string mobile, string email, string address, int cityId, int regionId)
+        public dynamic PostSupplier(SuppliersVM s)
         {
-            db.Suppliers.Add(new Supplier
-            {
-                NameAr = supplierNameAr,
-                NameEn = supplierNameEn,
-                Phone = phone,
-                Mobile = mobile,
-                Email = email,
-                Address = address,
-                CityId = cityId,
-                RegionId = regionId
-
-            });
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return SupplierManager.Instance.PostSupplier(s);
         }
 
         /// <summary>
@@ -133,23 +67,9 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         /// <returns></returns>
         [HttpPut]
         [AcceptVerbs("GET", "POST")]
-        public dynamic PutSupplier(int supplierId, string supplierNameAr, string supplierNAmeEn, string phone, string mobile, string email, string address, int cityId, int regionId)
+        public dynamic PutSupplier(SuppliersVM s)
         {
-            var supplier = db.Suppliers.Find(supplierId);
-
-            supplier.NameAr = supplierNameAr;
-            supplier.NameEn = supplierNAmeEn;
-            supplier.Phone = phone;
-            supplier.Mobile = mobile;
-            supplier.Email = email;
-            supplier.Address = address;
-            supplier.CityId = cityId;
-            supplier.RegionId = regionId;
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return SupplierManager.Instance.PutSupplier(s);
         }
 
         /// <summary>
@@ -161,13 +81,7 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [AcceptVerbs("GET", "POST")]
         public dynamic DeleteSupplier(int supplierId)
         {
-            var supplier = db.Suppliers.Where(s => s.Id == supplierId).FirstOrDefault();
-            db.Suppliers.Remove(supplier);
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return SupplierManager.Instance.DeleteSupplier(supplierId);
         }
 
 

@@ -9,7 +9,7 @@ namespace SmartGate.ElRwad.ViewModel
 {
     public class FacultyVM
     {
-        public int Faculty_ID { get; set; }
+        public int? Faculty_ID { get; set; }
 
         public string Faculty_E_Name { get; set; }
 

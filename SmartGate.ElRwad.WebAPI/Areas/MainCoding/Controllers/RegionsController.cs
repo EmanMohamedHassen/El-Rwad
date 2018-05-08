@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using SmartGate.ElRwad.BLL;
+using SmartGate.ElRwad.ViewModel;
 
 namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
 {
@@ -19,17 +21,7 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [HttpGet]
         public dynamic Getregions()
         {
-            var region = db.Regions.Select(s => new
-            {
-                regionId = s.Id,
-                regionArName = s.NameAr,
-                regionEnName = s.NameEn,
-                regionCityId = s.CityId,
-                regionCityName = s.City.Name_A
-
-
-            }).ToList();
-            return region;
+            return RegionManager.Instance.Getregions();
         }
         /// <summary>
         /// get  region by id
@@ -39,69 +31,18 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [HttpGet]
         public dynamic GetRegionById(int regionId)
         {
-            try
-            {
-                var s = db.Regions.Where(e => e.Id == regionId).FirstOrDefault();
-                if (s != null)
-                {
-                    return new
-                    {
-
-                        regionArName = s.NameAr,
-                        regionEnName = s.NameEn,
-                        regionCityId = s.CityId,
-                        regionCityName = s.City.Name_A
-
-                    };
-                }
-                else
-                {
-                    return new
-                    {
-                        Id = 0
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                return new
-                {
-                    result = new
-                    {
-                        Id = 0
-                    }
-                };
-            }
+            return RegionManager.Instance.GetRegionById(regionId);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cityId"></param>
+        /// <returns></returns>
         //get all regions by city id
         [HttpGet]
         public dynamic GetRegionsByCityId(int cityId)
         {
-            try
-            {
-                var region = db.Regions.Where(e => e.CityId == cityId).Select(s => new
-                {
-
-
-                    regionId = s.Id,
-                    regionArName = s.NameAr,
-                    regionEnName = s.NameEn,
-                    regionCityId = s.CityId,
-                    regionCityName = s.City.Name_A
-
-                }).ToList();
-                return region;
-            }
-            catch (Exception ex)
-            {
-                return new
-                {
-                    result = new
-                    {
-                        Id = 0
-                    }
-                };
-            }
+            return RegionManager.Instance.GetRegionById(cityId);
         }
 
         /// <summary>
@@ -112,20 +53,9 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         /// <param name="regionCityId"></param>
         /// <returns></returns>
         [HttpPost]
-        public dynamic PostRegion(string regionArName, string regionEnName, int regionCityId)
+        public dynamic PostRegion(RegionVM r)
         {
-            var region = db.Regions.Add(new Region
-            {
-                NameAr = regionArName,
-                NameEn = regionEnName,
-                CityId = regionCityId
-            });
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result,
-                regionId = region.Id
-            };
+            return RegionManager.Instance.PostRegion(r);
         }
         /// <summary>
         /// update region details
@@ -137,18 +67,9 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         /// <returns></returns>
         [HttpPut]
         [AcceptVerbs("GET", "POST")]
-        public dynamic PutRegion(int regionId, string regionArName, string regionEnName, int regionCityId)
+        public dynamic PutRegion(RegionVM r)
         {
-            var region = db.Regions.Find(regionId);
-            region.NameAr = regionArName;
-            region.NameEn = regionEnName;
-            region.CityId = regionCityId;
-
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return RegionManager.Instance.PutRegion(r);
         }
 
         /// <summary>
@@ -160,13 +81,7 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [AcceptVerbs("GET", "POST")]
         public dynamic DeleteRegion(int regionId)
         {
-            var region = db.Regions.Where(s => s.Id == regionId).FirstOrDefault();
-            db.Regions.Remove(region);
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return RegionManager.Instance.DeleteRegion(regionId);
         }
 
     }

@@ -5,121 +5,73 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using SmartGate.ElRwad.BLL;
+using SmartGate.ElRwad.ViewModel;
 
 namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
 {
     public class ProjMonthController : ApiController
     {
-        private elRwadEntities db = new elRwadEntities();
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public dynamic GetMonth()
         {
-            var month = db.Proj_Month.Select(s => new
-            {
-                monthId = s.Month_ID,
-                monthName = s.Month_Name,
-                monthNameEn = s.Month_Name_EN
-            }).ToList();
-            return month;
+            return MonthManager.Instance.GetMonth();
         }
 
         [HttpGet]
         public dynamic GetMonthById(int monthId)
         {
-            try
-            {
-                var s = db.Proj_Month.Where(e => e.Month_ID == monthId).FirstOrDefault();
-                if (s != null)
-                {
-                    return new
-                    {
-                        //monthId = s.Month_ID,
-                        monthName = s.Month_Name,
-                        monthNameEn = s.Month_Name_EN
-
-                    };
-                }
-                else
-                {
-                    return new
-                    {
-                        Id = 0
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                return new
-                {
-                    result = new
-                    {
-                        Id = 0
-                    }
-                };
-            }
+            return MonthManager.Instance.GetMonthById(monthId);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="monthId"></param>
+        /// <param name="monthName"></param>
+        /// <param name="monthNameEn"></param>
+        /// <returns></returns>
         [HttpPost]
-        public dynamic PostMonth(
-            byte monthId,
-            string monthName,
-            string monthNameEn
-            )
+        public dynamic PostMonth(MonthVM m)
         {
-            var month = db.Proj_Month.Add(new Proj_Month
-            {
-                Month_ID = monthId,
-                Month_Name = monthName,
-                Month_Name_EN = monthNameEn
-
-            });
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result,
-                monthId = month.Month_ID
-            };
+            return MonthManager.Instance.PostMonth(m);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="monthId"></param>
+        /// <param name="monthName"></param>
+        /// <param name="monthNameEn"></param>
+        /// <returns></returns>
         [HttpPut]
         [AcceptVerbs("GET", "POST")]
-        public dynamic PutMonth(
-           byte monthId,
-           string monthName,
-           string monthNameEn
-
-
-            )
+        public dynamic PutMonth(MonthVM m)
         {
-            var month = db.Proj_Month.Find(monthId);
-            month.Month_ID = monthId;
-            month.Month_Name = monthName;
-            month.Month_Name_EN = monthNameEn;
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return MonthManager.Instance.PutMonth(m);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="monthId"></param>
+        /// <returns></returns>
         [HttpDelete]
         [AcceptVerbs("GET", "POST")]
         public dynamic DeleteMonth(byte monthId)
         {
-            var month = db.Proj_Month.Where(s => s.Month_ID == monthId).FirstOrDefault();
-            db.Proj_Month.Remove(month);
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return MonthManager.Instance.DeleteMonth(monthId);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="monthId"></param>
+        /// <returns></returns>
         [HttpGet]
         private dynamic monthExists(byte monthId)
         {
-            var month = db.Proj_Month.Count(s => s.Month_ID == monthId) > 0 ? true : false;
-            return new
-            {
-                month = month
-            };
+            return MonthManager.Instance.monthExists(monthId);
         }
 
 

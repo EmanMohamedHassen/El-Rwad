@@ -8,7 +8,7 @@ namespace SmartGate.ElRwad.ViewModel
 {
    public class CarCategoriesVM
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         public string NameAr { get; set; }
 

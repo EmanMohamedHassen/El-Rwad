@@ -1,4 +1,6 @@
-﻿using SmartGate.ElRwad.DAL;
+﻿using SmartGate.ElRwad.BLL;
+using SmartGate.ElRwad.DAL;
+using SmartGate.ElRwad.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,103 +18,35 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [HttpGet]
         public dynamic GetYear()
         {
-            var year = db.Proj_Year.Select(s => new
-            {
-                yearId = s.ProjYear_ID,
-                yearName = s.ProjYear_Name
-            }).ToList();
-            return year;
+            return YearManager.Instance.GetYear();
         }
 
         [HttpGet]
         public dynamic GetYearById(int yearId)
         {
-            try
-            {
-                var s = db.Proj_Year.Where(e => e.ProjYear_ID == yearId).FirstOrDefault();
-                if (s != null)
-                {
-                    return new
-                    {
-                        yearName = s.ProjYear_Name
-                    };
-                }
-                else
-                {
-                    return new
-                    {
-                        Id = 0
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                return new
-                {
-                    result = new
-                    {
-                        Id = 0
-                    }
-                };
-            }
+            return YearManager.Instance.GetYearById(yearId);
         }
         [HttpPost]
-        public dynamic PostYearId(
-            int yearId,
-            string yearName
-            )
+        public dynamic PostYearId(YearVM y)
         {
-            var year = db.Proj_Year.Add(new Proj_Year
-            {
-                ProjYear_ID = yearId,
-                ProjYear_Name = yearName
-            });
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result,
-                yearId = year.ProjYear_ID
-            };
+            return YearManager.Instance.PostYearId(y);
         }
+
         [HttpPut]
-        [AcceptVerbs("GET", "POST")]
-        public dynamic PutYear(
-            int yearId,
-            int yearNewId,
-           string yearName
-
-            )
+        public dynamic PutYear(PutYearVM y)
         {
-            var year = db.Proj_Year.Find(yearId);
-            year.ProjYear_ID = yearNewId;
-            year.ProjYear_Name = yearName;
-
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return YearManager.Instance.PutYear(y);
         }
+
         [HttpDelete]
-        [AcceptVerbs("GET", "POST")]
         public dynamic DeleteYear(int yearId)
         {
-            var year = db.Proj_Year.Where(s => s.ProjYear_ID == yearId).FirstOrDefault();
-            db.Proj_Year.Remove(year);
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return YearManager.Instance.DeleteYear(yearId);
         }
         [HttpGet]
-        private dynamic yearExists(int yearId)
+        public dynamic yearExists(int yearId)
         {
-            var year = db.Proj_Year.Count(s => s.ProjYear_ID == yearId) > 0 ? true : false;
-            return new
-            {
-                year = year
-            };
+            return YearManager.Instance.yearExists(yearId);
         }
 
 

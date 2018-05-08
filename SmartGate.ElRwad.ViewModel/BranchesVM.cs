@@ -8,7 +8,7 @@ namespace SmartGate.ElRwad.ViewModel
 {
     public class BranchesVM
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         public int CompanyId { get; set; }
 

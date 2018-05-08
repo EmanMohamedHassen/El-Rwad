@@ -5,102 +5,69 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using SmartGate.ElRwad.ViewModel;
+using SmartGate.ElRwad.BLL;
 
 namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
 {
     public class DaysController : ApiController
     {
         private elRwadEntities db = new elRwadEntities();
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public dynamic GetAllDays()
         {
-            var days = db.Days.Select(s => new
-            {
-                id = s.Id,
-                nameAr = s.NameAr,
-                nameEn = s.NAmeEn,
-            }).ToList();
-            return days;
+            return DaysManager.Instance.GetAllDays();
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public dynamic GetDayById(int id)
         {
-            try
-            {
-                var days = db.Days.Where(e => e.Id == id).FirstOrDefault();
-                if (days != null)
-                {
-                    return new
-                    {
-                        nameAr = days.NameAr,
-                        nameEn = days.NAmeEn
-                    };
-                }
-                else
-                {
-                    return new
-                    {
-                        Id = 0
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                return new
-                {
-                    result = new
-                    {
-                        Id = 0
-                    }
-                };
-            }
+            return DaysManager.Instance.GetDayById(id);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nameAr"></param>
+        /// <param name="nameEn"></param>
+        /// <returns></returns>
         [HttpPost]
-        public dynamic PostDay(string nameAr, string nameEn)
+        public dynamic PostDay(DaysVM d)
         {
-            var day = db.Days.Add(new Day
-            {
-                NameAr = nameAr,
-                NAmeEn = nameEn
-
-            });
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result,
-                dayId = day.Id
-            };
+            return DaysManager.Instance.PostDay(d);
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nameAr"></param>
+        /// <param name="nameEn"></param>
+        /// <returns></returns>
         [HttpPut]
-        [AcceptVerbs("GET", "POST")]
-        public dynamic PutDay(int id, string nameAr, string nameEn)
+        //[AcceptVerbs("GET", "POST")]
+        public dynamic PutDay(DaysVM d)
         {
-            var day = db.Days.Find(id);
-            day.NameAr = nameAr;
-            day.NAmeEn = nameEn;
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return DaysManager.Instance.PostDay(d);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
-        [AcceptVerbs("GET", "POST")]
+        //[AcceptVerbs("GET", "POST")]
         public dynamic DeleteDay(int id)
         {
-            var day = db.Days.Where(e => e.Id == id).FirstOrDefault();
-
-            db.Days.Remove(day);
-
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return DaysManager.Instance.DeleteDay(id);
 
         }
 

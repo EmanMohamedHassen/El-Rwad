@@ -1,4 +1,6 @@
-﻿using SmartGate.ElRwad.DAL;
+﻿using SmartGate.ElRwad.BLL;
+using SmartGate.ElRwad.DAL;
+using SmartGate.ElRwad.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,125 +19,44 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         [HttpGet]
         public dynamic GetUniversity()
         {
-            var university = db.Universities.Select(s => new
-            {
-                universityId = s.University_ID,
-                universityArName = s.University_A_Name,
-                universityEnName = s.University_E_Name,
-                universityNotes = s.Notes
-
-            }).ToList();
-            return university;
+            
+            return UniversityManager.Instance.GetUniversity();
         }
         [HttpGet]
         public dynamic GetUniversityById(int universityId)
         {
             try
             {
-                var s = db.Universities.Where(e => e.University_ID == universityId).FirstOrDefault();
-                if (s != null)
-                {
-                    return new
-                    {
-
-                        universityId = s.University_ID,
-
-                        universityArName = s.University_A_Name,
-                        universityEnName = s.University_E_Name,
-                        universityNotes = s.Notes
-
-                    };
-                }
-                else
-                {
-                    return new
-                    {
-                        Id = 0
-                    };
-                }
+                return UniversityManager.Instance.GetUniversityById(universityId);
             }
             catch (Exception ex)
             {
-                return new
-                {
-                    result = new
-                    {
-                        Id = 0
-                    }
-                };
+                return ex.Message;
             }
         }
 
         [HttpPost]
-        public dynamic PostUniversity(
-
-            string universityArName,
-            string universityEnName,
-            string universityNotes
-
-            )
+        public dynamic PostUniversity(  UniversityVM university )
         {
-            var university = db.Universities.Add(new University
-            {
-
-                University_A_Name = universityArName,
-                University_E_Name = universityEnName,
-                Notes = universityNotes
-
-
-
-            });
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result,
-                universityId = university.University_ID
-            };
+            return UniversityManager.Instance.PostUniversity(university);
         }
+
         [HttpPut]
         [AcceptVerbs("GET", "POST")]
-        public dynamic PutUniversity(
-            int universityId,
-            string universityArName,
-            string universityEnName,
-            string universityNotes
-
-
-            )
+        public dynamic PutUniversity( UniversityVM university )
         {
-            var university = db.Universities.Find(universityId);
-
-            university.University_A_Name = universityArName;
-            university.University_E_Name = universityEnName;
-            university.Notes = universityNotes;
-
-
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return UniversityManager.Instance.PutUniversity(university);
         }
         [HttpDelete]
         [AcceptVerbs("GET", "POST")]
         public dynamic DeleteUniversity(int universityId)
         {
-            var university = db.Universities.Where(s => s.University_ID == universityId).FirstOrDefault();
-            db.Universities.Remove(university);
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return UniversityManager.Instance.DeleteUniversity(universityId);
         }
         [HttpGet]
         private dynamic universityExists(int universityId)
         {
-            var university = db.Universities.Count(s => s.University_ID == universityId) > 0 ? true : false;
-            return new
-            {
-                university = university
-            };
+            return UniversityManager.Instance.universityExists(universityId);
         }
 
 

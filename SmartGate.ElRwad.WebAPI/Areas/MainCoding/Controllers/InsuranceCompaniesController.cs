@@ -5,100 +5,65 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using SmartGate.ElRwad.BLL;
+using SmartGate.ElRwad.ViewModel;
 namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
 {
     public class InsuranceCompaniesController : ApiController
     {
-        private elRwadEntities db = new elRwadEntities();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
 
         public dynamic GetAllinsurComponies()
         {
-            var insurcompines = db.InsuranceCompanies.Select(s => new
-            {
-                insurcomId = s.Id,
-                insurcomNameA = s.NameA,
-                insurcomNameE = s.NameE
-
-            }).ToList();
-            return insurcompines;
+            return InsuranceCompaniesManager.Instance.GetAllinsurComponies();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="InsurcompanyId"></param>
+        /// <returns></returns>
         public dynamic GetInsurCompanyById(int InsurcompanyId)
         {
-            try
-            {
-                var insurcompany = db.InsuranceCompanies.Where(e => e.Id == InsurcompanyId).FirstOrDefault();
-                if (insurcompany != null)
-                {
-                    return new
-                    {
-                        companyId = insurcompany.Id,
-                        companyNameA = insurcompany.NameA,
-                        companyNameE = insurcompany.NameE
-                    };
-                }
-                else
-                {
-                    return new
-                    {
-                        Id = 0
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                return new
-                {
-                    result = new
-                    {
-                        Id = 0
-                    }
-                };
-            }
+            return InsuranceCompaniesManager.Instance.GetInsurCompanyById(InsurcompanyId);
         }
 
-        public dynamic PostInsurCompany(string companyNameA, string companyNameE)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="companyNameA"></param>
+        /// <param name="companyNameE"></param>
+        /// <returns></returns>
+        public dynamic PostInsurCompany(InsuranceCompanyVM i)
         {
-            db.InsuranceCompanies.Add(new InsuranceCompany
-            {
-                NameA = companyNameA,
-                NameE = companyNameE
-
-            });
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return InsuranceCompaniesManager.Instance.PostInsurCompany(i);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="InsurcompanyId"></param>
+        /// <param name="companyNameA"></param>
+        /// <param name="companyNameE"></param>
+        /// <returns></returns>
         [HttpPut]
         [AcceptVerbs("GET", "POST")]
 
-        public dynamic PutInsurCompany(int InsurcompanyId, string companyNameA, string companyNameE)
+        public dynamic PutInsurCompany(InsuranceCompanyVM i)
         {
-            var insurcompany = db.InsuranceCompanies.Find(InsurcompanyId);
-
-            insurcompany.NameA = companyNameA;
-            insurcompany.NameE = companyNameE;
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return InsuranceCompaniesManager.Instance.PutInsurCompany(i);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="InsurcompanyId"></param>
+        /// <returns></returns>
         [HttpDelete]
         [AcceptVerbs("GET", "POST")]
         public dynamic DeleteInsurCompany(int InsurcompanyId)
         {
-            var insurcompany = db.InsuranceCompanies.Where(s => s.Id == InsurcompanyId).FirstOrDefault();
-            db.InsuranceCompanies.Remove(insurcompany);
-            var result = db.SaveChanges() > 0 ? true : false;
-            return new
-            {
-                result = result
-            };
+            return InsuranceCompaniesManager.Instance.DeleteInsurCompany(InsurcompanyId);
         }
 
 
