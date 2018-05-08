@@ -60,6 +60,7 @@
     <Compile Include="ModelVM.cs" />
     <Compile Include="MonthVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchases\PurchaseOrderVM.cs" />
     <Compile Include="RegionVM.cs" />
     <Compile Include="ShowingBranchesVM.cs" />
     <Compile Include="SpecialtiesVM.cs" />
