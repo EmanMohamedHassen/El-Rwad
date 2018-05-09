@@ -10,6 +10,12 @@ namespace SmartGate.ElRwad.BLL.HR
 {
    public class EmployeeManager
     {
+        private static EmployeeManager instance;
+        public static EmployeeManager Instance { get { return instance; } }
+        static EmployeeManager()
+        {
+            instance = new EmployeeManager();
+        }
         private elRwadEntities db = new elRwadEntities();
         public object GetEmployees()
             {
@@ -575,88 +581,50 @@ namespace SmartGate.ElRwad.BLL.HR
                 }
             }
 
-            public dynamic PostEmployee(
-                string empPrintCode,
-                string fullName,
-                string phone,
-                string mobile,
-                string ssn,
-                DateTime birthDate,
-                int cityId,
-                string address,
-                string email,
-                int branchId,
-                int jobId,
-                bool sex,
-                int categoryId,
-                DateTime assignmentDate,
-                string insurance_Number,
-                bool isInsurance,
-                float basicSalary,
-                float insuranceSalary,
-                float variableSalary,
-                int userId,
-                DateTime insuranceDate,
-                DateTime healthcheckDate,
-                DateTime insuranceEndDate,
-                int deputationId,
-                int weekEndDay,
-                int shiftId,
-                float yearlySPInsuranceBasic,
-                float yearlySPInsuranceAdditional,
-                byte qualificationTypeId,
-                string qualify,
-                int universityId,
-                int facultyId,
-                int specialityId,
-                int gradYear,
-                string gradProj,
-                string totalGrad,
-                string notes
-                )
+            public dynamic PostEmployee(EmployeePostVM e )
             {
                 var employee = db.Employees.Add(new Employee
                 {
-                    Employee_Code = empPrintCode,
-                    FullName = fullName,
-                    Phone = phone,
-                    Mobile = mobile,
-                    SSN = ssn,
-                    BirthDate = birthDate,
-                    Sex = sex,
-                    City_ID = cityId,
-                    Address = address,
-                    Email = email,
-                    Branch_ID = branchId,
-                    Job_ID = jobId,
-                    Category_ID = categoryId,
-                    Assigment_Date = assignmentDate,
-                    Insurance_Number = insurance_Number,
-                    Is_Insurance = isInsurance,
-                    Basic_Salary = basicSalary,
-                    Insurance_Salary = insuranceSalary,
-                    Variable_Salary = variableSalary,
-                    User_ID = userId,
+                    Employee_Code = e.empPrintCode,
+                    FullName = e.fullName,
+                    Phone = e.phone,
+                    Mobile = e.mobile,
+                    SSN = e.ssn,
+                    BirthDate = e.birthDate,
+                    Sex = e.sex,
+                    City_ID = e.cityId,
+                    Address = e.address,
+                    Email = e.email,
+                    Branch_ID = e.branchId,
+                    Job_ID = e.jobId,
+                    Category_ID = e.categoryId,
+                    Assigment_Date = e.assignmentDate,
+                    Insurance_Number = e.insurance_Number,
+                    Is_Insurance = e.isInsurance,
+                    Basic_Salary = e.basicSalary,
+                    Insurance_Salary = e.insuranceSalary,
+                    Variable_Salary = e.variableSalary,
+                    User_ID = e.userId,
                     IsActive = true,
-                    Last_User_ID = userId,
+                    Last_User_ID = e.userId,
                     Last_Update = DateTime.Now,
-                    Insurance_Date = insuranceDate,
-                    HealthCheck_Date = healthcheckDate,
-                    Insurnace_EndDate = insuranceEndDate,
-                    Deputation_ID = deputationId,
-                    WeekEndDay = weekEndDay,
-                    Shift_Id = shiftId,
-                    YearlySPInsurance_Basic = yearlySPInsuranceBasic,
-                    YearlySPInsurance_Additional = yearlySPInsuranceAdditional,
-                    Qualify_Type = qualificationTypeId,
-                    Qualify = qualify,
-                    University_ID = universityId,
-                    Faculty_ID = facultyId,
-                    Specialty_ID = specialityId,
-                    Grad_Year = gradYear,
-                    Grad_Project = gradProj,
-                    Total_Grade = totalGrad,
-                    Notes = notes
+                    Insurance_Date = e.insuranceDate,
+                    HealthCheck_Date = e.healthcheckDate,
+                    Insurnace_EndDate = e.insuranceEndDate,
+                    Deputation_ID = e.deputationId,
+                    WeekEndDay = e.weekEndDay,
+                    Shift_Id = e.shiftId,
+                    YearlySPInsurance_Basic = e.yearlySPInsuranceBasic,
+                    YearlySPInsurance_Additional = e.yearlySPInsuranceAdditional,
+                    Qualify_Type = e.qualificationTypeId,
+                    Qualify = e.qualify,
+                    University_ID = e.universityId,
+                    Faculty_ID = e.facultyId,
+                    Specialty_ID = e.specialityId,
+                    Grad_Year = e.gradYear,
+                    Grad_Project = e.gradProj,
+                    Total_Grade = e.totalGrad,
+                    Notes = e.notes
 
 
                 });
@@ -667,94 +635,50 @@ namespace SmartGate.ElRwad.BLL.HR
                     employee = employee.Employee_ID
                 };
             }
-            [HttpPut]
-            [AcceptVerbs("GET", "POST")]
-            public dynamic PutEmployee(
-                int empId,
-                string empPrintCode,
-                string fullName,
-                string phone,
-                string mobile,
-                string ssn,
-                DateTime birthDate,
-                int cityId,
-                string address,
-                string email,
-                int branchId,
-                int jobId,
-                bool sex,
-                int categoryId,
-                DateTime assignmentDate,
-                string leaveReason,
-                string insurance_Number,
-                bool isInsurance,
-                float basicSalary,
-                float insuranceSalary,
-                float variableSalary,
-                bool isActive,
-                int userId,
-                DateTime leaveDate,
-                DateTime insuranceDate,
-                DateTime healthcheckDate,
-                DateTime insuranceEndDate,
-                int deputationId,
-                int weekEndDay,
-                int shiftId,
-                float yearlySPInsuranceBasic,
-                float yearlySPInsuranceAdditional,
-                byte qualificationTypeId,
-                string qualify,
-                int universityId,
-                int facultyId,
-                int specialityId,
-                int gradYear,
-                string gradProj,
-                string totalGrad,
-                string notes
-                )
+            public dynamic PutEmployee(EmployeePutVM e)
             {
-                var employee = db.Employees.Find(empId);
-                employee.Employee_Code = empPrintCode;
-                employee.FullName = fullName;
-                employee.Phone = phone;
-                employee.Mobile = mobile;
-                employee.SSN = ssn;
-                employee.BirthDate = birthDate;
-                employee.City_ID = cityId;
-                employee.Address = address;
-                employee.Email = email;
-                employee.Branch_ID = branchId;
-                employee.Job_ID = jobId;
-                employee.Sex = sex;
-                employee.Category_ID = categoryId;
-                employee.Assigment_Date = assignmentDate;
-                employee.LeaveReason = leaveReason;
-                employee.Insurance_Number = insurance_Number;
-                employee.Is_Insurance = isInsurance;
-                employee.Basic_Salary = basicSalary;
-                employee.Insurance_Salary = insuranceSalary;
-                employee.Variable_Salary = variableSalary;
-                employee.IsActive = isActive;
-                employee.Last_User_ID = userId;
+                var employee = db.Employees.Find(e.empId);
+                employee.Employee_Code = e.empPrintCode;
+                employee.FullName = e.fullName;
+                employee.Phone = e.phone;
+                employee.Mobile = e.mobile;
+                employee.SSN = e.ssn;
+                employee.BirthDate = e.birthDate;
+                employee.City_ID = e.cityId;
+                employee.Address = e.address;
+                employee.Email = e.email;
+                employee.Branch_ID = e.branchId;
+                employee.Job_ID = e.jobId;
+                employee.Sex = e.sex;
+                employee.Category_ID = e.categoryId;
+                employee.Assigment_Date = e.assignmentDate;
+                employee.LeaveReason = e.leaveReason;
+                employee.Insurance_Number = e.insurance_Number;
+                employee.Is_Insurance = e.isInsurance;
+                employee.Basic_Salary = e.basicSalary;
+                employee.Insurance_Salary = e.insuranceSalary;
+                employee.Variable_Salary = e.variableSalary;
+                employee.IsActive = e.isActive;
+                employee.Last_User_ID = e.userId;
                 employee.Last_Update = DateTime.Now;
-                employee.leave_Date = leaveDate;
-                employee.Insurance_Date = insuranceDate;
-                employee.HealthCheck_Date = healthcheckDate;
-                employee.Insurnace_EndDate = insuranceEndDate;
-                employee.Deputation_ID = deputationId;
-                employee.WeekEndDay = weekEndDay;
-                employee.Shift_Id = shiftId;
-                employee.YearlySPInsurance_Basic = yearlySPInsuranceBasic;
-                employee.YearlySPInsurance_Additional = yearlySPInsuranceAdditional;
-                employee.Qualify_Type = qualificationTypeId;
-                employee.Qualify = qualify;
-                employee.University_ID = universityId;
-                employee.Faculty_ID = facultyId;
-                employee.Specialty_ID = specialityId;
-                employee.Grad_Year = gradYear;
-                employee.Grad_Project = gradProj;
-                employee.Total_Grade = totalGrad;
-                employee.Notes = notes;
+                employee.leave_Date = e.leaveDate;
+                employee.Insurance_Date = e.insuranceDate;
+                employee.HealthCheck_Date = e.healthcheckDate;
+                employee.Insurnace_EndDate = e.insuranceEndDate;
+                employee.Deputation_ID = e.deputationId;
+                employee.WeekEndDay = e.weekEndDay;
+                employee.Shift_Id = e.shiftId;
+                employee.YearlySPInsurance_Basic = e.yearlySPInsuranceBasic;
+                employee.YearlySPInsurance_Additional = e.yearlySPInsuranceAdditional;
+                employee.Qualify_Type = e.qualificationTypeId;
+                employee.Qualify = e.qualify;
+                employee.University_ID = e.universityId;
+                employee.Faculty_ID = e.facultyId;
+                employee.Specialty_ID = e.specialityId;
+                employee.Grad_Year = e.gradYear;
+                employee.Grad_Project = e.gradProj;
+                employee.Total_Grade = e.totalGrad;
+                employee.Notes = e.notes;
 
                 var result = db.SaveChanges() > 0 ? true : false;
                 return new
@@ -762,8 +686,6 @@ namespace SmartGate.ElRwad.BLL.HR
                     result = result
                 };
             }
-            [HttpDelete]
-            [AcceptVerbs("GET", "POST")]
             public dynamic DeleteEmployee(int empId)
             {
                 var employee = db.Employees.Where(s => s.Employee_ID == empId).FirstOrDefault();
@@ -775,8 +697,7 @@ namespace SmartGate.ElRwad.BLL.HR
                 };
 
             }
-            [HttpGet]
-            private dynamic EmployeeExists(int empId)
+            public dynamic EmployeeExists(int empId)
             {
                 var employee = db.Employees.Count(s => s.Employee_ID == empId) > 0 ? true : false;
                 return new
@@ -789,5 +710,4 @@ namespace SmartGate.ElRwad.BLL.HR
         }
     }
 
-}
-}
+

@@ -77,11 +77,11 @@ namespace SmartGate.ElRwad.ViewModel.HR
         public string email { get; set; }
         public int? branchId { get; set; }
         public int? jobId { get; set; }
-        public string sex { get; set; }
+        public bool sex { get; set; }
         public int? categoryId { get; set; }
         public DateTime assignmentDate { get; set; }
         public string insurance_Number { get; set; }
-        public string isInsurance { get; set; }
+        public bool isInsurance { get; set; }
         public double basicSalary { get; set; }
         public double insuranceSalary { get; set; }
         public double variableSalary { get; set; }
@@ -94,7 +94,7 @@ namespace SmartGate.ElRwad.ViewModel.HR
         public int? shiftId { get; set; }
         public double? yearlySPInsuranceBasic { get; set; }
         public double? yearlySPInsuranceAdditional { get; set; }
-        public int qualificationTypeId { get; set; }
+        public byte? qualificationTypeId { get; set; }
         public string qualify { get; set; }
         public int? universityId { get; set; }
         public int? facultyId { get; set; }
@@ -103,6 +103,50 @@ namespace SmartGate.ElRwad.ViewModel.HR
         public string gradProj { get; set; }
         public string totalGrad { get; set; }
         public string notes { get; set; }
-        public int? imageId { get; set; }  
+    }
+
+    public class EmployeePutVM
+    {
+        public int empId { get; set; }
+        public string empPrintCode { get; set; }
+        public string fullName { get; set; }
+        public string phone { get; set; }
+        public string mobile { get; set; }
+        public string ssn { get; set; }
+        public DateTime birthDate { get; set; }
+        public int? cityId { get; set; }
+        public string address { get; set; }
+        public string email { get; set; }
+        public int? branchId { get; set; }
+        public int? jobId { get; set; }
+        public bool sex { get; set; }
+        public int? categoryId { get; set; }
+        public DateTime assignmentDate { get; set; }
+        public string leaveReason { get; set; }
+        public DateTime leaveDate { get; set; }
+        public bool isActive { get; set; }
+        public string insurance_Number { get; set; }
+        public bool isInsurance { get; set; }
+        public double basicSalary { get; set; }
+        public double insuranceSalary { get; set; }
+        public double variableSalary { get; set; }
+        public int? userId { get; set; }
+        public DateTime insuranceDate { get; set; }
+        public DateTime healthcheckDate { get; set; }
+        public DateTime insuranceEndDate { get; set; }
+        public int? deputationId { get; set; }
+        public int weekEndDay { get; set; }
+        public int? shiftId { get; set; }
+        public double? yearlySPInsuranceBasic { get; set; }
+        public double? yearlySPInsuranceAdditional { get; set; }
+        public byte? qualificationTypeId { get; set; }
+        public string qualify { get; set; }
+        public int? universityId { get; set; }
+        public int? facultyId { get; set; }
+        public int? specialityId { get; set; }
+        public int? gradYear { get; set; }
+        public string gradProj { get; set; }
+        public string totalGrad { get; set; }
+        public string notes { get; set; }
     }
 }

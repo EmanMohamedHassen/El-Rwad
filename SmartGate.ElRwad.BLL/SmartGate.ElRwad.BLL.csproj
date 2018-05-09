@@ -49,34 +49,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessoriesManager.cs" />
-    <Compile Include="BankManager.cs" />
-    <Compile Include="BranchesManager.cs" />
-    <Compile Include="BrandsManager.cs" />
-    <Compile Include="CarCategoriesManager.cs" />
-    <Compile Include="CityManager.cs" />
-    <Compile Include="ColorManger.cs" />
-    <Compile Include="CompaniesManager.cs" />
-    <Compile Include="DaysManager.cs" />
-    <Compile Include="DepartmentManager.cs" />
-    <Compile Include="DeputationManager.cs" />
-    <Compile Include="FacultyManager.cs" />
+    <Compile Include="HR\PermAbsentManager.cs" />
+    <Compile Include="HR\PermissionManager.cs" />
+    <Compile Include="MainCoding\AccessoriesManager.cs" />
+    <Compile Include="MainCoding\BankManager.cs" />
+    <Compile Include="MainCoding\BranchesManager.cs" />
+    <Compile Include="MainCoding\BrandsManager.cs" />
+    <Compile Include="MainCoding\CarCategoriesManager.cs" />
+    <Compile Include="MainCoding\CityManager.cs" />
+    <Compile Include="MainCoding\ColorManger.cs" />
+    <Compile Include="MainCoding\CompaniesManager.cs" />
+    <Compile Include="MainCoding\DaysManager.cs" />
+    <Compile Include="MainCoding\DepartmentManager.cs" />
+    <Compile Include="MainCoding\DeputationManager.cs" />
+    <Compile Include="MainCoding\FacultyManager.cs" />
     <Compile Include="HR\DeductionManager.cs" />
     <Compile Include="HR\EmployeeManager.cs" />
-    <Compile Include="InsuranceCompaniesManager.cs" />
-    <Compile Include="JobCategoryManager.cs" />
-    <Compile Include="JobManager.cs" />
-    <Compile Include="ManufacturingYearManager.cs" />
-    <Compile Include="ModelManager.cs" />
-    <Compile Include="MonthManager.cs" />
+    <Compile Include="HR\MessageManager.cs" />
+    <Compile Include="HR\MissionManager.cs" />
+    <Compile Include="HR\OfficialVacationsManager.cs" />
+    <Compile Include="HR\OrderStatusManager.cs" />
+    <Compile Include="MainCoding\InsuranceCompaniesManager.cs" />
+    <Compile Include="MainCoding\JobCategoryManager.cs" />
+    <Compile Include="MainCoding\JobManager.cs" />
+    <Compile Include="MainCoding\ManufacturingYearManager.cs" />
+    <Compile Include="MainCoding\ModelManager.cs" />
+    <Compile Include="MainCoding\MonthManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegionManager.cs" />
-    <Compile Include="ShowingBranchesManager.cs" />
-    <Compile Include="SpecialtiesManager.cs" />
-    <Compile Include="StoresManager.cs" />
-    <Compile Include="SupplierManager.cs" />
-    <Compile Include="UniversityManager.cs" />
-    <Compile Include="YearManager.cs" />
+    <Compile Include="MainCoding\RegionManager.cs" />
+    <Compile Include="MainCoding\ShowingBranchesManager.cs" />
+    <Compile Include="MainCoding\SpecialtiesManager.cs" />
+    <Compile Include="MainCoding\StoresManager.cs" />
+    <Compile Include="MainCoding\SupplierManager.cs" />
+    <Compile Include="MainCoding\UniversityManager.cs" />
+    <Compile Include="MainCoding\YearManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmartGate.ElRwad.DAL\SmartGate.ElRwad.DAL.csproj">
@@ -92,6 +98,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
