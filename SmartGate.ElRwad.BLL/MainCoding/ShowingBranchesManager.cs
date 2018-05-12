@@ -7,7 +7,7 @@ using SmartGate.ElRwad.DAL;
 using SmartGate.ElRwad.ViewModel;
 namespace SmartGate.ElRwad.BLL
 {
-  public  class ShowingBranchesManager
+    public class ShowingBranchesManager
     {
         private static ShowingBranchesManager instance;
         public static ShowingBranchesManager Instance { get { return instance; } }
@@ -22,15 +22,15 @@ namespace SmartGate.ElRwad.BLL
             List<ShowingBranchesVM> showingBranches = db.Showing_Branches.Select(s => new ShowingBranchesVM
             {
                 Id = s.Id,
-                NameAr= s.NameAr,
-                NameEn= s.NameEn,
-                Address= s.Address,
-                RegionId= s.RegionId,
-                RegionName= s.Region.NameAr,
+                NameAr = s.NameAr,
+                NameEn = s.NameEn,
+                Address = s.Address,
+                RegionId = s.RegionId,
+                RegionName = s.Region.NameAr,
                 CityId = s.CityId,
                 CityName = s.City.Name_A,
                 UserId = s.UserId,
-                LastUpdate= s.LastUpdate.Value.Year.ToString() + "-" + s.LastUpdate.Value.Month.ToString() + "-" + s.LastUpdate.Value.Day.ToString()
+                LastUpdate = s.LastUpdate.Value.Year.ToString() + "-" + s.LastUpdate.Value.Month.ToString() + "-" + s.LastUpdate.Value.Day.ToString()
 
             }).ToList();
             return showingBranches;
@@ -45,16 +45,16 @@ namespace SmartGate.ElRwad.BLL
                     return new ShowingBranchesVM
                     {
 
-                        Id= showingBranch.Id,
-                        NameAr= showingBranch.NameAr,
-                        NameEn= showingBranch.NameEn,
-                        Address= showingBranch.Address,
-                        RegionId= showingBranch.RegionId,
-                        RegionName= showingBranch.Region.NameAr,
-                        CityId= showingBranch.CityId,
-                        CityName= showingBranch.City.Name_A,
-                        UserId= showingBranch.UserId,
-                        LastUpdate= showingBranch.LastUpdate.Value.ToString("yyyy-MM-dd")
+                        Id = showingBranch.Id,
+                        NameAr = showingBranch.NameAr,
+                        NameEn = showingBranch.NameEn,
+                        Address = showingBranch.Address,
+                        RegionId = showingBranch.RegionId,
+                        RegionName = showingBranch.Region.NameAr,
+                        CityId = showingBranch.CityId,
+                        CityName = showingBranch.City.Name_A,
+                        UserId = showingBranch.UserId,
+                        LastUpdate = showingBranch.LastUpdate.Value.ToString("yyyy-MM-dd")
                     };
                 }
                 else
@@ -70,7 +70,7 @@ namespace SmartGate.ElRwad.BLL
                 return ex.Message;
             }
         }
-        
+
         public dynamic PostShowingBranch(ShowingBranchesVM b)
         {
             db.Showing_Branches.Add(new Showing_Branches
@@ -90,7 +90,7 @@ namespace SmartGate.ElRwad.BLL
                 result = result
             };
         }
-        
+
         public dynamic PutShowingBranch(ShowingBranchesVM b)
         {
             var showingBranch = db.Showing_Branches.Find(b.Id);
@@ -106,7 +106,7 @@ namespace SmartGate.ElRwad.BLL
                 result = result
             };
         }
-        
+
         public dynamic DeleteShowingBranch(int showingBranchId)
         {
             var showingBranch = db.Showing_Branches.Where(s => s.Id == showingBranchId).FirstOrDefault();

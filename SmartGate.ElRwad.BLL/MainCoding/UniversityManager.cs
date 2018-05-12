@@ -21,7 +21,7 @@ namespace SmartGate.ElRwad.BLL
 
         public dynamic GetUniversity()
         {
-            List< UniversityVM> university = db.Universities.Select(s => new UniversityVM
+            List<UniversityVM> university = db.Universities.Select(s => new UniversityVM
             {
                 University_ID = s.University_ID,
                 University_A_Name = s.University_A_Name,
@@ -71,7 +71,7 @@ namespace SmartGate.ElRwad.BLL
         }
 
 
-        public dynamic PostUniversity( UniversityVM university )
+        public dynamic PostUniversity(UniversityVM university)
         {
             var university1 = db.Universities.Add(new University
             {
@@ -88,7 +88,7 @@ namespace SmartGate.ElRwad.BLL
             };
         }
 
-        public dynamic PutUniversity( UniversityVM university  )
+        public dynamic PutUniversity(UniversityVM university)
         {
             var university1 = db.Universities.Find(university.University_ID);
 
@@ -118,7 +118,7 @@ namespace SmartGate.ElRwad.BLL
         public dynamic universityExists(int universityId)
         {
             var university = db.Universities.Count(s => s.University_ID == universityId) > 0 ? true : false;
-            return new 
+            return new
             {
                 university = university
             };

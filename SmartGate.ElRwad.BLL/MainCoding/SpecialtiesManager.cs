@@ -8,7 +8,7 @@ using SmartGate.ElRwad.DAL;
 
 namespace SmartGate.ElRwad.BLL
 {
-  public  class SpecialtiesManager
+    public class SpecialtiesManager
     {
         private static SpecialtiesManager instance;
         public static SpecialtiesManager Instance { get { return instance; } }
@@ -20,12 +20,12 @@ namespace SmartGate.ElRwad.BLL
         private elRwadEntities db = new elRwadEntities();
         public dynamic GetSpecialties()
         {
-           List<SpecialtiesVM> specialties = db.Specialties.Select(s => new SpecialtiesVM
+            List<SpecialtiesVM> specialties = db.Specialties.Select(s => new SpecialtiesVM
             {
                 Id = s.Specialty_ID,
-                NameA= s.Specialty_A_Name,
-                NameE= s.Specialty_E_Name,
-                Notes= s.Specialty_Notes
+                NameA = s.Specialty_A_Name,
+                NameE = s.Specialty_E_Name,
+                Notes = s.Specialty_Notes
 
             }).ToList();
             return specialties;
@@ -40,9 +40,9 @@ namespace SmartGate.ElRwad.BLL
                     return new SpecialtiesVM
                     {
                         //specialtyId = s.Specialty_ID,
-                        NameA= s.Specialty_A_Name,
-                        NameE= s.Specialty_E_Name,
-                        Notes= s.Specialty_Notes
+                        NameA = s.Specialty_A_Name,
+                        NameE = s.Specialty_E_Name,
+                        Notes = s.Specialty_Notes
 
                     };
                 }
@@ -64,11 +64,11 @@ namespace SmartGate.ElRwad.BLL
         {
             try
             {
-             List<SpecialtiesVM> specialty = db.Specialties.Where(e => e.Faculty_ID == facultyId).Select(s => new SpecialtiesVM
+                List<SpecialtiesVM> specialty = db.Specialties.Where(e => e.Faculty_ID == facultyId).Select(s => new SpecialtiesVM
                 {
-                    Id= s.Specialty_ID,
-                    NameA= s.Specialty_A_Name,
-                    NameE= s.Specialty_E_Name,
+                    Id = s.Specialty_ID,
+                    NameA = s.Specialty_A_Name,
+                    NameE = s.Specialty_E_Name,
                     Notes = s.Specialty_Notes
 
                 }).ToList();
@@ -98,7 +98,7 @@ namespace SmartGate.ElRwad.BLL
             };
         }
 
-        public dynamic PutSpecialty(SpecialtiesVM s )
+        public dynamic PutSpecialty(SpecialtiesVM s)
         {
             var specialties = db.Specialties.Find(s.Id);
 

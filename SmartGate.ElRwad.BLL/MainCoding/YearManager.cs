@@ -64,7 +64,7 @@ namespace SmartGate.ElRwad.BLL
                 ProjYear_Name = y.Year
             });
             var result = db.SaveChanges() > 0 ? true : false;
-            return new 
+            return new
             {
                 result = result,
                 yearId = year.ProjYear_ID

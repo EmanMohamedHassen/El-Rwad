@@ -49,7 +49,7 @@ namespace SmartGate.ElRwad.WebAPI.Areas.Sales.Controllers
         /// <param name="insurcompanyId"></param>
         /// <returns></returns>
         [HttpPost]
-        public dynamic PostSalesPurchaseOrder(PostSalesPurchaseOrderVM p)
+        public dynamic PostSalesPurchaseOrder(postSalesPurchaseOrderVM p)
         {
             return SalesPurchaseOrderManager.Instance.PostSalesPurchaseOrder(p);
         }

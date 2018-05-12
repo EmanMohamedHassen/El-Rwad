@@ -8,7 +8,7 @@ using SmartGate.ElRwad.DAL;
 
 namespace SmartGate.ElRwad.BLL
 {
-   public class SupplierManager
+    public class SupplierManager
     {
         private static SupplierManager instance;
         public static SupplierManager Instance { get { return instance; } }
@@ -19,18 +19,18 @@ namespace SmartGate.ElRwad.BLL
         private elRwadEntities db = new elRwadEntities();
 
 
-    
+
         public dynamic GetAllSuppliers()
         {
             List<SuppliersVM> suppliers = db.Suppliers.Select(s => new SuppliersVM
             {
                 Id = s.Id,
-                NameAr= s.NameAr,
-                NameEn= s.NameEn,
-                phone= s.Phone,
-                Mobile= s.Mobile,
-                Email= s.Email,
-                Address= s.Address,
+                NameAr = s.NameAr,
+                NameEn = s.NameEn,
+                phone = s.Phone,
+                Mobile = s.Mobile,
+                Email = s.Email,
+                Address = s.Address,
                 CityId = s.CityId,
                 CityName = s.City.Name_A,
                 RegionId = s.RegionId,
@@ -50,12 +50,12 @@ namespace SmartGate.ElRwad.BLL
                     return new SuppliersVM
                     {
                         NameAr = supplier.NameAr,
-                        NameEn= supplier.NameEn,
-                        phone= supplier.Phone,
+                        NameEn = supplier.NameEn,
+                        phone = supplier.Phone,
                         Mobile = supplier.Mobile,
-                        Email= supplier.Email,
-                        Address= supplier.Address,
-                        CityId= supplier.CityId,
+                        Email = supplier.Email,
+                        Address = supplier.Address,
+                        CityId = supplier.CityId,
                         CityName = supplier.City.Name_A,
                         RegionId = supplier.RegionId,
                         RegionName = supplier.Region.NameAr

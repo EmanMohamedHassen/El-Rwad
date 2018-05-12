@@ -18,13 +18,13 @@ namespace SmartGate.ElRwad.BLL
             instance = new RegionManager();
         }
         private elRwadEntities db = new elRwadEntities();
-        
+
 
         public dynamic Getregions()
         {
-          List<GetRegionVM>  region = db.Regions.Select(s => new GetRegionVM
+            List<GetRegionVM> region = db.Regions.Select(s => new GetRegionVM
             {
-                Id= s.Id,
+                Id = s.Id,
                 NameAr = s.NameAr,
                 NameEN = s.NameEn,
                 CityId = s.CityId,
@@ -70,7 +70,7 @@ namespace SmartGate.ElRwad.BLL
         {
             try
             {
-               List<GetRegionVM> region = db.Regions.Where(e => e.CityId == cityId).Select(s => new GetRegionVM
+                List<GetRegionVM> region = db.Regions.Where(e => e.CityId == cityId).Select(s => new GetRegionVM
                 {
                     Id = s.Id,
                     NameAr = s.NameAr,
@@ -87,7 +87,7 @@ namespace SmartGate.ElRwad.BLL
             }
         }
 
-        
+
 
         public dynamic PostRegion(RegionVM r)
         {

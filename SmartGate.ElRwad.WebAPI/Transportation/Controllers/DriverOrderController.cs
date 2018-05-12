@@ -1,4 +1,4 @@
-﻿using SmartGate.ElRwad.BLL.Transportation;
+﻿using SmartGate.ElRwad.BLL;
 using SmartGate.ElRwad.DAL;
 using SmartGate.ElRwad.ViewModel.Transportation;
 using System;

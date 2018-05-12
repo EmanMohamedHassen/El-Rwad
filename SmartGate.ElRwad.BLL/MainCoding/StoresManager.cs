@@ -8,7 +8,7 @@ using SmartGate.ElRwad.DAL;
 
 namespace SmartGate.ElRwad.BLL
 {
-   public class StoresManager
+    public class StoresManager
     {
         private static StoresManager instance;
         public static StoresManager Instance { get { return instance; } }
@@ -23,7 +23,7 @@ namespace SmartGate.ElRwad.BLL
             List<StoresVM> stores = db.Stores.Select(s => new StoresVM
             {
                 Id = s.Id,
-                Address= s.Address,
+                Address = s.Address,
                 RegionId = s.RegionId,
                 RegionName = s.Region.NameAr,
                 CityId = s.CityId,
@@ -96,7 +96,7 @@ namespace SmartGate.ElRwad.BLL
             store.RegionId = s.RegionId;
             store.CityId = s.CityId;
             store.Phone = s.Phone;
-            store.StoreManagerId =s.StoreManagerId;
+            store.StoreManagerId = s.StoreManagerId;
             var result = db.SaveChanges() > 0 ? true : false;
             return new
             {
