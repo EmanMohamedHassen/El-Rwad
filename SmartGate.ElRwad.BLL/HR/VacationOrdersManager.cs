@@ -9,7 +9,13 @@ namespace SmartGate.ElRwad.BLL.HR
 {
    public class VacationOrdersManager
     {
-            private elRwadEntities db = new elRwadEntities();
+        private static VacationOrdersManager instance;
+        public static VacationOrdersManager Instance { get { return instance; } }
+        static VacationOrdersManager()
+        {
+            instance = new VacationOrdersManager();
+        }
+        private elRwadEntities db = new elRwadEntities();
 
             enum OrderStatus { Order, AcceptedByManager, RefusedByManager, AcceptedByHr, RefusedByHr };
 
@@ -581,22 +587,22 @@ namespace SmartGate.ElRwad.BLL.HR
             }
 
             //for manager to accept and refuse 
-            public dynamic PutVacationbyManager(int vacationId, int OrderStatusId,  /*DateTime acceptedDate,*/ int userId)
+            public dynamic PutVacationbyManager(putVacationVM p)
             {
-                var vacation = db.Vacations_Orders.Find(vacationId);
+                var vacation = db.Vacations_Orders.Find(p.vacationId);
                 if (vacation.From_Date < DateTime.Now)
                 {
                     return new { result = " غير مسموح بأخذ قرار فى ميعاد سابق" };
                 }
-                vacation.OrderStatusId = OrderStatusId;
+                vacation.OrderStatusId = p.orderStatusId;
 
-                if (OrderStatusId == (int)OrderStatus.AcceptedByManager)
+                if (p.orderStatusId == (int)OrderStatus.AcceptedByManager)
                 {
                     vacation.Acceptance_Date = DateTime.Now;
-                    vacation.AccpetedBy_ID = userId;
+                    vacation.AccpetedBy_ID = p.userId;
                 }
 
-                vacation.User_ID = userId;
+                vacation.User_ID = p.userId;
                 vacation.Last_Update = DateTime.Now;
 
                 var result = db.SaveChanges() > 0 ? true : false;
