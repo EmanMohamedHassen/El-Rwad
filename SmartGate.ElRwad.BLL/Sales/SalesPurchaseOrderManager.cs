@@ -155,7 +155,7 @@ namespace SmartGate.ElRwad.BLL.Sales
         }
 
         
-        public dynamic PutSalesPurchaseOrder(postSalesPurchaseOrderVM p)
+        public dynamic PutSalesPurchaseOrder(post_SalesPurchaseOrderVM p)
         {
             var purchaseorder = db.Sales_PurchaseOrder.Find(p.purchaseorderID);
             purchaseorder.User_id = p.userID;

@@ -71,7 +71,7 @@ namespace SmartGate.ElRwad.WebAPI.Areas.Sales.Controllers
         /// <returns></returns>
         [HttpPut]
         //[AcceptVerbs("GET", "POST")]
-        public dynamic PutSalesPurchaseOrder(postSalesPurchaseOrderVM p)
+        public dynamic PutSalesPurchaseOrder(post_SalesPurchaseOrderVM p)
         {
             return SalesPurchaseOrderManager.Instance.PutSalesPurchaseOrder(p);
         }

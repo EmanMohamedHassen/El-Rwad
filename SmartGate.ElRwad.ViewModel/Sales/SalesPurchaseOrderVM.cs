@@ -67,7 +67,7 @@ namespace SmartGate.ElRwad.ViewModel.Sales
         public int totalPrice { get; set; }
     }
 
-    public class postSalesPurchaseOrderVM
+    public class post_SalesPurchaseOrderVM
     {
         public int purchaseorderID { get; set; }
         public int userID { get; set; }
