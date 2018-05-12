@@ -75,4 +75,14 @@ namespace SmartGate.ElRwad.ViewModel.HR
         public int? year { get; set; }
 
     }
+
+
+    public class putPermission
+    {
+        public int permissionId { get; set; }
+        public int OrderStatusId { get; set; }
+        public int userId { get; set; }
+    }
+
+   
 }

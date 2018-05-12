@@ -10,6 +10,12 @@ namespace SmartGate.ElRwad.BLL.HR
 {
    public class PermissionManager
     {
+        private static PermissionManager instance;
+        public static PermissionManager Instance { get { return instance; } }
+        static PermissionManager()
+        {
+            instance = new PermissionManager();
+        }
             private elRwadEntities db = new elRwadEntities();
 
             enum OrderStatus { Order, AcceptedByManager, RefusedByManager, AcceptedByHr, RefusedByHr };
@@ -515,19 +521,13 @@ namespace SmartGate.ElRwad.BLL.HR
             }
 
             //for manager to accept and refuse 
-            public dynamic PutPermissionbymanager(
-                int permissionId,
-                int OrderStatusId,
-                int userId
-
-
-                )
+            public dynamic PutPermissionbymanager(putPermission p)
             {
-                var Permission = db.HR_Leave_Order.Find(permissionId);
+                var Permission = db.HR_Leave_Order.Find(p.permissionId);
 
-                Permission.AccpetedBy_ID = userId;
-                Permission.OrderStatusId = OrderStatusId;
-                Permission.User_ID = userId;
+                Permission.AccpetedBy_ID = p.userId;
+                Permission.OrderStatusId = p.OrderStatusId;
+                Permission.User_ID = p.userId;
                 Permission.Last_Update = DateTime.Now;
                 var result = db.SaveChanges() > 0 ? true : false;
                 return new
@@ -536,24 +536,18 @@ namespace SmartGate.ElRwad.BLL.HR
                 };
             }
             //for Hr to accept and refuse
-            [HttpPut]
-            [AcceptVerbs("GET", "POST")]
-            public dynamic PutPermissionbyHr(
-                int permissionId,
-                int userId,
-                int OrderStatusId
-                )
+            public dynamic PutPermissionbyHr(putPermission p)
             {
-                var Permission = db.HR_Leave_Order.Find(permissionId);
+                var Permission = db.HR_Leave_Order.Find(p.permissionId);
 
 
-                if (OrderStatusId == (int)OrderStatus.AcceptedByHr)
+                if (p.OrderStatusId == (int)OrderStatus.AcceptedByHr)
                 {
                     Permission.Approv_Date = DateTime.Now;
                 }
 
-                Permission.OrderStatusId = OrderStatusId;
-                Permission.User_ID = userId;
+                Permission.OrderStatusId = p.OrderStatusId;
+                Permission.User_ID = p.userId;
                 Permission.Last_Update = DateTime.Now;
 
                 var result = db.SaveChanges() > 0 ? true : false;
@@ -563,8 +557,6 @@ namespace SmartGate.ElRwad.BLL.HR
                 };
             }
 
-            [HttpDelete]
-            [AcceptVerbs("GET", "POST")]
             public dynamic DeletePermission(int permissionId)
             {
 
@@ -582,9 +574,8 @@ namespace SmartGate.ElRwad.BLL.HR
                 };
 
             }
-            [HttpGet]
 
-            private dynamic PermissionExists(DateTime orderDate, int empId)
+            public dynamic PermissionExists(DateTime orderDate, int empId)
             {
                 var permission = db.HR_Leave_Order
                     .Count(e => e.Employee_ID == empId && e.OrderStatusId == (int)OrderStatus.AcceptedByHr && e.Order_Date == orderDate.Date) > 0 ? true : false;
