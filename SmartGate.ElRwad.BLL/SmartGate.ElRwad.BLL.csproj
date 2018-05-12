@@ -51,9 +51,6 @@
   <ItemGroup>
     <Compile Include="HR\PermAbsentManager.cs" />
     <Compile Include="HR\PermissionManager.cs" />
-    <Compile Include="HR\PermissionTypeManager.cs" />
-    <Compile Include="HR\VacationOrdersManager.cs" />
-    <Compile Include="HR\VacationTypeManager.cs" />
     <Compile Include="MainCoding\AccessoriesManager.cs" />
     <Compile Include="MainCoding\BankManager.cs" />
     <Compile Include="MainCoding\BranchesManager.cs" />
@@ -79,13 +76,13 @@
     <Compile Include="MainCoding\ModelManager.cs" />
     <Compile Include="MainCoding\MonthManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MainCoding\RegionManager.cs" />
-    <Compile Include="MainCoding\ShowingBranchesManager.cs" />
-    <Compile Include="MainCoding\SpecialtiesManager.cs" />
-    <Compile Include="MainCoding\StoresManager.cs" />
-    <Compile Include="MainCoding\SupplierManager.cs" />
-    <Compile Include="MainCoding\UniversityManager.cs" />
-    <Compile Include="MainCoding\YearManager.cs" />
+    <Compile Include="RegionManager.cs" />
+    <Compile Include="ShowingBranchesManager.cs" />
+    <Compile Include="SpecialtiesManager.cs" />
+    <Compile Include="StoresManager.cs" />
+    <Compile Include="SupplierManager.cs" />
+    <Compile Include="UniversityManager.cs" />
+    <Compile Include="YearManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmartGate.ElRwad.DAL\SmartGate.ElRwad.DAL.csproj">
@@ -101,7 +98,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
