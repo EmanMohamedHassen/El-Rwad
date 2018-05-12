@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HR\PermAbsentVM.cs" />
+    <Compile Include="HR\PermissionTypeVM.cs" />
     <Compile Include="HR\PermissionVM.cs" />
     <Compile Include="MainCoding\AccessoriesVM.cs" />
     <Compile Include="MainCoding\BankVM.cs" />

@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="HR\PermAbsentManager.cs" />
     <Compile Include="HR\PermissionManager.cs" />
+    <Compile Include="HR\PermissionTypeManager.cs" />
     <Compile Include="MainCoding\AccessoriesManager.cs" />
     <Compile Include="MainCoding\BankManager.cs" />
     <Compile Include="MainCoding\BranchesManager.cs" />
