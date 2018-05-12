@@ -6,6 +6,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using SmartGate.ElRwad.ViewModel;
+using SmartGate.ElRwad.ViewModel.Purchases;
+using SmartGate.ElRwad.BLL.Purchases;
 
 namespace SmartGate.ElRwad.WebAPI.Areas.purchases.Controllers
 {
@@ -127,7 +129,7 @@ namespace SmartGate.ElRwad.WebAPI.Areas.purchases.Controllers
         /// <returns></returns>
         [HttpPut]
         [AcceptVerbs("GET", "POST")]
-        public dynamic PutPurchaseOrder(PutIsApprovFinancialManagVM p)
+        public dynamic PutPurchaseOrder(PutTotalPriceVM p)
         {
             return PurchaseOrderManager.Instance.PutPurchaseOrder(p);
 
@@ -141,7 +143,7 @@ namespace SmartGate.ElRwad.WebAPI.Areas.purchases.Controllers
         /// <returns></returns>
         [HttpPut]
         [AcceptVerbs("GET", "POST")]
-        public dynamic PutPurchaseOrder(int id, bool isApprovFinancialManag)
+        public dynamic PutPurchaseOrder(PutIsApprovFinancialManagVM p)
         {
             return PurchaseOrderManager.Instance.PutPurchaseOrder(p);
         }

@@ -141,7 +141,7 @@ namespace SmartGate.ElRwad.BLL.Purchases
         {
             try
             {
-                List< PurchaseOrderVM> purchaseOrder = db.purchaseOrders.Where(e => e.IsApprovFinancialManag == null).Select(s => new PurchaseOrderDetailVM
+                List<PurchaseOrderDetailVM> purchaseOrder = db.purchaseOrders.Where(e => e.IsApprovFinancialManag == null).Select(s => new PurchaseOrderDetailVM
                 {
                     id = s.Id,
                     userId = s.UserId,

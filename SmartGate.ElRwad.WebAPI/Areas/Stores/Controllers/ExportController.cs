@@ -5,6 +5,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using SmartGate.ElRwad.ViewModel.Stores;
+using SmartGate.ElRwad.BLL;
+using SmartGate.ElRwad.BLL.Stores;
 
 namespace SmartGate.ElRwad.WebAPI.Areas.Stores.Controllers
 {
@@ -13,46 +16,14 @@ namespace SmartGate.ElRwad.WebAPI.Areas.Stores.Controllers
         private elRwadEntities db = new elRwadEntities();
 
 
-        public dynamic postExportDetails(int carId, DateTime exportDate, int exportMainId)
+        public dynamic postExportDetails(ExportDetailsVM e)
         {
-            var export = db.ExportDetails.Add(new ExportDetail
-            {
-                CarID = carId,
-                ExportDate = exportDate,
-                ExportMainID = exportMainId
-            });
-
-
-            var result = db.SaveChanges();
-
-            return new
-            {
-                result = result,
-                exportDetailsId = export.ExportDetails_ID
-            };
-
+            return ExportManager.Instance.postExportDetails(e);
         }
-
-
-
-        public dynamic postExportMain(bool forSale, int sellOrderId, int storeId, int toStoreId)
+        
+        public dynamic postExportMain(ExportVM e)
         {
-            var export = db.ExportMains.Add(new ExportMain
-            {
-                ForSale = forSale,
-                SellOrder_ID = sellOrderId,
-                StoreID = storeId,
-                ToStoreID = toStoreId
-            });
-
-
-            var result = db.SaveChanges();
-
-            return new
-            {
-                result = result,
-                exportDetailsId = export.ExportMainID
-            };
+            return ExportManager.Instance.postExportMain(e);
 
         }
     }

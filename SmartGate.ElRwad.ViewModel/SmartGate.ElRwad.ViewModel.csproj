@@ -60,12 +60,17 @@
     <Compile Include="ModelVM.cs" />
     <Compile Include="MonthVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchases\PurchaseOrderDetailsVM.cs" />
     <Compile Include="Purchases\PurchaseOrderVM.cs" />
     <Compile Include="RegionVM.cs" />
+    <Compile Include="Sales\SalesPurchaseOrderVM.cs" />
     <Compile Include="ShowingBranchesVM.cs" />
     <Compile Include="SpecialtiesVM.cs" />
     <Compile Include="StoresVM.cs" />
+    <Compile Include="Stores\ExportVM.cs" />
+    <Compile Include="Stores\StoryingVM.cs" />
     <Compile Include="SuppliersVM.cs" />
+    <Compile Include="Transportation\DriverOrderVM.cs" />
     <Compile Include="UniversityVM.cs" />
     <Compile Include="YearVM.cs" />
   </ItemGroup>
@@ -75,6 +80,7 @@
       <Name>SmartGate.ElRwad.DAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -36,7 +36,7 @@ namespace SmartGate.ElRwad.BLL.HR
             }).ToList();
             return deduction;
         }
-        [HttpGet]
+        
         public dynamic GetDeductionsForHr(byte monthID, int yearID)
         {
             var deduction = db.HR_Employee_Deductions.Where(e => e.Month == monthID && e.Year == yearID && e.HrApprov == null).Select(s => new
@@ -61,8 +61,7 @@ namespace SmartGate.ElRwad.BLL.HR
             return deduction;
         }
 
-
-        [HttpGet]
+        
         public dynamic GetDeductionsForHr()
         {
             var deduction = db.HR_Employee_Deductions.Where(e => e.HrApprov == null).Select(s => new
@@ -86,8 +85,7 @@ namespace SmartGate.ElRwad.BLL.HR
             }).ToList();
             return deduction;
         }
-
-        [HttpGet]
+        
         public dynamic GetDeductions(byte monthID, int yearID)
         {
             var deduction = db.HR_Employee_Deductions.Where(s => s.Month == monthID && s.Year == yearID && s.HrApprov == true).Select(s => new
@@ -111,7 +109,6 @@ namespace SmartGate.ElRwad.BLL.HR
             }).ToList();
             return deduction;
         }
-        [HttpGet]
 
         public dynamic GetDeductionById(int deductionId)
         {
@@ -158,7 +155,6 @@ namespace SmartGate.ElRwad.BLL.HR
                 };
             }
         }
-        [HttpGet]
 
         public dynamic GetDeductionByDate(DateTime fromDate, DateTime toDate)
         {
@@ -196,7 +192,7 @@ namespace SmartGate.ElRwad.BLL.HR
                 };
             }
         }
-        [HttpGet]
+        
 
         public dynamic GetDeductionByDateAndEmpId(int empId, DateTime fromDate, DateTime toDate)
         {
@@ -234,7 +230,7 @@ namespace SmartGate.ElRwad.BLL.HR
                 };
             }
         }
-        [HttpGet]
+        
 
         public dynamic GetDeductionByDateAndDepartmentId(int depId, DateTime fromDate, DateTime toDate)
         {
@@ -272,7 +268,7 @@ namespace SmartGate.ElRwad.BLL.HR
                 };
             }
         }
-        [HttpGet]
+        
 
         public dynamic GetDeductionByDateAndCategory(int depId, DateTime fromDate, DateTime toDate)
         {
@@ -312,47 +308,8 @@ namespace SmartGate.ElRwad.BLL.HR
             }
         }
 
-
-        //[HttpGet]
-
-        //public dynamic GetDeductionByDateAndDepartmentId(int empId, int depId, DateTime fromDate, DateTime toDate)
-        //{
-        //    try
-        //    {
-        //        var deduction = db.HR_Employee_Deductions.Where(e => e.Employee_ID == empId 
-        //        && e.Employee.Job.Department_ID == depId && e.Deduction_Date.Value.Date >= fromDate.Date 
-        //        && e.Deduction_Date.Value.Date <= toDate.Date).Select(s => new
-        //        {
-        //            deductionId = s.Deduction_ID,
-        //            month = s.Month,
-        //            year = s.Year,
-        //            deductionDate = s.Deduction_Date,
-        //            employeeId = s.Employee_ID,
-        //            empName = s.Employee.FullName,
-        //            empPrintCode = s.Employee.Employee_Code,
-        //            deducDayCount = s.DeducDay_Count,
-        //            reason = s.Reason,
-        //            userId = s.User_ID,
-        //            lastUpdate = s.Last_Update,
-        //            managerId = s.ManagerID
-
-        //        }).ToList();
-        //        return deduction;
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return new
-        //        {
-        //            result = new
-        //            {
-        //                Id = 0
-        //            }
-        //        };
-        //    }
-        //}
-
-        [HttpPost]
+        
+        
         public dynamic PostDeduction(
             DateTime deductionDate,
             byte month,
@@ -386,8 +343,7 @@ namespace SmartGate.ElRwad.BLL.HR
                 deduction = deduction.Deduction_ID
             };
         }
-        [HttpPut]
-        [AcceptVerbs("GET", "POST")]
+       
         public dynamic PutDeduction(int deductionId,
             DateTime deductionDate,
             byte month,
@@ -417,8 +373,7 @@ namespace SmartGate.ElRwad.BLL.HR
             };
         }
 
-        [HttpPut]
-        [AcceptVerbs("GET", "POST")]
+        
         public dynamic PutDeductionForApprov(int deductionId,
             bool hrApprov,
             int userId
@@ -438,8 +393,7 @@ namespace SmartGate.ElRwad.BLL.HR
         }
 
 
-        [HttpDelete]
-        [AcceptVerbs("GET", "POST")]
+        
         public dynamic DeleteDeduction(int deductionId)
         {
             var deduction = db.HR_Employee_Deductions.Where(s => s.Deduction_ID == deductionId).FirstOrDefault();
@@ -451,7 +405,7 @@ namespace SmartGate.ElRwad.BLL.HR
             };
 
         }
-        [HttpGet]
+        
         private dynamic DeductionExists(int deductionId)
         {
             var deduction = db.HR_Employee_Deductions.Count(s => s.Deduction_ID == deductionId) > 0 ? true : false;

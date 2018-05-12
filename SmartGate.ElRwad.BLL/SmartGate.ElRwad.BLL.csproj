@@ -60,6 +60,7 @@
     <Compile Include="DaysManager.cs" />
     <Compile Include="DepartmentManager.cs" />
     <Compile Include="DeputationManager.cs" />
+    <Compile Include="DriverOrderManager.cs" />
     <Compile Include="FacultyManager.cs" />
     <Compile Include="HR\DeductionManager.cs" />
     <Compile Include="InsuranceCompaniesManager.cs" />
@@ -69,11 +70,15 @@
     <Compile Include="ModelManager.cs" />
     <Compile Include="MonthManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchases\PurchaseOrderDetailsManager.cs" />
     <Compile Include="Purchases\PurchaseOrderManager.cs" />
     <Compile Include="RegionManager.cs" />
+    <Compile Include="Sales\SalesPurchaseOrderManager.cs" />
     <Compile Include="ShowingBranchesManager.cs" />
     <Compile Include="SpecialtiesManager.cs" />
     <Compile Include="StoresManager.cs" />
+    <Compile Include="Stores\ExportManager.cs" />
+    <Compile Include="Stores\StoringManager.cs" />
     <Compile Include="SupplierManager.cs" />
     <Compile Include="UniversityManager.cs" />
     <Compile Include="YearManager.cs" />
@@ -91,6 +96,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Transportation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
