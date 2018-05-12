@@ -44,6 +44,7 @@
     <Compile Include="HR\PermissionTypeVM.cs" />
     <Compile Include="HR\PermissionVM.cs" />
     <Compile Include="HR\VacationOrdersVM.cs" />
+    <Compile Include="HR\VacationTypeVM.cs" />
     <Compile Include="MainCoding\AccessoriesVM.cs" />
     <Compile Include="MainCoding\BankVM.cs" />
     <Compile Include="MainCoding\BranchesVM.cs" />
