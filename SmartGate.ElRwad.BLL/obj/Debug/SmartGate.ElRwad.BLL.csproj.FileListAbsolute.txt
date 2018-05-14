@@ -1,0 +1,14 @@
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.BLL\bin\Debug\SmartGate.ElRwad.BLL.dll.config
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.BLL\bin\Debug\SmartGate.ElRwad.BLL.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.BLL\bin\Debug\SmartGate.ElRwad.BLL.pdb
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.BLL\bin\Debug\EntityFramework.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.BLL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.BLL\bin\Debug\SmartGate.ElRwad.DAL.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.BLL\bin\Debug\SmartGate.ElRwad.ViewModel.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.BLL\bin\Debug\SmartGate.ElRwad.DAL.pdb
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.BLL\bin\Debug\SmartGate.ElRwad.ViewModel.pdb
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.BLL\bin\Debug\EntityFramework.xml
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.BLL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.BLL\obj\Debug\SmartGate.ElRwad.BLL.csprojResolveAssemblyReference.cache
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.BLL\obj\Debug\SmartGate.ElRwad.BLL.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.BLL\obj\Debug\SmartGate.ElRwad.BLL.pdb

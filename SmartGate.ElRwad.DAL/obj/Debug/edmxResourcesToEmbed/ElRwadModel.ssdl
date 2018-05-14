@@ -1,0 +1,3559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ElRWADModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Accessories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameA" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameE" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="float" />
+  </EntityType>
+  <EntityType Name="AddingPermission">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="carId" Type="int" Nullable="false" />
+    <Property Name="purchaseOrderId" Type="int" Nullable="false" />
+    <Property Name="indoresmentNo" Type="int" Nullable="false" />
+    <Property Name="storeId" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Banks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameA" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameE" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Branches">
+    <Key>
+      <PropertyRef Name="Branch_ID" />
+    </Key>
+    <Property Name="Branch_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company_ID" Type="int" />
+    <Property Name="Branch_A_Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="Branch_E_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Branch_Location" Type="nvarchar" MaxLength="100" />
+    <Property Name="Branch_Description" Type="ntext" />
+    <Property Name="Branch_Mobile" Type="int" />
+    <Property Name="Branch_Phone" Type="int" />
+    <Property Name="Manager_ID" Type="int" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Last_Update" Type="smalldatetime" />
+    <Property Name="Branch_Image" Type="nvarchar(max)" />
+    <Property Name="RegionId" Type="int" />
+    <Property Name="CityId" Type="int" />
+  </EntityType>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="LastUpdate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Cars">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VIN" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlateNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="MotorNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Storing_Master_Id" Type="int" />
+    <Property Name="IsSold" Type="bit" />
+    <Property Name="IsReceived" Type="bit" />
+    <Property Name="SalesOrderID" Type="int" />
+    <Property Name="modelID" Type="int" />
+    <Property Name="ManufacturingYearID" Type="int" />
+    <Property Name="BrandID" Type="int" />
+    <Property Name="CarCateID" Type="int" />
+    <Property Name="CurrentStoreID" Type="int" />
+    <Property Name="ColorId" Type="int" />
+    <Property Name="purchaseOrderDetailsId" Type="int" />
+  </EntityType>
+  <EntityType Name="CarsCategories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModelId" Type="int" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="City_ID" />
+    </Key>
+    <Property Name="City_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_A" Type="nvarchar" MaxLength="100" />
+    <Property Name="Name_E" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="ntext" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Last_Update" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Company_ID" />
+    </Key>
+    <Property Name="Company_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Company_A_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Company_E_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Small_Image" Type="image" />
+    <Property Name="Back_Image" Type="image" />
+    <Property Name="Company_Notes" Type="ntext" />
+    <Property Name="Manager_ID" Type="int" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Last_Update" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Days">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+    <Property Name="NAmeEn" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ElRWAD.dbo.Deductions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Deductions">
+    <Key>
+      <PropertyRef Name="Deduction_ID" />
+    </Key>
+    <Property Name="Deduction_ID" Type="int" Nullable="false" />
+    <Property Name="Deduction_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deduction_A_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Deduction_E_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Deduction_Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Last_Update" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="Department_ID" />
+    </Key>
+    <Property Name="Department_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Department_A_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Department_E_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Department_Description" Type="nvarchar(max)" />
+    <Property Name="Manager_ID" Type="int" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Last_Update" Type="smalldatetime" />
+    <Property Name="Branch_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Deputations">
+    <Key>
+      <PropertyRef Name="Deputations_ID" />
+    </Key>
+    <Property Name="Deputations_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="Tittle_EN" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Drivers_Orders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DriverId" Type="int" />
+    <Property Name="PurchaseOrderId" Type="int" />
+    <Property Name="OrderDate" Type="smalldatetime" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Employee_ID" />
+    </Key>
+    <Property Name="Employee_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employee_Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Sex" Type="bit" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="SSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="BirthDate" Type="datetime" />
+    <Property Name="City_ID" Type="int" />
+    <Property Name="Address" Type="ntext" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageID" Type="int" />
+    <Property Name="Branch_ID" Type="int" />
+    <Property Name="Job_ID" Type="int" />
+    <Property Name="Category_ID" Type="int" />
+    <Property Name="Assigment_Date" Type="datetime" />
+    <Property Name="LeaveReason" Type="nvarchar" MaxLength="500" />
+    <Property Name="Insurance_Number" Type="nvarchar" MaxLength="15" />
+    <Property Name="Is_Insurance" Type="bit" Nullable="false" />
+    <Property Name="Basic_Salary" Type="float" Nullable="false" />
+    <Property Name="Insurance_Salary" Type="float" Nullable="false" />
+    <Property Name="Variable_Salary" Type="float" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Last_User_ID" Type="int" />
+    <Property Name="Last_Update" Type="datetime" />
+    <Property Name="leave_Date" Type="smalldatetime" />
+    <Property Name="Insurance_Date" Type="smalldatetime" />
+    <Property Name="HealthCheck_Date" Type="smalldatetime" />
+    <Property Name="Insurnace_EndDate" Type="smalldatetime" />
+    <Property Name="Deputation_ID" Type="int" />
+    <Property Name="WeekEndDay" Type="int" Nullable="false" />
+    <Property Name="Shift_Id" Type="int" />
+    <Property Name="YearlySPInsurance_Basic" Type="float" />
+    <Property Name="YearlySPInsurance_Additional" Type="float" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastName" Type="nchar" MaxLength="100" />
+    <Property Name="Prefix" Type="nchar" MaxLength="10" />
+    <Property Name="Country_ID" Type="int" />
+    <Property Name="ZipCode" Type="nchar" MaxLength="50" />
+    <Property Name="Qualify" Type="nchar" MaxLength="100" />
+    <Property Name="University_ID" Type="int" />
+    <Property Name="Qualify_Type" Type="tinyint" />
+    <Property Name="Faculty_ID" Type="int" />
+    <Property Name="Specialty_ID" Type="int" />
+    <Property Name="Grad_Year" Type="int" />
+    <Property Name="Grad_Project" Type="ntext" />
+    <Property Name="Total_Grade" Type="nchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Employees_Categories">
+    <Key>
+      <PropertyRef Name="Category_ID" />
+    </Key>
+    <Property Name="Category_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name_A" Type="nvarchar" MaxLength="100" />
+    <Property Name="Name_E" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="ntext" />
+    <Property Name="Work_Days_Week" Type="int" />
+    <Property Name="Work_Days_Month" Type="int" />
+    <Property Name="Work_Day_Hours" Type="int" />
+    <Property Name="Work_Day_Hours_From" Type="nvarchar" MaxLength="10" />
+    <Property Name="Work_Day_Hours_To" Type="nvarchar" MaxLength="10" />
+    <Property Name="Calculate_Salary_DueTo" Type="tinyint" />
+    <Property Name="Max_Absence_Days" Type="smallint" />
+    <Property Name="Year_Vacations" Type="int" />
+    <Property Name="Insurance_Percent" Type="float" />
+    <Property Name="Income_Taxes_Percent" Type="float" />
+    <Property Name="Taxes_after_Absence" Type="bit" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Last_Update" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Emplyees_Qualifications">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QualifyTypeId" Type="tinyint" />
+    <Property Name="Qualify" Type="nvarchar" MaxLength="100" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="FacultyId" Type="int" />
+    <Property Name="SpecialtyId" Type="int" />
+    <Property Name="GradYear" Type="int" />
+    <Property Name="GradProject" Type="nvarchar(max)" />
+    <Property Name="TotalGrade" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="LastUpdate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="ExportDetails">
+    <Key>
+      <PropertyRef Name="ExportDetails_ID" />
+    </Key>
+    <Property Name="ExportDetails_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CarID" Type="int" />
+    <Property Name="ExportDate" Type="smalldatetime" />
+    <Property Name="ExportMainID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExportMain">
+    <Key>
+      <PropertyRef Name="ExportMainID" />
+    </Key>
+    <Property Name="ExportMainID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ForSale" Type="bit" />
+    <Property Name="SellOrder_ID" Type="int" />
+    <Property Name="StoreID" Type="int" />
+    <Property Name="ToStoreID" Type="int" />
+  </EntityType>
+  <EntityType Name="Faculties">
+    <Key>
+      <PropertyRef Name="Faculty_ID" />
+    </Key>
+    <Property Name="Faculty_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Faculty_A_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Faculty_E_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Faculty_Notes" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Group_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LinkId" Type="int" />
+    <Property Name="GroupId" Type="int" />
+  </EntityType>
+  <EntityType Name="GroupsMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HR_Employee_Deductions">
+    <Key>
+      <PropertyRef Name="Deduction_ID" />
+    </Key>
+    <Property Name="Deduction_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Month" Type="tinyint" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Deduction_Date" Type="datetime" />
+    <Property Name="Employee_ID" Type="int" />
+    <Property Name="DeducDay_Count" Type="float" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="2000" />
+    <Property Name="HrApprov" Type="bit" />
+    <Property Name="Approv_Date" Type="smalldatetime" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Last_Update" Type="datetime" />
+    <Property Name="ManagerID" Type="int" />
+  </EntityType>
+  <EntityType Name="HR_Leave_Order">
+    <Key>
+      <PropertyRef Name="Order_ID" />
+    </Key>
+    <Property Name="Order_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Order_Date" Type="datetime" />
+    <Property Name="LeaveType_ID" Type="int" />
+    <Property Name="Employee_ID" Type="int" />
+    <Property Name="From_Date" Type="smalldatetime" />
+    <Property Name="To_Date" Type="smalldatetime" />
+    <Property Name="Leave_Hours" Type="float" />
+    <Property Name="AccpetedBy_ID" Type="int" />
+    <Property Name="From_Hour" Type="int" />
+    <Property Name="From_Minute" Type="int" />
+    <Property Name="To_Hour" Type="int" />
+    <Property Name="To_Minute" Type="int" />
+    <Property Name="Month" Type="tinyint" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Permission_Causes" Type="nvarchar(max)" />
+    <Property Name="DayOrNight" Type="bit" />
+    <Property Name="OrderStatusId" Type="int" />
+    <Property Name="Approv_Date" Type="smalldatetime" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Last_Update" Type="datetime" />
+  </EntityType>
+  <EntityType Name="InsuranceCompanies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameA" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameE" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Jobs">
+    <Key>
+      <PropertyRef Name="Job_ID" />
+    </Key>
+    <Property Name="Job_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Job_A_Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="Job_E_Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="Department_ID" Type="int" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Last_Update" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Links">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Link" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ManufacturingYear">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Year" Type="int" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar(max)" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="FromUserId" Type="int" />
+    <Property Name="ToUserId" Type="int" />
+    <Property Name="FilePath" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Mission">
+    <Key>
+      <PropertyRef Name="Mission_ID" />
+    </Key>
+    <Property Name="Mission_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Emp_ID" Type="int" />
+    <Property Name="Month" Type="tinyint" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Mission_Causes" Type="nvarchar(max)" />
+    <Property Name="Mission_Date" Type="smalldatetime" />
+    <Property Name="Approv" Type="bit" />
+    <Property Name="Approv_Date" Type="smalldatetime" />
+    <Property Name="From_Hour" Type="int" />
+    <Property Name="From_Minute" Type="int" />
+    <Property Name="To_Hour" Type="int" />
+    <Property Name="To_Minute" Type="int" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Update_Date" Type="smalldatetime" />
+    <Property Name="ManagerID" Type="int" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="BrandId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="LastUpdate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="MovementPermission">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DriverId" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="StoreIDFrom" Type="int" />
+    <Property Name="CarID" Type="int" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="StoreIDTo" Type="int" />
+    <Property Name="date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Official_Vacation">
+    <Key>
+      <PropertyRef Name="VacationID" />
+    </Key>
+    <Property Name="VacationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="FromDate" Type="smalldatetime" />
+    <Property Name="ToDate" Type="smalldatetime" />
+    <Property Name="For_EmpTyp" Type="bit" />
+    <Property Name="EmpTyp_ID" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="LastUpdate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="OrderStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="StatusAr" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Perm_Absent">
+    <Key>
+      <PropertyRef Name="PermAbsent_ID" />
+    </Key>
+    <Property Name="PermAbsent_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderDate" Type="smalldatetime" />
+    <Property Name="PermAbsent_FromDate" Type="smalldatetime" />
+    <Property Name="PermAbsent_ToDate" Type="smalldatetime" />
+    <Property Name="Emp_ID" Type="int" />
+    <Property Name="Month" Type="tinyint" />
+    <Property Name="Year" Type="int" />
+    <Property Name="OrderStatusId" Type="int" />
+    <Property Name="Approv_Date" Type="smalldatetime" />
+    <Property Name="Approv_Emp" Type="int" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Last_Update" Type="smalldatetime" />
+    <Property Name="Abs_Causes" Type="nvarchar(max)" />
+    <Property Name="count" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="PermissionType">
+    <Key>
+      <PropertyRef Name="PermissionType_ID" />
+    </Key>
+    <Property Name="PermissionType_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PermissionType_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="PermissionType_Name_EN" Type="nvarchar" MaxLength="50" />
+    <Property Name="Salary_Deduc" Type="bit" />
+    <Property Name="Deduc_Percent" Type="float" />
+    <Property Name="Max_Times" Type="tinyint" />
+    <Property Name="Hours_Count" Type="tinyint" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Last_Update" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="ProcessStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Proj_Month">
+    <Key>
+      <PropertyRef Name="Month_ID" />
+    </Key>
+    <Property Name="Month_ID" Type="tinyint" Nullable="false" />
+    <Property Name="Month_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Month_Name_EN" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Proj_Year">
+    <Key>
+      <PropertyRef Name="ProjYear_ID" />
+    </Key>
+    <Property Name="ProjYear_ID" Type="int" Nullable="false" />
+    <Property Name="ProjYear_Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="purchaseOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="BranchId" Type="int" />
+    <Property Name="SupplierId" Type="int" />
+    <Property Name="SupplierRepresentativeId" Type="int" />
+    <Property Name="TotalPrice" Type="float" />
+    <Property Name="ReceivingAddress" Type="nvarchar(max)" />
+    <Property Name="AddressRegionId" Type="int" />
+    <Property Name="AddressCityId" Type="int" />
+    <Property Name="OrderDate" Type="smalldatetime" />
+    <Property Name="IsApprovFinancialManag" Type="bit" />
+  </EntityType>
+  <EntityType Name="PurchaseOrder_Accessories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SallesorderDetailsId" Type="int" Nullable="false" />
+    <Property Name="Accessories_Id" Type="int" Nullable="false" />
+    <Property Name="PurchaseOrder_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="PurchaseOrderDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseOrderId" Type="int" />
+    <Property Name="BrandId" Type="int" />
+    <Property Name="ModelId" Type="int" />
+    <Property Name="ManufacturingYearId" Type="int" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="ColorId" Type="int" />
+    <Property Name="IsNew" Type="bit" />
+    <Property Name="ProcessStatusId" Type="int" />
+    <Property Name="Count" Type="int" />
+    <Property Name="Price" Type="float" />
+    <Property Name="IsBuying" Type="bit" />
+    <Property Name="IsReceived" Type="bit" />
+  </EntityType>
+  <EntityType Name="QualificationType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Qualification" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RecievedCarPermission">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="MovementID" Type="int" />
+    <Property Name="IndrosmentNumber" Type="int" />
+  </EntityType>
+  <EntityType Name="Regions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="CityId" Type="int" />
+  </EntityType>
+  <EntityType Name="Sales_PurchaseOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="User_id" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Buyer_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Adress" Type="varchar" MaxLength="50" />
+    <Property Name="City_Id" Type="int" />
+    <Property Name="Region_Id" Type="int" />
+    <Property Name="Mob_Number" Type="int" />
+    <Property Name="SSN" Type="int" Nullable="false" />
+    <Property Name="Brand_Id" Type="int" />
+    <Property Name="Model_Id" Type="int" />
+    <Property Name="Category_Id" Type="int" />
+    <Property Name="Color_Id" Type="int" />
+    <Property Name="Internal_Color" Type="varchar" MaxLength="50" />
+    <Property Name="CarStatus" Type="bit" />
+    <Property Name="Price" Type="float" />
+    <Property Name="HaveInsurance" Type="bit" />
+    <Property Name="InsurCom_Id" Type="int" />
+    <Property Name="IsApproval" Type="bit" />
+    <Property Name="RefusalReasons" Type="varchar" MaxLength="50" />
+    <Property Name="Total_Price" Type="float" />
+    <Property Name="Deposit" Type="float" />
+    <Property Name="Remaining" Type="float" />
+    <Property Name="Payment_Method" Type="bit" />
+    <Property Name="Bank_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="SellBill">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WithdrawpermId" Type="int" />
+  </EntityType>
+  <EntityType Name="SellOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="BuyerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cityid" Type="int" />
+    <Property Name="RegionId" Type="int" />
+    <Property Name="MobNumber" Type="int" />
+    <Property Name="SSN" Type="int" />
+    <Property Name="Isapproval" Type="bit" />
+    <Property Name="RefusalReasons" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SellOrder_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellorderId" Type="int" />
+    <Property Name="BrandId" Type="int" />
+    <Property Name="ModelId" Type="int" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="ColorId" Type="int" />
+    <Property Name="IsNew" Type="bit" />
+    <Property Name="InternalColor" Type="nvarchar" MaxLength="50" />
+    <Property Name="HaveInsurance" Type="bit" />
+    <Property Name="InsurcomId" Type="int" />
+    <Property Name="Price" Type="float" />
+    <Property Name="Totalprice" Type="float" />
+    <Property Name="Deposit" Type="float" />
+    <Property Name="Remaining" Type="float" />
+    <Property Name="PaymentMethod" Type="bit" />
+    <Property Name="BankId" Type="int" />
+  </EntityType>
+  <EntityType Name="Sheet_Details">
+    <Key>
+      <PropertyRef Name="Detail_ID" />
+    </Key>
+    <Property Name="Detail_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TimeSheet_ID" Type="int" Nullable="false" />
+    <Property Name="Employee_ID" Type="int" Nullable="false" />
+    <Property Name="Enterance_Time" Type="nvarchar" MaxLength="50" />
+    <Property Name="Exit_Time" Type="nvarchar" MaxLength="50" />
+    <Property Name="Day_State" Type="int" />
+    <Property Name="last_Update" Type="datetime" />
+    <Property Name="User_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="ShiftDetail">
+    <Key>
+      <PropertyRef Name="ShDetailId" />
+    </Key>
+    <Property Name="ShDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShiftId" Type="int" Nullable="false" />
+    <Property Name="DayNumber" Type="int" Nullable="false" />
+    <Property Name="Entrance" Type="smalldatetime" Nullable="false" />
+    <Property Name="Exit" Type="smalldatetime" Nullable="false" />
+    <Property Name="HasOverTime" Type="bit" Nullable="false" />
+    <Property Name="OverTimeStart" Type="smalldatetime" Nullable="false" />
+    <Property Name="OverTime" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Shifts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="YearId" Type="int" />
+    <Property Name="FromDate" Type="smalldatetime" />
+    <Property Name="ToDate" Type="smalldatetime" />
+    <Property Name="FromMinute" Type="int" />
+    <Property Name="ToMinute" Type="int" />
+    <Property Name="FromHour" Type="int" />
+    <Property Name="ToHour" Type="int" />
+  </EntityType>
+  <EntityType Name="Showing_Branches">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="RegionId" Type="int" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="LastUpdate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Specialties">
+    <Key>
+      <PropertyRef Name="Specialty_ID" />
+    </Key>
+    <Property Name="Specialty_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Specialty_A_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Specialty_E_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Specialty_Notes" Type="ntext" />
+    <Property Name="Faculty_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Stores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="RegionId" Type="int" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="StoreManagerId" Type="int" />
+  </EntityType>
+  <EntityType Name="Storing_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="VIN" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlateNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="MotorNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="DesiredCategoryId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Storing_Master_Id" Type="int" />
+    <Property Name="PurchaseOrderDetail_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Storing_Master">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseOrderId" Type="int" />
+    <Property Name="StoreId" Type="int" />
+    <Property Name="ApprovalNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddingDate" Type="smalldatetime" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="RegionId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="LastUpdate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="SuppliersRepresentative">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierId" Type="int" />
+    <Property Name="NameAr" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Job" Type="nvarchar(max)" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="LastUpdate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="University">
+    <Key>
+      <PropertyRef Name="University_ID" />
+    </Key>
+    <Property Name="University_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="University_A_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="University_E_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Notes" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Group_ID" Type="int" />
+    <Property Name="User_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="User_Pass" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsAdmin" Type="bit" />
+    <Property Name="LastLogIn" Type="datetime" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="Employee_ID" Type="int" />
+    <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vacations_Orders">
+    <Key>
+      <PropertyRef Name="Order_ID" />
+    </Key>
+    <Property Name="Order_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Order_Date" Type="datetime" />
+    <Property Name="VacationType_ID" Type="int" />
+    <Property Name="Employee_ID" Type="int" />
+    <Property Name="From_Date" Type="datetime" />
+    <Property Name="To_Date" Type="datetime" />
+    <Property Name="Month_ID" Type="tinyint" />
+    <Property Name="Year_ID" Type="int" />
+    <Property Name="Vacation_Notes" Type="nvarchar(max)" />
+    <Property Name="count" Type="tinyint" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Last_Update" Type="datetime" />
+    <Property Name="Responsible_Employee_ID" Type="int" />
+    <Property Name="Acceptance_Date" Type="smalldatetime" />
+    <Property Name="AccpetedBy_ID" Type="int" />
+    <Property Name="OrderStatusId" Type="int" />
+  </EntityType>
+  <EntityType Name="Vacations_Types">
+    <Key>
+      <PropertyRef Name="VacationType_ID" />
+    </Key>
+    <Property Name="VacationType_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type_Name_EN" Type="nvarchar" MaxLength="50" />
+    <Property Name="Max_Days" Type="int" />
+    <Property Name="Print_With_Reports" Type="bit" />
+    <Property Name="Month_Max_Times" Type="int" />
+    <Property Name="Reg_Max_Month" Type="int" />
+    <Property Name="With_Period" Type="bit" />
+    <Property Name="From_Date" Type="smalldatetime" />
+    <Property Name="To_Date" Type="smalldatetime" />
+    <Property Name="For_Emp_Type" Type="bit" />
+    <Property Name="Emp_Type" Type="int" />
+    <Property Name="Notes" Type="ntext" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Last_Update" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Vendor_Items">
+    <Key>
+      <PropertyRef Name="Vendor_ID" />
+    </Key>
+    <Property Name="Vendor_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item_ID" Type="int" Nullable="false" />
+    <Property Name="Pref_Vendor_Flag" Type="bit" />
+    <Property Name="Last_Purchase_Price" Type="numeric" Precision="18" Scale="8" />
+    <Property Name="Last_Update" Type="datetime" />
+  </EntityType>
+  <EntityType Name="WithdrawPerm">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellOrderDetailsId" Type="int" />
+    <Property Name="CarId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_AddingPermission_Cars">
+    <End Role="Cars" Type="Self.Cars" Multiplicity="1" />
+    <End Role="AddingPermission" Type="Self.AddingPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cars">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AddingPermission">
+        <PropertyRef Name="carId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddingPermission_purchaseOrder">
+    <End Role="purchaseOrder" Type="Self.purchaseOrder" Multiplicity="1" />
+    <End Role="AddingPermission" Type="Self.AddingPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="purchaseOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AddingPermission">
+        <PropertyRef Name="purchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddingPermission_Stores">
+    <End Role="Stores" Type="Self.Stores" Multiplicity="1" />
+    <End Role="AddingPermission" Type="Self.AddingPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AddingPermission">
+        <PropertyRef Name="storeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddingPermission_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="AddingPermission" Type="Self.AddingPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="AddingPermission">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branches_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Branches" Type="Self.Branches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="City_ID" />
+      </Principal>
+      <Dependent Role="Branches">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branches_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Branches" Type="Self.Branches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Company_ID" />
+      </Principal>
+      <Dependent Role="Branches">
+        <PropertyRef Name="Company_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branches_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Branches" Type="Self.Branches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Branches">
+        <PropertyRef Name="Manager_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branches_Regions">
+    <End Role="Regions" Type="Self.Regions" Multiplicity="0..1" />
+    <End Role="Branches" Type="Self.Branches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Branches">
+        <PropertyRef Name="RegionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Brand_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Brand" Type="Self.Brand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Brand">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_Brand">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_CarsCategories">
+    <End Role="CarsCategories" Type="Self.CarsCategories" Multiplicity="0..1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarsCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="CarCateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_Color">
+    <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="ColorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_ManufacturingYear">
+    <End Role="ManufacturingYear" Type="Self.ManufacturingYear" Multiplicity="0..1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManufacturingYear">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="ManufacturingYearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_Model">
+    <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="modelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_PurchaseOrderDetails">
+    <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetails" Multiplicity="0..1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseOrderDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="purchaseOrderDetailsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_SellOrder_Details">
+    <End Role="SellOrder_Details" Type="Self.SellOrder_Details" Multiplicity="0..1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SellOrder_Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="SalesOrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarsCategories_Model">
+    <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
+    <End Role="CarsCategories" Type="Self.CarsCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CarsCategories">
+        <PropertyRef Name="ModelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="Manager_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Departments_Branches">
+    <End Role="Branches" Type="Self.Branches" Multiplicity="0..1" />
+    <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="Branch_ID" />
+      </Principal>
+      <Dependent Role="Departments">
+        <PropertyRef Name="Branch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Departments_Employee">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Departments">
+        <PropertyRef Name="Manager_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Departments_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Departments">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesiredCategory_ManufacturingYear">
+    <End Role="ManufacturingYear" Type="Self.ManufacturingYear" Multiplicity="0..1" />
+    <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManufacturingYear">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrderDetails">
+        <PropertyRef Name="ManufacturingYearId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Drivers_Orders_Employee">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Drivers_Orders" Type="Self.Drivers_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Drivers_Orders">
+        <PropertyRef Name="DriverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Drivers_Orders_purchaseOrder">
+    <End Role="purchaseOrder" Type="Self.purchaseOrder" Multiplicity="0..1" />
+    <End Role="Drivers_Orders" Type="Self.Drivers_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="purchaseOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Drivers_Orders">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Drivers_Orders_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Drivers_Orders" Type="Self.Drivers_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Drivers_Orders">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Branches">
+    <End Role="Branches" Type="Self.Branches" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="Branch_ID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Branch_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="City_ID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="City_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Days">
+    <End Role="Days" Type="Self.Days" Multiplicity="1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Days">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="WeekEndDay" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Deputations">
+    <End Role="Deputations" Type="Self.Deputations" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deputations">
+        <PropertyRef Name="Deputations_ID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Deputation_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Employees_Categories">
+    <End Role="Employees_Categories" Type="Self.Employees_Categories" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees_Categories">
+        <PropertyRef Name="Category_ID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Category_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Faculties">
+    <End Role="Faculties" Type="Self.Faculties" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculties">
+        <PropertyRef Name="Faculty_ID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Faculty_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Jobs">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="Job_ID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Job_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_QualificationType">
+    <End Role="QualificationType" Type="Self.QualificationType" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QualificationType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Qualify_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_University">
+    <End Role="University" Type="Self.University" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="University_ID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="University_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emplyees_Qualifications_Faculties">
+    <End Role="Faculties" Type="Self.Faculties" Multiplicity="0..1" />
+    <End Role="Emplyees_Qualifications" Type="Self.Emplyees_Qualifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculties">
+        <PropertyRef Name="Faculty_ID" />
+      </Principal>
+      <Dependent Role="Emplyees_Qualifications">
+        <PropertyRef Name="FacultyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emplyees_Qualifications_QualificationType">
+    <End Role="QualificationType" Type="Self.QualificationType" Multiplicity="0..1" />
+    <End Role="Emplyees_Qualifications" Type="Self.Emplyees_Qualifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QualificationType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Emplyees_Qualifications">
+        <PropertyRef Name="QualifyTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emplyees_Qualifications_Specialties">
+    <End Role="Specialties" Type="Self.Specialties" Multiplicity="0..1" />
+    <End Role="Emplyees_Qualifications" Type="Self.Emplyees_Qualifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specialties">
+        <PropertyRef Name="Specialty_ID" />
+      </Principal>
+      <Dependent Role="Emplyees_Qualifications">
+        <PropertyRef Name="SpecialtyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emplyees_Qualifications_University">
+    <End Role="University" Type="Self.University" Multiplicity="0..1" />
+    <End Role="Emplyees_Qualifications" Type="Self.Emplyees_Qualifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="University_ID" />
+      </Principal>
+      <Dependent Role="Emplyees_Qualifications">
+        <PropertyRef Name="UniversityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emplyees_Qualifications_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Emplyees_Qualifications" Type="Self.Emplyees_Qualifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Emplyees_Qualifications">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emplyees_Qualifications_Users1">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Emplyees_Qualifications" Type="Self.Emplyees_Qualifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Emplyees_Qualifications">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExportDetails_Cars">
+    <End Role="Cars" Type="Self.Cars" Multiplicity="0..1" />
+    <End Role="ExportDetails" Type="Self.ExportDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cars">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExportDetails">
+        <PropertyRef Name="CarID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExportDetails_ExportMain">
+    <End Role="ExportMain" Type="Self.ExportMain" Multiplicity="1" />
+    <End Role="ExportDetails" Type="Self.ExportDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExportMain">
+        <PropertyRef Name="ExportMainID" />
+      </Principal>
+      <Dependent Role="ExportDetails">
+        <PropertyRef Name="ExportMainID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExportMain_SellOrder">
+    <End Role="SellOrder" Type="Self.SellOrder" Multiplicity="0..1" />
+    <End Role="ExportMain" Type="Self.ExportMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SellOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExportMain">
+        <PropertyRef Name="SellOrder_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExportMain_Stores">
+    <End Role="Stores" Type="Self.Stores" Multiplicity="0..1" />
+    <End Role="ExportMain" Type="Self.ExportMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExportMain">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExportMain_Stores1">
+    <End Role="Stores" Type="Self.Stores" Multiplicity="0..1" />
+    <End Role="ExportMain" Type="Self.ExportMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExportMain">
+        <PropertyRef Name="ToStoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Details_GroupsMaster">
+    <End Role="GroupsMaster" Type="Self.GroupsMaster" Multiplicity="0..1" />
+    <End Role="Group_Details" Type="Self.Group_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupsMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Group_Details">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Details_Links">
+    <End Role="Links" Type="Self.Links" Multiplicity="0..1" />
+    <End Role="Group_Details" Type="Self.Group_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Links">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Group_Details">
+        <PropertyRef Name="LinkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HR_Employee_Deductions_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="HR_Employee_Deductions" Type="Self.HR_Employee_Deductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="HR_Employee_Deductions">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HR_Employee_Deductions_Employees1">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="HR_Employee_Deductions" Type="Self.HR_Employee_Deductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="HR_Employee_Deductions">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HR_Employee_Deductions_Proj_Month">
+    <End Role="Proj_Month" Type="Self.Proj_Month" Multiplicity="0..1" />
+    <End Role="HR_Employee_Deductions" Type="Self.HR_Employee_Deductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proj_Month">
+        <PropertyRef Name="Month_ID" />
+      </Principal>
+      <Dependent Role="HR_Employee_Deductions">
+        <PropertyRef Name="Month" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HR_Employee_Deductions_Proj_Year">
+    <End Role="Proj_Year" Type="Self.Proj_Year" Multiplicity="0..1" />
+    <End Role="HR_Employee_Deductions" Type="Self.HR_Employee_Deductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proj_Year">
+        <PropertyRef Name="ProjYear_ID" />
+      </Principal>
+      <Dependent Role="HR_Employee_Deductions">
+        <PropertyRef Name="Year" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HR_Employee_Deductions_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="HR_Employee_Deductions" Type="Self.HR_Employee_Deductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="HR_Employee_Deductions">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HR_Leave_Order_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="HR_Leave_Order" Type="Self.HR_Leave_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="HR_Leave_Order">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HR_Leave_Order_OrderStatus">
+    <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="0..1" />
+    <End Role="HR_Leave_Order" Type="Self.HR_Leave_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HR_Leave_Order">
+        <PropertyRef Name="OrderStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HR_Leave_Order_PermissionType">
+    <End Role="PermissionType" Type="Self.PermissionType" Multiplicity="0..1" />
+    <End Role="HR_Leave_Order" Type="Self.HR_Leave_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermissionType">
+        <PropertyRef Name="PermissionType_ID" />
+      </Principal>
+      <Dependent Role="HR_Leave_Order">
+        <PropertyRef Name="LeaveType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HR_Leave_Order_Proj_Month">
+    <End Role="Proj_Month" Type="Self.Proj_Month" Multiplicity="0..1" />
+    <End Role="HR_Leave_Order" Type="Self.HR_Leave_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proj_Month">
+        <PropertyRef Name="Month_ID" />
+      </Principal>
+      <Dependent Role="HR_Leave_Order">
+        <PropertyRef Name="Month" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HR_Leave_Order_Proj_Year">
+    <End Role="Proj_Year" Type="Self.Proj_Year" Multiplicity="0..1" />
+    <End Role="HR_Leave_Order" Type="Self.HR_Leave_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proj_Year">
+        <PropertyRef Name="ProjYear_ID" />
+      </Principal>
+      <Dependent Role="HR_Leave_Order">
+        <PropertyRef Name="Year" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HR_Leave_Order_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="HR_Leave_Order" Type="Self.HR_Leave_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="HR_Leave_Order">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HR_Leave_Order_Users1">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="HR_Leave_Order" Type="Self.HR_Leave_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="HR_Leave_Order">
+        <PropertyRef Name="AccpetedBy_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jobs_Departments">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Department_ID" />
+      </Principal>
+      <Dependent Role="Jobs">
+        <PropertyRef Name="Department_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jobs_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Jobs">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="FromUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Users1">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="ToUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mission_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Mission" Type="Self.Mission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Mission">
+        <PropertyRef Name="Emp_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mission_Employees1">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Mission" Type="Self.Mission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Mission">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mission_Proj_Month">
+    <End Role="Proj_Month" Type="Self.Proj_Month" Multiplicity="0..1" />
+    <End Role="Mission" Type="Self.Mission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proj_Month">
+        <PropertyRef Name="Month_ID" />
+      </Principal>
+      <Dependent Role="Mission">
+        <PropertyRef Name="Month" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mission_Proj_Year">
+    <End Role="Proj_Year" Type="Self.Proj_Year" Multiplicity="0..1" />
+    <End Role="Mission" Type="Self.Mission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proj_Year">
+        <PropertyRef Name="ProjYear_ID" />
+      </Principal>
+      <Dependent Role="Mission">
+        <PropertyRef Name="Year" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mission_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Mission" Type="Self.Mission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Mission">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Model_Brand">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+    <End Role="Model" Type="Self.Model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="BrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovementPermission_Cars">
+    <End Role="Cars" Type="Self.Cars" Multiplicity="0..1" />
+    <End Role="MovementPermission" Type="Self.MovementPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cars">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MovementPermission">
+        <PropertyRef Name="CarID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovementPermission_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="MovementPermission" Type="Self.MovementPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="MovementPermission">
+        <PropertyRef Name="DriverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovementPermission_Stores">
+    <End Role="Stores" Type="Self.Stores" Multiplicity="0..1" />
+    <End Role="MovementPermission" Type="Self.MovementPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MovementPermission">
+        <PropertyRef Name="StoreIDFrom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovementPermission_Stores1">
+    <End Role="Stores" Type="Self.Stores" Multiplicity="0..1" />
+    <End Role="MovementPermission" Type="Self.MovementPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MovementPermission">
+        <PropertyRef Name="StoreIDTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovementPermission_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="MovementPermission" Type="Self.MovementPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="MovementPermission">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Official_Vacation_Employees_Categories">
+    <End Role="Employees_Categories" Type="Self.Employees_Categories" Multiplicity="0..1" />
+    <End Role="Official_Vacation" Type="Self.Official_Vacation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees_Categories">
+        <PropertyRef Name="Category_ID" />
+      </Principal>
+      <Dependent Role="Official_Vacation">
+        <PropertyRef Name="EmpTyp_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Official_Vacation_Proj_Year">
+    <End Role="Proj_Year" Type="Self.Proj_Year" Multiplicity="1" />
+    <End Role="Official_Vacation" Type="Self.Official_Vacation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proj_Year">
+        <PropertyRef Name="ProjYear_ID" />
+      </Principal>
+      <Dependent Role="Official_Vacation">
+        <PropertyRef Name="Year" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Official_Vacation_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Official_Vacation" Type="Self.Official_Vacation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Official_Vacation">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Perm_Absent_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Perm_Absent" Type="Self.Perm_Absent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Perm_Absent">
+        <PropertyRef Name="Emp_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Perm_Absent_OrderStatus">
+    <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="0..1" />
+    <End Role="Perm_Absent" Type="Self.Perm_Absent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Perm_Absent">
+        <PropertyRef Name="OrderStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Perm_Absent_Proj_Month">
+    <End Role="Proj_Month" Type="Self.Proj_Month" Multiplicity="0..1" />
+    <End Role="Perm_Absent" Type="Self.Perm_Absent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proj_Month">
+        <PropertyRef Name="Month_ID" />
+      </Principal>
+      <Dependent Role="Perm_Absent">
+        <PropertyRef Name="Month" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Perm_Absent_Proj_Year">
+    <End Role="Proj_Year" Type="Self.Proj_Year" Multiplicity="0..1" />
+    <End Role="Perm_Absent" Type="Self.Perm_Absent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proj_Year">
+        <PropertyRef Name="ProjYear_ID" />
+      </Principal>
+      <Dependent Role="Perm_Absent">
+        <PropertyRef Name="Year" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Perm_Absent_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Perm_Absent" Type="Self.Perm_Absent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Perm_Absent">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Perm_Absent_Users1">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Perm_Absent" Type="Self.Perm_Absent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Perm_Absent">
+        <PropertyRef Name="Approv_Emp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermissionType_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="PermissionType" Type="Self.PermissionType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="PermissionType">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrder_Accessories_Accessories">
+    <End Role="Accessories" Type="Self.Accessories" Multiplicity="1" />
+    <End Role="PurchaseOrder_Accessories" Type="Self.PurchaseOrder_Accessories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accessories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrder_Accessories">
+        <PropertyRef Name="Accessories_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrder_Accessories_purchaseOrder">
+    <End Role="purchaseOrder" Type="Self.purchaseOrder" Multiplicity="0..1" />
+    <End Role="PurchaseOrder_Accessories" Type="Self.PurchaseOrder_Accessories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="purchaseOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrder_Accessories">
+        <PropertyRef Name="PurchaseOrder_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrder_Accessories_SellOrder_Details">
+    <End Role="SellOrder_Details" Type="Self.SellOrder_Details" Multiplicity="1" />
+    <End Role="PurchaseOrder_Accessories" Type="Self.PurchaseOrder_Accessories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SellOrder_Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrder_Accessories">
+        <PropertyRef Name="SallesorderDetailsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_purchaseOrder_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="purchaseOrder" Type="Self.purchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="City_ID" />
+      </Principal>
+      <Dependent Role="purchaseOrder">
+        <PropertyRef Name="AddressCityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_purchaseOrder_Regions">
+    <End Role="Regions" Type="Self.Regions" Multiplicity="0..1" />
+    <End Role="purchaseOrder" Type="Self.purchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="purchaseOrder">
+        <PropertyRef Name="AddressRegionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_purchaseOrder_Showing_Branches">
+    <End Role="Showing_Branches" Type="Self.Showing_Branches" Multiplicity="0..1" />
+    <End Role="purchaseOrder" Type="Self.purchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Showing_Branches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="purchaseOrder">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_purchaseOrder_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+    <End Role="purchaseOrder" Type="Self.purchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="purchaseOrder">
+        <PropertyRef Name="SupplierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_purchaseOrder_SuppliersRepresentative">
+    <End Role="SuppliersRepresentative" Type="Self.SuppliersRepresentative" Multiplicity="0..1" />
+    <End Role="purchaseOrder" Type="Self.purchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SuppliersRepresentative">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="purchaseOrder">
+        <PropertyRef Name="SupplierRepresentativeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_purchaseOrder_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="purchaseOrder" Type="Self.purchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="purchaseOrder">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrderDetails_Brand">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+    <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrderDetails">
+        <PropertyRef Name="BrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrderDetails_CarsCategories">
+    <End Role="CarsCategories" Type="Self.CarsCategories" Multiplicity="0..1" />
+    <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarsCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrderDetails">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrderDetails_Color">
+    <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
+    <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrderDetails">
+        <PropertyRef Name="ColorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrderDetails_Model">
+    <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
+    <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrderDetails">
+        <PropertyRef Name="ModelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrderDetails_ProcessStatus">
+    <End Role="ProcessStatus" Type="Self.ProcessStatus" Multiplicity="0..1" />
+    <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProcessStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrderDetails">
+        <PropertyRef Name="ProcessStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrderDetails_purchaseOrder">
+    <End Role="purchaseOrder" Type="Self.purchaseOrder" Multiplicity="0..1" />
+    <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="purchaseOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrderDetails">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecievedCarPermission_MovementPermission">
+    <End Role="MovementPermission" Type="Self.MovementPermission" Multiplicity="0..1" />
+    <End Role="RecievedCarPermission" Type="Self.RecievedCarPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MovementPermission">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RecievedCarPermission">
+        <PropertyRef Name="MovementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Regions_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Regions" Type="Self.Regions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="City_ID" />
+      </Principal>
+      <Dependent Role="Regions">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_PurchaseOrder_Banks">
+    <End Role="Banks" Type="Self.Banks" Multiplicity="0..1" />
+    <End Role="Sales_PurchaseOrder" Type="Self.Sales_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Banks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_PurchaseOrder">
+        <PropertyRef Name="Bank_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_PurchaseOrder_Brand">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+    <End Role="Sales_PurchaseOrder" Type="Self.Sales_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_PurchaseOrder">
+        <PropertyRef Name="Brand_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_PurchaseOrder_CarsCategories">
+    <End Role="CarsCategories" Type="Self.CarsCategories" Multiplicity="0..1" />
+    <End Role="Sales_PurchaseOrder" Type="Self.Sales_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarsCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_PurchaseOrder">
+        <PropertyRef Name="Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_PurchaseOrder_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Sales_PurchaseOrder" Type="Self.Sales_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="City_ID" />
+      </Principal>
+      <Dependent Role="Sales_PurchaseOrder">
+        <PropertyRef Name="City_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_PurchaseOrder_Color">
+    <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
+    <End Role="Sales_PurchaseOrder" Type="Self.Sales_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_PurchaseOrder">
+        <PropertyRef Name="Color_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_PurchaseOrder_InsuranceCompanies">
+    <End Role="InsuranceCompanies" Type="Self.InsuranceCompanies" Multiplicity="0..1" />
+    <End Role="Sales_PurchaseOrder" Type="Self.Sales_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InsuranceCompanies">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_PurchaseOrder">
+        <PropertyRef Name="InsurCom_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_PurchaseOrder_Model">
+    <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
+    <End Role="Sales_PurchaseOrder" Type="Self.Sales_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_PurchaseOrder">
+        <PropertyRef Name="Model_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_PurchaseOrder_Regions">
+    <End Role="Regions" Type="Self.Regions" Multiplicity="0..1" />
+    <End Role="Sales_PurchaseOrder" Type="Self.Sales_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_PurchaseOrder">
+        <PropertyRef Name="Region_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_PurchaseOrder_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Sales_PurchaseOrder" Type="Self.Sales_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Sales_PurchaseOrder">
+        <PropertyRef Name="User_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SellBill_WithdrawPerm">
+    <End Role="WithdrawPerm" Type="Self.WithdrawPerm" Multiplicity="0..1" />
+    <End Role="SellBill" Type="Self.SellBill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WithdrawPerm">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SellBill">
+        <PropertyRef Name="WithdrawpermId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SellOrder_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="SellOrder" Type="Self.SellOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="City_ID" />
+      </Principal>
+      <Dependent Role="SellOrder">
+        <PropertyRef Name="Cityid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SellOrder_Details_Banks">
+    <End Role="Banks" Type="Self.Banks" Multiplicity="0..1" />
+    <End Role="SellOrder_Details" Type="Self.SellOrder_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Banks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SellOrder_Details">
+        <PropertyRef Name="BankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SellOrder_Details_Brand">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+    <End Role="SellOrder_Details" Type="Self.SellOrder_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SellOrder_Details">
+        <PropertyRef Name="BrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SellOrder_Details_CarsCategories">
+    <End Role="CarsCategories" Type="Self.CarsCategories" Multiplicity="0..1" />
+    <End Role="SellOrder_Details" Type="Self.SellOrder_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarsCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SellOrder_Details">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SellOrder_Details_Color">
+    <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
+    <End Role="SellOrder_Details" Type="Self.SellOrder_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SellOrder_Details">
+        <PropertyRef Name="ColorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SellOrder_Details_InsuranceCompanies">
+    <End Role="InsuranceCompanies" Type="Self.InsuranceCompanies" Multiplicity="0..1" />
+    <End Role="SellOrder_Details" Type="Self.SellOrder_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InsuranceCompanies">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SellOrder_Details">
+        <PropertyRef Name="InsurcomId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SellOrder_Details_Model">
+    <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
+    <End Role="SellOrder_Details" Type="Self.SellOrder_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SellOrder_Details">
+        <PropertyRef Name="ModelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SellOrder_Details_SellOrder">
+    <End Role="SellOrder" Type="Self.SellOrder" Multiplicity="0..1" />
+    <End Role="SellOrder_Details" Type="Self.SellOrder_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SellOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SellOrder_Details">
+        <PropertyRef Name="SellorderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SellOrder_Regions">
+    <End Role="Regions" Type="Self.Regions" Multiplicity="0..1" />
+    <End Role="SellOrder" Type="Self.SellOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SellOrder">
+        <PropertyRef Name="RegionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SellOrder_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="SellOrder" Type="Self.SellOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="SellOrder">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shifts_Proj_Year">
+    <End Role="Proj_Year" Type="Self.Proj_Year" Multiplicity="0..1" />
+    <End Role="Shifts" Type="Self.Shifts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proj_Year">
+        <PropertyRef Name="ProjYear_ID" />
+      </Principal>
+      <Dependent Role="Shifts">
+        <PropertyRef Name="YearId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Showing_Branches_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Showing_Branches" Type="Self.Showing_Branches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="City_ID" />
+      </Principal>
+      <Dependent Role="Showing_Branches">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Showing_Branches_Regions">
+    <End Role="Regions" Type="Self.Regions" Multiplicity="0..1" />
+    <End Role="Showing_Branches" Type="Self.Showing_Branches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Showing_Branches">
+        <PropertyRef Name="RegionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Specialties_Faculties">
+    <End Role="Faculties" Type="Self.Faculties" Multiplicity="0..1" />
+    <End Role="Specialties" Type="Self.Specialties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculties">
+        <PropertyRef Name="Faculty_ID" />
+      </Principal>
+      <Dependent Role="Specialties">
+        <PropertyRef Name="Faculty_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stores_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Stores" Type="Self.Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="City_ID" />
+      </Principal>
+      <Dependent Role="Stores">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stores_Employee">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Stores" Type="Self.Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Stores">
+        <PropertyRef Name="StoreManagerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stores_Regions">
+    <End Role="Regions" Type="Self.Regions" Multiplicity="0..1" />
+    <End Role="Stores" Type="Self.Stores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Stores">
+        <PropertyRef Name="RegionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storing_Details_PurchaseOrderDetails">
+    <End Role="PurchaseOrderDetails" Type="Self.PurchaseOrderDetails" Multiplicity="0..1" />
+    <End Role="Storing_Details" Type="Self.Storing_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseOrderDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Storing_Details">
+        <PropertyRef Name="PurchaseOrderDetail_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storing_Details_Storing_Master">
+    <End Role="Storing_Master" Type="Self.Storing_Master" Multiplicity="0..1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Storing_Master">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="Storing_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storing_Details_Storing_Master1">
+    <End Role="Storing_Master" Type="Self.Storing_Master" Multiplicity="0..1" />
+    <End Role="Storing_Details" Type="Self.Storing_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Storing_Master">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Storing_Details">
+        <PropertyRef Name="Storing_Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storing_Details_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Storing_Details" Type="Self.Storing_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Storing_Details">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storing_Master_purchaseOrder">
+    <End Role="purchaseOrder" Type="Self.purchaseOrder" Multiplicity="0..1" />
+    <End Role="Storing_Master" Type="Self.Storing_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="purchaseOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Storing_Master">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storing_Master_Stores">
+    <End Role="Stores" Type="Self.Stores" Multiplicity="0..1" />
+    <End Role="Storing_Master" Type="Self.Storing_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Storing_Master">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storing_Master_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Storing_Master" Type="Self.Storing_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Storing_Master">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Storing_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Suppliers_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="City_ID" />
+      </Principal>
+      <Dependent Role="Suppliers">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Suppliers_Regions">
+    <End Role="Regions" Type="Self.Regions" Multiplicity="0..1" />
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Suppliers">
+        <PropertyRef Name="RegionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Suppliers_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Suppliers">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppliersRepresentative_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+    <End Role="SuppliersRepresentative" Type="Self.SuppliersRepresentative" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SuppliersRepresentative">
+        <PropertyRef Name="SupplierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_Orders_Employee">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Vacations_Orders" Type="Self.Vacations_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Vacations_Orders">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_Orders_OrderStatus">
+    <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="0..1" />
+    <End Role="Vacations_Orders" Type="Self.Vacations_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vacations_Orders">
+        <PropertyRef Name="OrderStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_Orders_Proj_Month">
+    <End Role="Proj_Month" Type="Self.Proj_Month" Multiplicity="0..1" />
+    <End Role="Vacations_Orders" Type="Self.Vacations_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proj_Month">
+        <PropertyRef Name="Month_ID" />
+      </Principal>
+      <Dependent Role="Vacations_Orders">
+        <PropertyRef Name="Month_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_Orders_Proj_Year">
+    <End Role="Proj_Year" Type="Self.Proj_Year" Multiplicity="0..1" />
+    <End Role="Vacations_Orders" Type="Self.Vacations_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proj_Year">
+        <PropertyRef Name="ProjYear_ID" />
+      </Principal>
+      <Dependent Role="Vacations_Orders">
+        <PropertyRef Name="Year_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_Orders_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Vacations_Orders" Type="Self.Vacations_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Vacations_Orders">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_Orders_Users1">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Vacations_Orders" Type="Self.Vacations_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Vacations_Orders">
+        <PropertyRef Name="Responsible_Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_Orders_Users2">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Vacations_Orders" Type="Self.Vacations_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Vacations_Orders">
+        <PropertyRef Name="AccpetedBy_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_Orders_Vacations_Types">
+    <End Role="Vacations_Types" Type="Self.Vacations_Types" Multiplicity="0..1" />
+    <End Role="Vacations_Orders" Type="Self.Vacations_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vacations_Types">
+        <PropertyRef Name="VacationType_ID" />
+      </Principal>
+      <Dependent Role="Vacations_Orders">
+        <PropertyRef Name="VacationType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_Types_Employees_Categories1">
+    <End Role="Employees_Categories" Type="Self.Employees_Categories" Multiplicity="0..1" />
+    <End Role="Vacations_Types" Type="Self.Vacations_Types" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees_Categories">
+        <PropertyRef Name="Category_ID" />
+      </Principal>
+      <Dependent Role="Vacations_Types">
+        <PropertyRef Name="Emp_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacations_Types_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Vacations_Types" Type="Self.Vacations_Types" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Vacations_Types">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WithdrawPerm_Cars">
+    <End Role="Cars" Type="Self.Cars" Multiplicity="0..1" />
+    <End Role="WithdrawPerm" Type="Self.WithdrawPerm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cars">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WithdrawPerm">
+        <PropertyRef Name="CarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WithdrawPerm_SellOrder_Details">
+    <End Role="SellOrder_Details" Type="Self.SellOrder_Details" Multiplicity="0..1" />
+    <End Role="WithdrawPerm" Type="Self.WithdrawPerm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SellOrder_Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WithdrawPerm">
+        <PropertyRef Name="SellOrderDetailsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WithdrawPerm_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="WithdrawPerm" Type="Self.WithdrawPerm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="WithdrawPerm">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ElRWADModelStoreContainer">
+    <EntitySet Name="Accessories" EntityType="Self.Accessories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AddingPermission" EntityType="Self.AddingPermission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Banks" EntityType="Self.Banks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Branches" EntityType="Self.Branches" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cars" EntityType="Self.Cars" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CarsCategories" EntityType="Self.CarsCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Days" EntityType="Self.Days" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Deputations" EntityType="Self.Deputations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Drivers_Orders" EntityType="Self.Drivers_Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees_Categories" EntityType="Self.Employees_Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Emplyees_Qualifications" EntityType="Self.Emplyees_Qualifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExportDetails" EntityType="Self.ExportDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExportMain" EntityType="Self.ExportMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Faculties" EntityType="Self.Faculties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group_Details" EntityType="Self.Group_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupsMaster" EntityType="Self.GroupsMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_Employee_Deductions" EntityType="Self.HR_Employee_Deductions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_Leave_Order" EntityType="Self.HR_Leave_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InsuranceCompanies" EntityType="Self.InsuranceCompanies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Links" EntityType="Self.Links" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManufacturingYear" EntityType="Self.ManufacturingYear" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mission" EntityType="Self.Mission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Model" EntityType="Self.Model" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MovementPermission" EntityType="Self.MovementPermission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Official_Vacation" EntityType="Self.Official_Vacation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderStatus" EntityType="Self.OrderStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Perm_Absent" EntityType="Self.Perm_Absent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PermissionType" EntityType="Self.PermissionType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProcessStatus" EntityType="Self.ProcessStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proj_Month" EntityType="Self.Proj_Month" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proj_Year" EntityType="Self.Proj_Year" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="purchaseOrder" EntityType="Self.purchaseOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PurchaseOrder_Accessories" EntityType="Self.PurchaseOrder_Accessories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PurchaseOrderDetails" EntityType="Self.PurchaseOrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QualificationType" EntityType="Self.QualificationType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecievedCarPermission" EntityType="Self.RecievedCarPermission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Regions" EntityType="Self.Regions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_PurchaseOrder" EntityType="Self.Sales_PurchaseOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SellBill" EntityType="Self.SellBill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SellOrder" EntityType="Self.SellOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SellOrder_Details" EntityType="Self.SellOrder_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sheet_Details" EntityType="Self.Sheet_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShiftDetail" EntityType="Self.ShiftDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shifts" EntityType="Self.Shifts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Showing_Branches" EntityType="Self.Showing_Branches" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Specialties" EntityType="Self.Specialties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stores" EntityType="Self.Stores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Storing_Details" EntityType="Self.Storing_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Storing_Master" EntityType="Self.Storing_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuppliersRepresentative" EntityType="Self.SuppliersRepresentative" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="University" EntityType="Self.University" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vacations_Orders" EntityType="Self.Vacations_Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vacations_Types" EntityType="Self.Vacations_Types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vendor_Items" EntityType="Self.Vendor_Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WithdrawPerm" EntityType="Self.WithdrawPerm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Deductions" EntityType="Self.Deductions" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Deductions].[Deduction_ID] AS [Deduction_ID], 
+    [Deductions].[Deduction_Code] AS [Deduction_Code], 
+    [Deductions].[Deduction_A_Name] AS [Deduction_A_Name], 
+    [Deductions].[Deduction_E_Name] AS [Deduction_E_Name], 
+    [Deductions].[Deduction_Description] AS [Deduction_Description], 
+    [Deductions].[User_ID] AS [User_ID], 
+    [Deductions].[Last_Update] AS [Last_Update]
+    FROM [dbo].[Deductions] AS [Deductions]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AddingPermission_Cars" Association="Self.FK_AddingPermission_Cars">
+      <End Role="Cars" EntitySet="Cars" />
+      <End Role="AddingPermission" EntitySet="AddingPermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddingPermission_purchaseOrder" Association="Self.FK_AddingPermission_purchaseOrder">
+      <End Role="purchaseOrder" EntitySet="purchaseOrder" />
+      <End Role="AddingPermission" EntitySet="AddingPermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddingPermission_Stores" Association="Self.FK_AddingPermission_Stores">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="AddingPermission" EntitySet="AddingPermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddingPermission_Users" Association="Self.FK_AddingPermission_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="AddingPermission" EntitySet="AddingPermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branches_City" Association="Self.FK_Branches_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Branches" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branches_Company" Association="Self.FK_Branches_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Branches" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branches_Employees" Association="Self.FK_Branches_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Branches" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branches_Regions" Association="Self.FK_Branches_Regions">
+      <End Role="Regions" EntitySet="Regions" />
+      <End Role="Branches" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Brand_Users" Association="Self.FK_Brand_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Brand" EntitySet="Brand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_Brand" Association="Self.FK_Cars_Brand">
+      <End Role="Brand" EntitySet="Brand" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_CarsCategories" Association="Self.FK_Cars_CarsCategories">
+      <End Role="CarsCategories" EntitySet="CarsCategories" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_Color" Association="Self.FK_Cars_Color">
+      <End Role="Color" EntitySet="Color" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_ManufacturingYear" Association="Self.FK_Cars_ManufacturingYear">
+      <End Role="ManufacturingYear" EntitySet="ManufacturingYear" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_Model" Association="Self.FK_Cars_Model">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_PurchaseOrderDetails" Association="Self.FK_Cars_PurchaseOrderDetails">
+      <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_SellOrder_Details" Association="Self.FK_Cars_SellOrder_Details">
+      <End Role="SellOrder_Details" EntitySet="SellOrder_Details" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarsCategories_Model" Association="Self.FK_CarsCategories_Model">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="CarsCategories" EntitySet="CarsCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Users" Association="Self.FK_City_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Employees" Association="Self.FK_Company_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Departments_Branches" Association="Self.FK_Departments_Branches">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Departments" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Departments_Employee" Association="Self.FK_Departments_Employee">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Departments" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Departments_Users" Association="Self.FK_Departments_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Departments" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesiredCategory_ManufacturingYear" Association="Self.FK_DesiredCategory_ManufacturingYear">
+      <End Role="ManufacturingYear" EntitySet="ManufacturingYear" />
+      <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Drivers_Orders_Employee" Association="Self.FK_Drivers_Orders_Employee">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Drivers_Orders" EntitySet="Drivers_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Drivers_Orders_purchaseOrder" Association="Self.FK_Drivers_Orders_purchaseOrder">
+      <End Role="purchaseOrder" EntitySet="purchaseOrder" />
+      <End Role="Drivers_Orders" EntitySet="Drivers_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Drivers_Orders_Users" Association="Self.FK_Drivers_Orders_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Drivers_Orders" EntitySet="Drivers_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Branches" Association="Self.FK_Employees_Branches">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_City" Association="Self.FK_Employees_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Days" Association="Self.FK_Employees_Days">
+      <End Role="Days" EntitySet="Days" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Deputations" Association="Self.FK_Employees_Deputations">
+      <End Role="Deputations" EntitySet="Deputations" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Employees_Categories" Association="Self.FK_Employees_Employees_Categories">
+      <End Role="Employees_Categories" EntitySet="Employees_Categories" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Faculties" Association="Self.FK_Employees_Faculties">
+      <End Role="Faculties" EntitySet="Faculties" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Jobs" Association="Self.FK_Employees_Jobs">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_QualificationType" Association="Self.FK_Employees_QualificationType">
+      <End Role="QualificationType" EntitySet="QualificationType" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_University" Association="Self.FK_Employees_University">
+      <End Role="University" EntitySet="University" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emplyees_Qualifications_Faculties" Association="Self.FK_Emplyees_Qualifications_Faculties">
+      <End Role="Faculties" EntitySet="Faculties" />
+      <End Role="Emplyees_Qualifications" EntitySet="Emplyees_Qualifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emplyees_Qualifications_QualificationType" Association="Self.FK_Emplyees_Qualifications_QualificationType">
+      <End Role="QualificationType" EntitySet="QualificationType" />
+      <End Role="Emplyees_Qualifications" EntitySet="Emplyees_Qualifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emplyees_Qualifications_Specialties" Association="Self.FK_Emplyees_Qualifications_Specialties">
+      <End Role="Specialties" EntitySet="Specialties" />
+      <End Role="Emplyees_Qualifications" EntitySet="Emplyees_Qualifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emplyees_Qualifications_University" Association="Self.FK_Emplyees_Qualifications_University">
+      <End Role="University" EntitySet="University" />
+      <End Role="Emplyees_Qualifications" EntitySet="Emplyees_Qualifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emplyees_Qualifications_Users" Association="Self.FK_Emplyees_Qualifications_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Emplyees_Qualifications" EntitySet="Emplyees_Qualifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emplyees_Qualifications_Users1" Association="Self.FK_Emplyees_Qualifications_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Emplyees_Qualifications" EntitySet="Emplyees_Qualifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExportDetails_Cars" Association="Self.FK_ExportDetails_Cars">
+      <End Role="Cars" EntitySet="Cars" />
+      <End Role="ExportDetails" EntitySet="ExportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExportDetails_ExportMain" Association="Self.FK_ExportDetails_ExportMain">
+      <End Role="ExportMain" EntitySet="ExportMain" />
+      <End Role="ExportDetails" EntitySet="ExportDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExportMain_SellOrder" Association="Self.FK_ExportMain_SellOrder">
+      <End Role="SellOrder" EntitySet="SellOrder" />
+      <End Role="ExportMain" EntitySet="ExportMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExportMain_Stores" Association="Self.FK_ExportMain_Stores">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="ExportMain" EntitySet="ExportMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExportMain_Stores1" Association="Self.FK_ExportMain_Stores1">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="ExportMain" EntitySet="ExportMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Details_GroupsMaster" Association="Self.FK_Group_Details_GroupsMaster">
+      <End Role="GroupsMaster" EntitySet="GroupsMaster" />
+      <End Role="Group_Details" EntitySet="Group_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Details_Links" Association="Self.FK_Group_Details_Links">
+      <End Role="Links" EntitySet="Links" />
+      <End Role="Group_Details" EntitySet="Group_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HR_Employee_Deductions_Employees" Association="Self.FK_HR_Employee_Deductions_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="HR_Employee_Deductions" EntitySet="HR_Employee_Deductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HR_Employee_Deductions_Employees1" Association="Self.FK_HR_Employee_Deductions_Employees1">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="HR_Employee_Deductions" EntitySet="HR_Employee_Deductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HR_Employee_Deductions_Proj_Month" Association="Self.FK_HR_Employee_Deductions_Proj_Month">
+      <End Role="Proj_Month" EntitySet="Proj_Month" />
+      <End Role="HR_Employee_Deductions" EntitySet="HR_Employee_Deductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HR_Employee_Deductions_Proj_Year" Association="Self.FK_HR_Employee_Deductions_Proj_Year">
+      <End Role="Proj_Year" EntitySet="Proj_Year" />
+      <End Role="HR_Employee_Deductions" EntitySet="HR_Employee_Deductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HR_Employee_Deductions_Users" Association="Self.FK_HR_Employee_Deductions_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="HR_Employee_Deductions" EntitySet="HR_Employee_Deductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HR_Leave_Order_Employees" Association="Self.FK_HR_Leave_Order_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="HR_Leave_Order" EntitySet="HR_Leave_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HR_Leave_Order_OrderStatus" Association="Self.FK_HR_Leave_Order_OrderStatus">
+      <End Role="OrderStatus" EntitySet="OrderStatus" />
+      <End Role="HR_Leave_Order" EntitySet="HR_Leave_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HR_Leave_Order_PermissionType" Association="Self.FK_HR_Leave_Order_PermissionType">
+      <End Role="PermissionType" EntitySet="PermissionType" />
+      <End Role="HR_Leave_Order" EntitySet="HR_Leave_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HR_Leave_Order_Proj_Month" Association="Self.FK_HR_Leave_Order_Proj_Month">
+      <End Role="Proj_Month" EntitySet="Proj_Month" />
+      <End Role="HR_Leave_Order" EntitySet="HR_Leave_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HR_Leave_Order_Proj_Year" Association="Self.FK_HR_Leave_Order_Proj_Year">
+      <End Role="Proj_Year" EntitySet="Proj_Year" />
+      <End Role="HR_Leave_Order" EntitySet="HR_Leave_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HR_Leave_Order_Users" Association="Self.FK_HR_Leave_Order_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="HR_Leave_Order" EntitySet="HR_Leave_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HR_Leave_Order_Users1" Association="Self.FK_HR_Leave_Order_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="HR_Leave_Order" EntitySet="HR_Leave_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jobs_Departments" Association="Self.FK_Jobs_Departments">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Jobs" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jobs_Users" Association="Self.FK_Jobs_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Jobs" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users" Association="Self.FK_Messages_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users1" Association="Self.FK_Messages_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mission_Employees" Association="Self.FK_Mission_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Mission" EntitySet="Mission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mission_Employees1" Association="Self.FK_Mission_Employees1">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Mission" EntitySet="Mission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mission_Proj_Month" Association="Self.FK_Mission_Proj_Month">
+      <End Role="Proj_Month" EntitySet="Proj_Month" />
+      <End Role="Mission" EntitySet="Mission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mission_Proj_Year" Association="Self.FK_Mission_Proj_Year">
+      <End Role="Proj_Year" EntitySet="Proj_Year" />
+      <End Role="Mission" EntitySet="Mission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mission_Users" Association="Self.FK_Mission_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Mission" EntitySet="Mission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Model_Brand" Association="Self.FK_Model_Brand">
+      <End Role="Brand" EntitySet="Brand" />
+      <End Role="Model" EntitySet="Model" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovementPermission_Cars" Association="Self.FK_MovementPermission_Cars">
+      <End Role="Cars" EntitySet="Cars" />
+      <End Role="MovementPermission" EntitySet="MovementPermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovementPermission_Employees" Association="Self.FK_MovementPermission_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="MovementPermission" EntitySet="MovementPermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovementPermission_Stores" Association="Self.FK_MovementPermission_Stores">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="MovementPermission" EntitySet="MovementPermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovementPermission_Stores1" Association="Self.FK_MovementPermission_Stores1">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="MovementPermission" EntitySet="MovementPermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovementPermission_Users" Association="Self.FK_MovementPermission_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MovementPermission" EntitySet="MovementPermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Official_Vacation_Employees_Categories" Association="Self.FK_Official_Vacation_Employees_Categories">
+      <End Role="Employees_Categories" EntitySet="Employees_Categories" />
+      <End Role="Official_Vacation" EntitySet="Official_Vacation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Official_Vacation_Proj_Year" Association="Self.FK_Official_Vacation_Proj_Year">
+      <End Role="Proj_Year" EntitySet="Proj_Year" />
+      <End Role="Official_Vacation" EntitySet="Official_Vacation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Official_Vacation_Users" Association="Self.FK_Official_Vacation_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Official_Vacation" EntitySet="Official_Vacation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Perm_Absent_Employees" Association="Self.FK_Perm_Absent_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Perm_Absent" EntitySet="Perm_Absent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Perm_Absent_OrderStatus" Association="Self.FK_Perm_Absent_OrderStatus">
+      <End Role="OrderStatus" EntitySet="OrderStatus" />
+      <End Role="Perm_Absent" EntitySet="Perm_Absent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Perm_Absent_Proj_Month" Association="Self.FK_Perm_Absent_Proj_Month">
+      <End Role="Proj_Month" EntitySet="Proj_Month" />
+      <End Role="Perm_Absent" EntitySet="Perm_Absent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Perm_Absent_Proj_Year" Association="Self.FK_Perm_Absent_Proj_Year">
+      <End Role="Proj_Year" EntitySet="Proj_Year" />
+      <End Role="Perm_Absent" EntitySet="Perm_Absent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Perm_Absent_Users" Association="Self.FK_Perm_Absent_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Perm_Absent" EntitySet="Perm_Absent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Perm_Absent_Users1" Association="Self.FK_Perm_Absent_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Perm_Absent" EntitySet="Perm_Absent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermissionType_Users" Association="Self.FK_PermissionType_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="PermissionType" EntitySet="PermissionType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrder_Accessories_Accessories" Association="Self.FK_PurchaseOrder_Accessories_Accessories">
+      <End Role="Accessories" EntitySet="Accessories" />
+      <End Role="PurchaseOrder_Accessories" EntitySet="PurchaseOrder_Accessories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrder_Accessories_purchaseOrder" Association="Self.FK_PurchaseOrder_Accessories_purchaseOrder">
+      <End Role="purchaseOrder" EntitySet="purchaseOrder" />
+      <End Role="PurchaseOrder_Accessories" EntitySet="PurchaseOrder_Accessories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrder_Accessories_SellOrder_Details" Association="Self.FK_PurchaseOrder_Accessories_SellOrder_Details">
+      <End Role="SellOrder_Details" EntitySet="SellOrder_Details" />
+      <End Role="PurchaseOrder_Accessories" EntitySet="PurchaseOrder_Accessories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_purchaseOrder_City" Association="Self.FK_purchaseOrder_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="purchaseOrder" EntitySet="purchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_purchaseOrder_Regions" Association="Self.FK_purchaseOrder_Regions">
+      <End Role="Regions" EntitySet="Regions" />
+      <End Role="purchaseOrder" EntitySet="purchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_purchaseOrder_Showing_Branches" Association="Self.FK_purchaseOrder_Showing_Branches">
+      <End Role="Showing_Branches" EntitySet="Showing_Branches" />
+      <End Role="purchaseOrder" EntitySet="purchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_purchaseOrder_Suppliers" Association="Self.FK_purchaseOrder_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="purchaseOrder" EntitySet="purchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_purchaseOrder_SuppliersRepresentative" Association="Self.FK_purchaseOrder_SuppliersRepresentative">
+      <End Role="SuppliersRepresentative" EntitySet="SuppliersRepresentative" />
+      <End Role="purchaseOrder" EntitySet="purchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_purchaseOrder_Users" Association="Self.FK_purchaseOrder_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="purchaseOrder" EntitySet="purchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrderDetails_Brand" Association="Self.FK_PurchaseOrderDetails_Brand">
+      <End Role="Brand" EntitySet="Brand" />
+      <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrderDetails_CarsCategories" Association="Self.FK_PurchaseOrderDetails_CarsCategories">
+      <End Role="CarsCategories" EntitySet="CarsCategories" />
+      <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrderDetails_Color" Association="Self.FK_PurchaseOrderDetails_Color">
+      <End Role="Color" EntitySet="Color" />
+      <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrderDetails_Model" Association="Self.FK_PurchaseOrderDetails_Model">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrderDetails_ProcessStatus" Association="Self.FK_PurchaseOrderDetails_ProcessStatus">
+      <End Role="ProcessStatus" EntitySet="ProcessStatus" />
+      <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrderDetails_purchaseOrder" Association="Self.FK_PurchaseOrderDetails_purchaseOrder">
+      <End Role="purchaseOrder" EntitySet="purchaseOrder" />
+      <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecievedCarPermission_MovementPermission" Association="Self.FK_RecievedCarPermission_MovementPermission">
+      <End Role="MovementPermission" EntitySet="MovementPermission" />
+      <End Role="RecievedCarPermission" EntitySet="RecievedCarPermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Regions_City" Association="Self.FK_Regions_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Regions" EntitySet="Regions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_PurchaseOrder_Banks" Association="Self.FK_Sales_PurchaseOrder_Banks">
+      <End Role="Banks" EntitySet="Banks" />
+      <End Role="Sales_PurchaseOrder" EntitySet="Sales_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_PurchaseOrder_Brand" Association="Self.FK_Sales_PurchaseOrder_Brand">
+      <End Role="Brand" EntitySet="Brand" />
+      <End Role="Sales_PurchaseOrder" EntitySet="Sales_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_PurchaseOrder_CarsCategories" Association="Self.FK_Sales_PurchaseOrder_CarsCategories">
+      <End Role="CarsCategories" EntitySet="CarsCategories" />
+      <End Role="Sales_PurchaseOrder" EntitySet="Sales_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_PurchaseOrder_City" Association="Self.FK_Sales_PurchaseOrder_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Sales_PurchaseOrder" EntitySet="Sales_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_PurchaseOrder_Color" Association="Self.FK_Sales_PurchaseOrder_Color">
+      <End Role="Color" EntitySet="Color" />
+      <End Role="Sales_PurchaseOrder" EntitySet="Sales_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_PurchaseOrder_InsuranceCompanies" Association="Self.FK_Sales_PurchaseOrder_InsuranceCompanies">
+      <End Role="InsuranceCompanies" EntitySet="InsuranceCompanies" />
+      <End Role="Sales_PurchaseOrder" EntitySet="Sales_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_PurchaseOrder_Model" Association="Self.FK_Sales_PurchaseOrder_Model">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="Sales_PurchaseOrder" EntitySet="Sales_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_PurchaseOrder_Regions" Association="Self.FK_Sales_PurchaseOrder_Regions">
+      <End Role="Regions" EntitySet="Regions" />
+      <End Role="Sales_PurchaseOrder" EntitySet="Sales_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_PurchaseOrder_Users" Association="Self.FK_Sales_PurchaseOrder_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Sales_PurchaseOrder" EntitySet="Sales_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SellBill_WithdrawPerm" Association="Self.FK_SellBill_WithdrawPerm">
+      <End Role="WithdrawPerm" EntitySet="WithdrawPerm" />
+      <End Role="SellBill" EntitySet="SellBill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SellOrder_City" Association="Self.FK_SellOrder_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="SellOrder" EntitySet="SellOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SellOrder_Details_Banks" Association="Self.FK_SellOrder_Details_Banks">
+      <End Role="Banks" EntitySet="Banks" />
+      <End Role="SellOrder_Details" EntitySet="SellOrder_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SellOrder_Details_Brand" Association="Self.FK_SellOrder_Details_Brand">
+      <End Role="Brand" EntitySet="Brand" />
+      <End Role="SellOrder_Details" EntitySet="SellOrder_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SellOrder_Details_CarsCategories" Association="Self.FK_SellOrder_Details_CarsCategories">
+      <End Role="CarsCategories" EntitySet="CarsCategories" />
+      <End Role="SellOrder_Details" EntitySet="SellOrder_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SellOrder_Details_Color" Association="Self.FK_SellOrder_Details_Color">
+      <End Role="Color" EntitySet="Color" />
+      <End Role="SellOrder_Details" EntitySet="SellOrder_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SellOrder_Details_InsuranceCompanies" Association="Self.FK_SellOrder_Details_InsuranceCompanies">
+      <End Role="InsuranceCompanies" EntitySet="InsuranceCompanies" />
+      <End Role="SellOrder_Details" EntitySet="SellOrder_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SellOrder_Details_Model" Association="Self.FK_SellOrder_Details_Model">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="SellOrder_Details" EntitySet="SellOrder_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SellOrder_Details_SellOrder" Association="Self.FK_SellOrder_Details_SellOrder">
+      <End Role="SellOrder" EntitySet="SellOrder" />
+      <End Role="SellOrder_Details" EntitySet="SellOrder_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SellOrder_Regions" Association="Self.FK_SellOrder_Regions">
+      <End Role="Regions" EntitySet="Regions" />
+      <End Role="SellOrder" EntitySet="SellOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SellOrder_Users" Association="Self.FK_SellOrder_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="SellOrder" EntitySet="SellOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shifts_Proj_Year" Association="Self.FK_Shifts_Proj_Year">
+      <End Role="Proj_Year" EntitySet="Proj_Year" />
+      <End Role="Shifts" EntitySet="Shifts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Showing_Branches_City" Association="Self.FK_Showing_Branches_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Showing_Branches" EntitySet="Showing_Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Showing_Branches_Regions" Association="Self.FK_Showing_Branches_Regions">
+      <End Role="Regions" EntitySet="Regions" />
+      <End Role="Showing_Branches" EntitySet="Showing_Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Specialties_Faculties" Association="Self.FK_Specialties_Faculties">
+      <End Role="Faculties" EntitySet="Faculties" />
+      <End Role="Specialties" EntitySet="Specialties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stores_City" Association="Self.FK_Stores_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Stores" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stores_Employee" Association="Self.FK_Stores_Employee">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Stores" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stores_Regions" Association="Self.FK_Stores_Regions">
+      <End Role="Regions" EntitySet="Regions" />
+      <End Role="Stores" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storing_Details_PurchaseOrderDetails" Association="Self.FK_Storing_Details_PurchaseOrderDetails">
+      <End Role="PurchaseOrderDetails" EntitySet="PurchaseOrderDetails" />
+      <End Role="Storing_Details" EntitySet="Storing_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storing_Details_Storing_Master" Association="Self.FK_Storing_Details_Storing_Master">
+      <End Role="Storing_Master" EntitySet="Storing_Master" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storing_Details_Storing_Master1" Association="Self.FK_Storing_Details_Storing_Master1">
+      <End Role="Storing_Master" EntitySet="Storing_Master" />
+      <End Role="Storing_Details" EntitySet="Storing_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storing_Details_Users" Association="Self.FK_Storing_Details_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Storing_Details" EntitySet="Storing_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storing_Master_purchaseOrder" Association="Self.FK_Storing_Master_purchaseOrder">
+      <End Role="purchaseOrder" EntitySet="purchaseOrder" />
+      <End Role="Storing_Master" EntitySet="Storing_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storing_Master_Stores" Association="Self.FK_Storing_Master_Stores">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="Storing_Master" EntitySet="Storing_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storing_Master_Users" Association="Self.FK_Storing_Master_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Storing_Master" EntitySet="Storing_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Storing_Users" Association="Self.FK_Storing_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Suppliers_City" Association="Self.FK_Suppliers_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Suppliers" EntitySet="Suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Suppliers_Regions" Association="Self.FK_Suppliers_Regions">
+      <End Role="Regions" EntitySet="Regions" />
+      <End Role="Suppliers" EntitySet="Suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Suppliers_Users" Association="Self.FK_Suppliers_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Suppliers" EntitySet="Suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppliersRepresentative_Suppliers" Association="Self.FK_SuppliersRepresentative_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="SuppliersRepresentative" EntitySet="SuppliersRepresentative" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_Orders_Employee" Association="Self.FK_Vacations_Orders_Employee">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Vacations_Orders" EntitySet="Vacations_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_Orders_OrderStatus" Association="Self.FK_Vacations_Orders_OrderStatus">
+      <End Role="OrderStatus" EntitySet="OrderStatus" />
+      <End Role="Vacations_Orders" EntitySet="Vacations_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_Orders_Proj_Month" Association="Self.FK_Vacations_Orders_Proj_Month">
+      <End Role="Proj_Month" EntitySet="Proj_Month" />
+      <End Role="Vacations_Orders" EntitySet="Vacations_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_Orders_Proj_Year" Association="Self.FK_Vacations_Orders_Proj_Year">
+      <End Role="Proj_Year" EntitySet="Proj_Year" />
+      <End Role="Vacations_Orders" EntitySet="Vacations_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_Orders_Users" Association="Self.FK_Vacations_Orders_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Vacations_Orders" EntitySet="Vacations_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_Orders_Users1" Association="Self.FK_Vacations_Orders_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Vacations_Orders" EntitySet="Vacations_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_Orders_Users2" Association="Self.FK_Vacations_Orders_Users2">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Vacations_Orders" EntitySet="Vacations_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_Orders_Vacations_Types" Association="Self.FK_Vacations_Orders_Vacations_Types">
+      <End Role="Vacations_Types" EntitySet="Vacations_Types" />
+      <End Role="Vacations_Orders" EntitySet="Vacations_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_Types_Employees_Categories1" Association="Self.FK_Vacations_Types_Employees_Categories1">
+      <End Role="Employees_Categories" EntitySet="Employees_Categories" />
+      <End Role="Vacations_Types" EntitySet="Vacations_Types" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacations_Types_Users" Association="Self.FK_Vacations_Types_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Vacations_Types" EntitySet="Vacations_Types" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WithdrawPerm_Cars" Association="Self.FK_WithdrawPerm_Cars">
+      <End Role="Cars" EntitySet="Cars" />
+      <End Role="WithdrawPerm" EntitySet="WithdrawPerm" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WithdrawPerm_SellOrder_Details" Association="Self.FK_WithdrawPerm_SellOrder_Details">
+      <End Role="SellOrder_Details" EntitySet="SellOrder_Details" />
+      <End Role="WithdrawPerm" EntitySet="WithdrawPerm" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WithdrawPerm_Users" Association="Self.FK_WithdrawPerm_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="WithdrawPerm" EntitySet="WithdrawPerm" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,9 @@
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.DAL\bin\Debug\SmartGate.ElRwad.DAL.dll.config
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.DAL\bin\Debug\SmartGate.ElRwad.DAL.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.DAL\bin\Debug\SmartGate.ElRwad.DAL.pdb
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.DAL\bin\Debug\EntityFramework.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.DAL\bin\Debug\EntityFramework.xml
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.DAL\obj\Debug\SmartGate.ElRwad.DAL.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.DAL\obj\Debug\SmartGate.ElRwad.DAL.pdb

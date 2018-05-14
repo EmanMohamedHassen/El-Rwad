@@ -1,0 +1,1008 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ElRWADModelStoreContainer" CdmEntityContainer="elRwadEntities">
+    <EntitySetMapping Name="Accessories">
+      <EntityTypeMapping TypeName="ElRWADModel.Accessory">
+        <MappingFragment StoreEntitySet="Accessories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameA" ColumnName="NameA" />
+          <ScalarProperty Name="NameE" ColumnName="NameE" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AddingPermissions">
+      <EntityTypeMapping TypeName="ElRWADModel.AddingPermission">
+        <MappingFragment StoreEntitySet="AddingPermission">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="carId" ColumnName="carId" />
+          <ScalarProperty Name="purchaseOrderId" ColumnName="purchaseOrderId" />
+          <ScalarProperty Name="indoresmentNo" ColumnName="indoresmentNo" />
+          <ScalarProperty Name="storeId" ColumnName="storeId" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="ElRWADModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="ElRWADModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="ElRWADModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="ElRWADModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banks">
+      <EntityTypeMapping TypeName="ElRWADModel.Bank">
+        <MappingFragment StoreEntitySet="Banks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameA" ColumnName="NameA" />
+          <ScalarProperty Name="NameE" ColumnName="NameE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Branches">
+      <EntityTypeMapping TypeName="ElRWADModel.Branch">
+        <MappingFragment StoreEntitySet="Branches">
+          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
+          <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+          <ScalarProperty Name="Branch_A_Title" ColumnName="Branch_A_Title" />
+          <ScalarProperty Name="Branch_E_Name" ColumnName="Branch_E_Name" />
+          <ScalarProperty Name="Branch_Location" ColumnName="Branch_Location" />
+          <ScalarProperty Name="Branch_Description" ColumnName="Branch_Description" />
+          <ScalarProperty Name="Branch_Mobile" ColumnName="Branch_Mobile" />
+          <ScalarProperty Name="Branch_Phone" ColumnName="Branch_Phone" />
+          <ScalarProperty Name="Manager_ID" ColumnName="Manager_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+          <ScalarProperty Name="Branch_Image" ColumnName="Branch_Image" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brands">
+      <EntityTypeMapping TypeName="ElRWADModel.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cars">
+      <EntityTypeMapping TypeName="ElRWADModel.Car">
+        <MappingFragment StoreEntitySet="Cars">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
+          <ScalarProperty Name="PlateNo" ColumnName="PlateNo" />
+          <ScalarProperty Name="MotorNo" ColumnName="MotorNo" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Storing_Master_Id" ColumnName="Storing_Master_Id" />
+          <ScalarProperty Name="IsSold" ColumnName="IsSold" />
+          <ScalarProperty Name="IsReceived" ColumnName="IsReceived" />
+          <ScalarProperty Name="SalesOrderID" ColumnName="SalesOrderID" />
+          <ScalarProperty Name="modelID" ColumnName="modelID" />
+          <ScalarProperty Name="ManufacturingYearID" ColumnName="ManufacturingYearID" />
+          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+          <ScalarProperty Name="CarCateID" ColumnName="CarCateID" />
+          <ScalarProperty Name="CurrentStoreID" ColumnName="CurrentStoreID" />
+          <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+          <ScalarProperty Name="purchaseOrderDetailsId" ColumnName="purchaseOrderDetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarsCategories">
+      <EntityTypeMapping TypeName="ElRWADModel.CarsCategory">
+        <MappingFragment StoreEntitySet="CarsCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="ElRWADModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="Name_A" ColumnName="Name_A" />
+          <ScalarProperty Name="Name_E" ColumnName="Name_E" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colors">
+      <EntityTypeMapping TypeName="ElRWADModel.Color">
+        <MappingFragment StoreEntitySet="Color">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="ElRWADModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+          <ScalarProperty Name="Company_Code" ColumnName="Company_Code" />
+          <ScalarProperty Name="Company_A_Name" ColumnName="Company_A_Name" />
+          <ScalarProperty Name="Company_E_Name" ColumnName="Company_E_Name" />
+          <ScalarProperty Name="Small_Image" ColumnName="Small_Image" />
+          <ScalarProperty Name="Back_Image" ColumnName="Back_Image" />
+          <ScalarProperty Name="Company_Notes" ColumnName="Company_Notes" />
+          <ScalarProperty Name="Manager_ID" ColumnName="Manager_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Days">
+      <EntityTypeMapping TypeName="ElRWADModel.Day">
+        <MappingFragment StoreEntitySet="Days">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NAmeEn" ColumnName="NAmeEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="ElRWADModel.Department">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="Department_A_Name" ColumnName="Department_A_Name" />
+          <ScalarProperty Name="Department_E_Name" ColumnName="Department_E_Name" />
+          <ScalarProperty Name="Department_Description" ColumnName="Department_Description" />
+          <ScalarProperty Name="Manager_ID" ColumnName="Manager_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+          <ScalarProperty Name="Branch_Id" ColumnName="Branch_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deputations">
+      <EntityTypeMapping TypeName="ElRWADModel.Deputation">
+        <MappingFragment StoreEntitySet="Deputations">
+          <ScalarProperty Name="Deputations_ID" ColumnName="Deputations_ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Tittle_EN" ColumnName="Tittle_EN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drivers_Orders">
+      <EntityTypeMapping TypeName="ElRWADModel.Drivers_Orders">
+        <MappingFragment StoreEntitySet="Drivers_Orders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DriverId" ColumnName="DriverId" />
+          <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="ElRWADModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Employee_Code" ColumnName="Employee_Code" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
+          <ScalarProperty Name="Job_ID" ColumnName="Job_ID" />
+          <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+          <ScalarProperty Name="Assigment_Date" ColumnName="Assigment_Date" />
+          <ScalarProperty Name="LeaveReason" ColumnName="LeaveReason" />
+          <ScalarProperty Name="Insurance_Number" ColumnName="Insurance_Number" />
+          <ScalarProperty Name="Is_Insurance" ColumnName="Is_Insurance" />
+          <ScalarProperty Name="Basic_Salary" ColumnName="Basic_Salary" />
+          <ScalarProperty Name="Insurance_Salary" ColumnName="Insurance_Salary" />
+          <ScalarProperty Name="Variable_Salary" ColumnName="Variable_Salary" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Last_User_ID" ColumnName="Last_User_ID" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+          <ScalarProperty Name="leave_Date" ColumnName="leave_Date" />
+          <ScalarProperty Name="Insurance_Date" ColumnName="Insurance_Date" />
+          <ScalarProperty Name="HealthCheck_Date" ColumnName="HealthCheck_Date" />
+          <ScalarProperty Name="Insurnace_EndDate" ColumnName="Insurnace_EndDate" />
+          <ScalarProperty Name="Deputation_ID" ColumnName="Deputation_ID" />
+          <ScalarProperty Name="WeekEndDay" ColumnName="WeekEndDay" />
+          <ScalarProperty Name="Shift_Id" ColumnName="Shift_Id" />
+          <ScalarProperty Name="YearlySPInsurance_Basic" ColumnName="YearlySPInsurance_Basic" />
+          <ScalarProperty Name="YearlySPInsurance_Additional" ColumnName="YearlySPInsurance_Additional" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Country_ID" ColumnName="Country_ID" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Qualify" ColumnName="Qualify" />
+          <ScalarProperty Name="University_ID" ColumnName="University_ID" />
+          <ScalarProperty Name="Qualify_Type" ColumnName="Qualify_Type" />
+          <ScalarProperty Name="Faculty_ID" ColumnName="Faculty_ID" />
+          <ScalarProperty Name="Specialty_ID" ColumnName="Specialty_ID" />
+          <ScalarProperty Name="Grad_Year" ColumnName="Grad_Year" />
+          <ScalarProperty Name="Grad_Project" ColumnName="Grad_Project" />
+          <ScalarProperty Name="Total_Grade" ColumnName="Total_Grade" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees_Categories">
+      <EntityTypeMapping TypeName="ElRWADModel.Employees_Categories">
+        <MappingFragment StoreEntitySet="Employees_Categories">
+          <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+          <ScalarProperty Name="Category_Code" ColumnName="Category_Code" />
+          <ScalarProperty Name="Name_A" ColumnName="Name_A" />
+          <ScalarProperty Name="Name_E" ColumnName="Name_E" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Work_Days_Week" ColumnName="Work_Days_Week" />
+          <ScalarProperty Name="Work_Days_Month" ColumnName="Work_Days_Month" />
+          <ScalarProperty Name="Work_Day_Hours" ColumnName="Work_Day_Hours" />
+          <ScalarProperty Name="Work_Day_Hours_From" ColumnName="Work_Day_Hours_From" />
+          <ScalarProperty Name="Work_Day_Hours_To" ColumnName="Work_Day_Hours_To" />
+          <ScalarProperty Name="Calculate_Salary_DueTo" ColumnName="Calculate_Salary_DueTo" />
+          <ScalarProperty Name="Max_Absence_Days" ColumnName="Max_Absence_Days" />
+          <ScalarProperty Name="Year_Vacations" ColumnName="Year_Vacations" />
+          <ScalarProperty Name="Insurance_Percent" ColumnName="Insurance_Percent" />
+          <ScalarProperty Name="Income_Taxes_Percent" ColumnName="Income_Taxes_Percent" />
+          <ScalarProperty Name="Taxes_after_Absence" ColumnName="Taxes_after_Absence" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emplyees_Qualifications">
+      <EntityTypeMapping TypeName="ElRWADModel.Emplyees_Qualifications">
+        <MappingFragment StoreEntitySet="Emplyees_Qualifications">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="QualifyTypeId" ColumnName="QualifyTypeId" />
+          <ScalarProperty Name="Qualify" ColumnName="Qualify" />
+          <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
+          <ScalarProperty Name="FacultyId" ColumnName="FacultyId" />
+          <ScalarProperty Name="SpecialtyId" ColumnName="SpecialtyId" />
+          <ScalarProperty Name="GradYear" ColumnName="GradYear" />
+          <ScalarProperty Name="GradProject" ColumnName="GradProject" />
+          <ScalarProperty Name="TotalGrade" ColumnName="TotalGrade" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExportDetails">
+      <EntityTypeMapping TypeName="ElRWADModel.ExportDetail">
+        <MappingFragment StoreEntitySet="ExportDetails">
+          <ScalarProperty Name="ExportDetails_ID" ColumnName="ExportDetails_ID" />
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="ExportDate" ColumnName="ExportDate" />
+          <ScalarProperty Name="ExportMainID" ColumnName="ExportMainID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExportMains">
+      <EntityTypeMapping TypeName="ElRWADModel.ExportMain">
+        <MappingFragment StoreEntitySet="ExportMain">
+          <ScalarProperty Name="ExportMainID" ColumnName="ExportMainID" />
+          <ScalarProperty Name="ForSale" ColumnName="ForSale" />
+          <ScalarProperty Name="SellOrder_ID" ColumnName="SellOrder_ID" />
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="ToStoreID" ColumnName="ToStoreID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Faculties">
+      <EntityTypeMapping TypeName="ElRWADModel.Faculty">
+        <MappingFragment StoreEntitySet="Faculties">
+          <ScalarProperty Name="Faculty_ID" ColumnName="Faculty_ID" />
+          <ScalarProperty Name="Faculty_A_Name" ColumnName="Faculty_A_Name" />
+          <ScalarProperty Name="Faculty_E_Name" ColumnName="Faculty_E_Name" />
+          <ScalarProperty Name="Faculty_Notes" ColumnName="Faculty_Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group_Details">
+      <EntityTypeMapping TypeName="ElRWADModel.Group_Details">
+        <MappingFragment StoreEntitySet="Group_Details">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LinkId" ColumnName="LinkId" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupsMasters">
+      <EntityTypeMapping TypeName="ElRWADModel.GroupsMaster">
+        <MappingFragment StoreEntitySet="GroupsMaster">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_Employee_Deductions">
+      <EntityTypeMapping TypeName="ElRWADModel.HR_Employee_Deductions">
+        <MappingFragment StoreEntitySet="HR_Employee_Deductions">
+          <ScalarProperty Name="Deduction_ID" ColumnName="Deduction_ID" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Deduction_Date" ColumnName="Deduction_Date" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="DeducDay_Count" ColumnName="DeducDay_Count" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="HrApprov" ColumnName="HrApprov" />
+          <ScalarProperty Name="Approv_Date" ColumnName="Approv_Date" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_Leave_Order">
+      <EntityTypeMapping TypeName="ElRWADModel.HR_Leave_Order">
+        <MappingFragment StoreEntitySet="HR_Leave_Order">
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="LeaveType_ID" ColumnName="LeaveType_ID" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="From_Date" ColumnName="From_Date" />
+          <ScalarProperty Name="To_Date" ColumnName="To_Date" />
+          <ScalarProperty Name="Leave_Hours" ColumnName="Leave_Hours" />
+          <ScalarProperty Name="AccpetedBy_ID" ColumnName="AccpetedBy_ID" />
+          <ScalarProperty Name="From_Hour" ColumnName="From_Hour" />
+          <ScalarProperty Name="From_Minute" ColumnName="From_Minute" />
+          <ScalarProperty Name="To_Hour" ColumnName="To_Hour" />
+          <ScalarProperty Name="To_Minute" ColumnName="To_Minute" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Permission_Causes" ColumnName="Permission_Causes" />
+          <ScalarProperty Name="DayOrNight" ColumnName="DayOrNight" />
+          <ScalarProperty Name="OrderStatusId" ColumnName="OrderStatusId" />
+          <ScalarProperty Name="Approv_Date" ColumnName="Approv_Date" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InsuranceCompanies">
+      <EntityTypeMapping TypeName="ElRWADModel.InsuranceCompany">
+        <MappingFragment StoreEntitySet="InsuranceCompanies">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameA" ColumnName="NameA" />
+          <ScalarProperty Name="NameE" ColumnName="NameE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="ElRWADModel.Job">
+        <MappingFragment StoreEntitySet="Jobs">
+          <ScalarProperty Name="Job_ID" ColumnName="Job_ID" />
+          <ScalarProperty Name="Job_A_Title" ColumnName="Job_A_Title" />
+          <ScalarProperty Name="Job_E_Title" ColumnName="Job_E_Title" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Links">
+      <EntityTypeMapping TypeName="ElRWADModel.Link">
+        <MappingFragment StoreEntitySet="Links">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Link1" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManufacturingYears">
+      <EntityTypeMapping TypeName="ElRWADModel.ManufacturingYear">
+        <MappingFragment StoreEntitySet="ManufacturingYear">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="ElRWADModel.Message">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Message1" ColumnName="Message" />
+          <ScalarProperty Name="FromUserId" ColumnName="FromUserId" />
+          <ScalarProperty Name="ToUserId" ColumnName="ToUserId" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Missions">
+      <EntityTypeMapping TypeName="ElRWADModel.Mission">
+        <MappingFragment StoreEntitySet="Mission">
+          <ScalarProperty Name="Mission_ID" ColumnName="Mission_ID" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Mission_Causes" ColumnName="Mission_Causes" />
+          <ScalarProperty Name="Mission_Date" ColumnName="Mission_Date" />
+          <ScalarProperty Name="Approv" ColumnName="Approv" />
+          <ScalarProperty Name="Approv_Date" ColumnName="Approv_Date" />
+          <ScalarProperty Name="From_Hour" ColumnName="From_Hour" />
+          <ScalarProperty Name="From_Minute" ColumnName="From_Minute" />
+          <ScalarProperty Name="To_Hour" ColumnName="To_Hour" />
+          <ScalarProperty Name="To_Minute" ColumnName="To_Minute" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Models">
+      <EntityTypeMapping TypeName="ElRWADModel.Model">
+        <MappingFragment StoreEntitySet="Model">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MovementPermissions">
+      <EntityTypeMapping TypeName="ElRWADModel.MovementPermission">
+        <MappingFragment StoreEntitySet="MovementPermission">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DriverId" ColumnName="DriverId" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StoreIDFrom" ColumnName="StoreIDFrom" />
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="StoreIDTo" ColumnName="StoreIDTo" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Official_Vacation">
+      <EntityTypeMapping TypeName="ElRWADModel.Official_Vacation">
+        <MappingFragment StoreEntitySet="Official_Vacation">
+          <ScalarProperty Name="VacationID" ColumnName="VacationID" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="For_EmpTyp" ColumnName="For_EmpTyp" />
+          <ScalarProperty Name="EmpTyp_ID" ColumnName="EmpTyp_ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderStatus">
+      <EntityTypeMapping TypeName="ElRWADModel.OrderStatu">
+        <MappingFragment StoreEntitySet="OrderStatus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StatusEn" ColumnName="StatusEn" />
+          <ScalarProperty Name="StatusAr" ColumnName="StatusAr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Perm_Absent">
+      <EntityTypeMapping TypeName="ElRWADModel.Perm_Absent">
+        <MappingFragment StoreEntitySet="Perm_Absent">
+          <ScalarProperty Name="PermAbsent_ID" ColumnName="PermAbsent_ID" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="PermAbsent_FromDate" ColumnName="PermAbsent_FromDate" />
+          <ScalarProperty Name="PermAbsent_ToDate" ColumnName="PermAbsent_ToDate" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="OrderStatusId" ColumnName="OrderStatusId" />
+          <ScalarProperty Name="Approv_Date" ColumnName="Approv_Date" />
+          <ScalarProperty Name="Approv_Emp" ColumnName="Approv_Emp" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+          <ScalarProperty Name="Abs_Causes" ColumnName="Abs_Causes" />
+          <ScalarProperty Name="count" ColumnName="count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermissionTypes">
+      <EntityTypeMapping TypeName="ElRWADModel.PermissionType">
+        <MappingFragment StoreEntitySet="PermissionType">
+          <ScalarProperty Name="PermissionType_ID" ColumnName="PermissionType_ID" />
+          <ScalarProperty Name="PermissionType_Name" ColumnName="PermissionType_Name" />
+          <ScalarProperty Name="PermissionType_Name_EN" ColumnName="PermissionType_Name_EN" />
+          <ScalarProperty Name="Salary_Deduc" ColumnName="Salary_Deduc" />
+          <ScalarProperty Name="Deduc_Percent" ColumnName="Deduc_Percent" />
+          <ScalarProperty Name="Max_Times" ColumnName="Max_Times" />
+          <ScalarProperty Name="Hours_Count" ColumnName="Hours_Count" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProcessStatus">
+      <EntityTypeMapping TypeName="ElRWADModel.ProcessStatu">
+        <MappingFragment StoreEntitySet="ProcessStatus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proj_Month">
+      <EntityTypeMapping TypeName="ElRWADModel.Proj_Month">
+        <MappingFragment StoreEntitySet="Proj_Month">
+          <ScalarProperty Name="Month_ID" ColumnName="Month_ID" />
+          <ScalarProperty Name="Month_Name" ColumnName="Month_Name" />
+          <ScalarProperty Name="Month_Name_EN" ColumnName="Month_Name_EN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proj_Year">
+      <EntityTypeMapping TypeName="ElRWADModel.Proj_Year">
+        <MappingFragment StoreEntitySet="Proj_Year">
+          <ScalarProperty Name="ProjYear_ID" ColumnName="ProjYear_ID" />
+          <ScalarProperty Name="ProjYear_Name" ColumnName="ProjYear_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchaseOrders">
+      <EntityTypeMapping TypeName="ElRWADModel.purchaseOrder">
+        <MappingFragment StoreEntitySet="purchaseOrder">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="SupplierRepresentativeId" ColumnName="SupplierRepresentativeId" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="ReceivingAddress" ColumnName="ReceivingAddress" />
+          <ScalarProperty Name="AddressRegionId" ColumnName="AddressRegionId" />
+          <ScalarProperty Name="AddressCityId" ColumnName="AddressCityId" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="IsApprovFinancialManag" ColumnName="IsApprovFinancialManag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QualificationTypes">
+      <EntityTypeMapping TypeName="ElRWADModel.QualificationType">
+        <MappingFragment StoreEntitySet="QualificationType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecievedCarPermissions">
+      <EntityTypeMapping TypeName="ElRWADModel.RecievedCarPermission">
+        <MappingFragment StoreEntitySet="RecievedCarPermission">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="MovementID" ColumnName="MovementID" />
+          <ScalarProperty Name="IndrosmentNumber" ColumnName="IndrosmentNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regions">
+      <EntityTypeMapping TypeName="ElRWADModel.Region">
+        <MappingFragment StoreEntitySet="Regions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_PurchaseOrder">
+      <EntityTypeMapping TypeName="ElRWADModel.Sales_PurchaseOrder">
+        <MappingFragment StoreEntitySet="Sales_PurchaseOrder">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Buyer_Name" ColumnName="Buyer_Name" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="City_Id" ColumnName="City_Id" />
+          <ScalarProperty Name="Region_Id" ColumnName="Region_Id" />
+          <ScalarProperty Name="Mob_Number" ColumnName="Mob_Number" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="Brand_Id" ColumnName="Brand_Id" />
+          <ScalarProperty Name="Model_Id" ColumnName="Model_Id" />
+          <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+          <ScalarProperty Name="Color_Id" ColumnName="Color_Id" />
+          <ScalarProperty Name="Internal_Color" ColumnName="Internal_Color" />
+          <ScalarProperty Name="CarStatus" ColumnName="CarStatus" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="HaveInsurance" ColumnName="HaveInsurance" />
+          <ScalarProperty Name="InsurCom_Id" ColumnName="InsurCom_Id" />
+          <ScalarProperty Name="IsApproval" ColumnName="IsApproval" />
+          <ScalarProperty Name="RefusalReasons" ColumnName="RefusalReasons" />
+          <ScalarProperty Name="Total_Price" ColumnName="Total_Price" />
+          <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+          <ScalarProperty Name="Remaining" ColumnName="Remaining" />
+          <ScalarProperty Name="Payment_Method" ColumnName="Payment_Method" />
+          <ScalarProperty Name="Bank_Id" ColumnName="Bank_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SellBills">
+      <EntityTypeMapping TypeName="ElRWADModel.SellBill">
+        <MappingFragment StoreEntitySet="SellBill">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WithdrawpermId" ColumnName="WithdrawpermId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SellOrders">
+      <EntityTypeMapping TypeName="ElRWADModel.SellOrder">
+        <MappingFragment StoreEntitySet="SellOrder">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="BuyerName" ColumnName="BuyerName" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="MobNumber" ColumnName="MobNumber" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="Isapproval" ColumnName="Isapproval" />
+          <ScalarProperty Name="RefusalReasons" ColumnName="RefusalReasons" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SellOrder_Details">
+      <EntityTypeMapping TypeName="ElRWADModel.SellOrder_Details">
+        <MappingFragment StoreEntitySet="SellOrder_Details">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SellorderId" ColumnName="SellorderId" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+          <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+          <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+          <ScalarProperty Name="InternalColor" ColumnName="InternalColor" />
+          <ScalarProperty Name="HaveInsurance" ColumnName="HaveInsurance" />
+          <ScalarProperty Name="InsurcomId" ColumnName="InsurcomId" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Totalprice" ColumnName="Totalprice" />
+          <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+          <ScalarProperty Name="Remaining" ColumnName="Remaining" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sheet_Details">
+      <EntityTypeMapping TypeName="ElRWADModel.Sheet_Details">
+        <MappingFragment StoreEntitySet="Sheet_Details">
+          <ScalarProperty Name="Detail_ID" ColumnName="Detail_ID" />
+          <ScalarProperty Name="TimeSheet_ID" ColumnName="TimeSheet_ID" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Enterance_Time" ColumnName="Enterance_Time" />
+          <ScalarProperty Name="Exit_Time" ColumnName="Exit_Time" />
+          <ScalarProperty Name="Day_State" ColumnName="Day_State" />
+          <ScalarProperty Name="last_Update" ColumnName="last_Update" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShiftDetails">
+      <EntityTypeMapping TypeName="ElRWADModel.ShiftDetail">
+        <MappingFragment StoreEntitySet="ShiftDetail">
+          <ScalarProperty Name="ShDetailId" ColumnName="ShDetailId" />
+          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+          <ScalarProperty Name="DayNumber" ColumnName="DayNumber" />
+          <ScalarProperty Name="Entrance" ColumnName="Entrance" />
+          <ScalarProperty Name="Exit" ColumnName="Exit" />
+          <ScalarProperty Name="HasOverTime" ColumnName="HasOverTime" />
+          <ScalarProperty Name="OverTimeStart" ColumnName="OverTimeStart" />
+          <ScalarProperty Name="OverTime" ColumnName="OverTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shifts">
+      <EntityTypeMapping TypeName="ElRWADModel.Shift">
+        <MappingFragment StoreEntitySet="Shifts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="YearId" ColumnName="YearId" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromMinute" ColumnName="FromMinute" />
+          <ScalarProperty Name="ToMinute" ColumnName="ToMinute" />
+          <ScalarProperty Name="FromHour" ColumnName="FromHour" />
+          <ScalarProperty Name="ToHour" ColumnName="ToHour" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Showing_Branches">
+      <EntityTypeMapping TypeName="ElRWADModel.Showing_Branches">
+        <MappingFragment StoreEntitySet="Showing_Branches">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Specialties">
+      <EntityTypeMapping TypeName="ElRWADModel.Specialty">
+        <MappingFragment StoreEntitySet="Specialties">
+          <ScalarProperty Name="Specialty_ID" ColumnName="Specialty_ID" />
+          <ScalarProperty Name="Specialty_A_Name" ColumnName="Specialty_A_Name" />
+          <ScalarProperty Name="Specialty_E_Name" ColumnName="Specialty_E_Name" />
+          <ScalarProperty Name="Specialty_Notes" ColumnName="Specialty_Notes" />
+          <ScalarProperty Name="Faculty_ID" ColumnName="Faculty_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stores">
+      <EntityTypeMapping TypeName="ElRWADModel.Store">
+        <MappingFragment StoreEntitySet="Stores">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="StoreManagerId" ColumnName="StoreManagerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Storing_Details">
+      <EntityTypeMapping TypeName="ElRWADModel.Storing_Details">
+        <MappingFragment StoreEntitySet="Storing_Details">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
+          <ScalarProperty Name="PlateNo" ColumnName="PlateNo" />
+          <ScalarProperty Name="MotorNo" ColumnName="MotorNo" />
+          <ScalarProperty Name="DesiredCategoryId" ColumnName="DesiredCategoryId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Storing_Master_Id" ColumnName="Storing_Master_Id" />
+          <ScalarProperty Name="PurchaseOrderDetail_Id" ColumnName="PurchaseOrderDetail_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Storing_Master">
+      <EntityTypeMapping TypeName="ElRWADModel.Storing_Master">
+        <MappingFragment StoreEntitySet="Storing_Master">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="ApprovalNo" ColumnName="ApprovalNo" />
+          <ScalarProperty Name="AddingDate" ColumnName="AddingDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="ElRWADModel.Supplier">
+        <MappingFragment StoreEntitySet="Suppliers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuppliersRepresentatives">
+      <EntityTypeMapping TypeName="ElRWADModel.SuppliersRepresentative">
+        <MappingFragment StoreEntitySet="SuppliersRepresentative">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Job" ColumnName="Job" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ElRWADModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Universities">
+      <EntityTypeMapping TypeName="ElRWADModel.University">
+        <MappingFragment StoreEntitySet="University">
+          <ScalarProperty Name="University_ID" ColumnName="University_ID" />
+          <ScalarProperty Name="University_A_Name" ColumnName="University_A_Name" />
+          <ScalarProperty Name="University_E_Name" ColumnName="University_E_Name" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ElRWADModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="User_Group_ID" ColumnName="User_Group_ID" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="User_Pass" ColumnName="User_Pass" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="LastLogIn" ColumnName="LastLogIn" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacations_Orders">
+      <EntityTypeMapping TypeName="ElRWADModel.Vacations_Orders">
+        <MappingFragment StoreEntitySet="Vacations_Orders">
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="VacationType_ID" ColumnName="VacationType_ID" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="From_Date" ColumnName="From_Date" />
+          <ScalarProperty Name="To_Date" ColumnName="To_Date" />
+          <ScalarProperty Name="Month_ID" ColumnName="Month_ID" />
+          <ScalarProperty Name="Year_ID" ColumnName="Year_ID" />
+          <ScalarProperty Name="Vacation_Notes" ColumnName="Vacation_Notes" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+          <ScalarProperty Name="Responsible_Employee_ID" ColumnName="Responsible_Employee_ID" />
+          <ScalarProperty Name="Acceptance_Date" ColumnName="Acceptance_Date" />
+          <ScalarProperty Name="AccpetedBy_ID" ColumnName="AccpetedBy_ID" />
+          <ScalarProperty Name="OrderStatusId" ColumnName="OrderStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacations_Types">
+      <EntityTypeMapping TypeName="ElRWADModel.Vacations_Types">
+        <MappingFragment StoreEntitySet="Vacations_Types">
+          <ScalarProperty Name="VacationType_ID" ColumnName="VacationType_ID" />
+          <ScalarProperty Name="Type_Name" ColumnName="Type_Name" />
+          <ScalarProperty Name="Type_Name_EN" ColumnName="Type_Name_EN" />
+          <ScalarProperty Name="Max_Days" ColumnName="Max_Days" />
+          <ScalarProperty Name="Print_With_Reports" ColumnName="Print_With_Reports" />
+          <ScalarProperty Name="Month_Max_Times" ColumnName="Month_Max_Times" />
+          <ScalarProperty Name="Reg_Max_Month" ColumnName="Reg_Max_Month" />
+          <ScalarProperty Name="With_Period" ColumnName="With_Period" />
+          <ScalarProperty Name="From_Date" ColumnName="From_Date" />
+          <ScalarProperty Name="To_Date" ColumnName="To_Date" />
+          <ScalarProperty Name="For_Emp_Type" ColumnName="For_Emp_Type" />
+          <ScalarProperty Name="Emp_Type" ColumnName="Emp_Type" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendor_Items">
+      <EntityTypeMapping TypeName="ElRWADModel.Vendor_Items">
+        <MappingFragment StoreEntitySet="Vendor_Items">
+          <ScalarProperty Name="Vendor_ID" ColumnName="Vendor_ID" />
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Pref_Vendor_Flag" ColumnName="Pref_Vendor_Flag" />
+          <ScalarProperty Name="Last_Purchase_Price" ColumnName="Last_Purchase_Price" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WithdrawPerms">
+      <EntityTypeMapping TypeName="ElRWADModel.WithdrawPerm">
+        <MappingFragment StoreEntitySet="WithdrawPerm">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SellOrderDetailsId" ColumnName="SellOrderDetailsId" />
+          <ScalarProperty Name="CarId" ColumnName="CarId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deductions">
+      <EntityTypeMapping TypeName="ElRWADModel.Deduction">
+        <MappingFragment StoreEntitySet="Deductions">
+          <ScalarProperty Name="Deduction_ID" ColumnName="Deduction_ID" />
+          <ScalarProperty Name="Deduction_Code" ColumnName="Deduction_Code" />
+          <ScalarProperty Name="Deduction_A_Name" ColumnName="Deduction_A_Name" />
+          <ScalarProperty Name="Deduction_E_Name" ColumnName="Deduction_E_Name" />
+          <ScalarProperty Name="Deduction_Description" ColumnName="Deduction_Description" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="ElRWADModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="PurchaseOrder_Accessories">
+      <EntityTypeMapping TypeName="ElRWADModel.PurchaseOrder_Accessories">
+        <MappingFragment StoreEntitySet="PurchaseOrder_Accessories">
+          <ScalarProperty Name="PurchaseOrder_Id" ColumnName="PurchaseOrder_Id" />
+          <ScalarProperty Name="Accessories_Id" ColumnName="Accessories_Id" />
+          <ScalarProperty Name="SallesorderDetailsId" ColumnName="SallesorderDetailsId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PurchaseOrderDetails">
+      <EntityTypeMapping TypeName="ElRWADModel.PurchaseOrderDetail">
+        <MappingFragment StoreEntitySet="PurchaseOrderDetails">
+          <ScalarProperty Name="IsReceived" ColumnName="IsReceived" />
+          <ScalarProperty Name="IsBuying" ColumnName="IsBuying" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="ProcessStatusId" ColumnName="ProcessStatusId" />
+          <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+          <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="ManufacturingYearId" ColumnName="ManufacturingYearId" />
+          <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+          <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

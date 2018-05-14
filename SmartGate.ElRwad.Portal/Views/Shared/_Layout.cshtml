@@ -22,10 +22,22 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        if (HttpContext.Current.User.IsInRole("admin"))
+                        {
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        }
+                        if (HttpContext.Current.User.IsInRole("admin"))
+                        {
+                            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                        }
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
+
             </div>
         </div>
     </div>

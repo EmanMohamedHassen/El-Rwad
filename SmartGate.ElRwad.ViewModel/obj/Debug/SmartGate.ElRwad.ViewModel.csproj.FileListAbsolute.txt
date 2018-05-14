@@ -1,0 +1,9 @@
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ViewModel\bin\Debug\SmartGate.ElRwad.ViewModel.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ViewModel\bin\Debug\SmartGate.ElRwad.ViewModel.pdb
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ViewModel\bin\Debug\SmartGate.ElRwad.DAL.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ViewModel\bin\Debug\EntityFramework.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ViewModel\bin\Debug\SmartGate.ElRwad.DAL.pdb
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ViewModel\bin\Debug\EntityFramework.xml
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ViewModel\obj\Debug\SmartGate.ElRwad.ViewModel.csprojResolveAssemblyReference.cache
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ViewModel\obj\Debug\SmartGate.ElRwad.ViewModel.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ViewModel\obj\Debug\SmartGate.ElRwad.ViewModel.pdb
