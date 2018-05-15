@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGate.ElRwad.BLL", "Sma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGate.ElRwad.Test", "SmartGate.ElRwad.Test\SmartGate.ElRwad.Test.csproj", "{55FD949C-1A9C-4A12-A3A6-CBF8F361B2F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlRwad.Portal", "..\..\..\BAK\AlRwad\al rwad\AlRwad.Portal.csproj", "{890B4799-6CA0-4AF0-89C1-3C21FDD77C28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{55FD949C-1A9C-4A12-A3A6-CBF8F361B2F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55FD949C-1A9C-4A12-A3A6-CBF8F361B2F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55FD949C-1A9C-4A12-A3A6-CBF8F361B2F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{890B4799-6CA0-4AF0-89C1-3C21FDD77C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{890B4799-6CA0-4AF0-89C1-3C21FDD77C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{890B4799-6CA0-4AF0-89C1-3C21FDD77C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{890B4799-6CA0-4AF0-89C1-3C21FDD77C28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

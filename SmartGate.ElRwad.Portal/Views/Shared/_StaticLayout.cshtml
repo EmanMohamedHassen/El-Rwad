@@ -1,0 +1,158 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en-US" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ELRWAD</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="templatemo">
+
+    <!-- css -->
+
+    @Styles.Render("~/Content/static")
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amiri" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700itali" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,900,800,700,500,200,100,600" rel="stylesheet">
+
+    <!-- JavaScripts -->
+   @Scripts.Render("~/bundles/static")
+
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+</head>
+<body>
+    <div class="responsive_menu">
+        <ul class="main_menu">
+            <li>
+                @Html.ActionLink("الرئيسية","Index", "Home")
+            </li>
+
+            <li>
+                <a href="#">السيارات</a>
+                <ul>
+                    <li>@Html.ActionLink("العروض", "Blog", "Home")</li>
+                    <li>@Html.ActionLink("ProjectImage", "ProjectImage", "Home")</li>
+                    <li>@Html.ActionLink("ProjectSlideShow", "ProjectSlideShow", "Home")</li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">العروض</a>
+                <ul>
+                    <li>@Html.ActionLink("العروض", "Blog", "Home")</li>
+                    <li>@Html.ActionLink("BlogSingle", "BlogSingle", "Home")</li>
+                    <li><a href="#">visit templatemo</a></li>
+                </ul>
+            </li>
+
+            <li>@Html.ActionLink("عن الشركة", "About", "Home")</li>
+            <li>@Html.ActionLink("اتصل بنا", "Contact", "Home")</li>
+        </ul> <!-- /.main_menu -->
+    </div> <!-- /.responsive_menu -->
+
+    <header class="site-header clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="header_wrap">
+                        <div class="login_btn hidden-xs hidden-sm">
+                            @Html.ActionLink("تسجيل الدخول", "Login", "Account")
+                        </div>
+                    </div>
+
+                    <div class="main-navigation pull-left">
+
+                        <nav class="main-nav visible-md visible-lg">
+
+
+                            <ul class="sf-menu">
+                                <li>@Html.ActionLink("اتصل بنا", "Contact", "Home")</li>
+
+                                <li>@Html.ActionLink("عن الشركة", "About", "Home")</li>
+
+                                <li>
+                                    <a href="#">العروض</a>
+                                    <ul>
+                                        <li>@Html.ActionLink("Blog", "Blog", "Home")</li>
+                                        <li>@Html.ActionLink("BlogSingle", "BlogSingle", "Home")</li>
+                                        <li><a href="#">visit templatemo</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#">السيارات</a>
+                                    <ul>
+                                        <li>@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>
+                                        <li>@Html.ActionLink("ProjectImage", "ProjectImage", "Home")</li>
+                                        <li>@Html.ActionLink("ProjectSlideShow", "ProjectSlideShow", "Home")</li>
+                                    </ul>
+                                </li>
+
+                                <li>@Html.ActionLink("الرئيسية", "Index", "Home")</li>
+
+                            </ul> <!-- /.sf-menu -->
+                        </nav> <!-- /.main-nav -->
+                        <!-- This one in here is responsive menu for tablet and mobiles -->
+                        <div class="responsive-navigation visible-sm visible-xs">
+                            <a href="#nogo" class="menu-toggle-btn">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </div> <!-- /responsive_navigation -->
+
+                    </div> <!-- /.main-navigation -->
+                    <div class="pull-right logo">
+                        @*<a href="index.html">*@
+                            <img src="~/assets/static/logo.png" alt="Medigo by templatemo">
+                        @*</a>*@
+                    </div>	<!-- /.logo -->
+
+                </div> <!-- /.col-md-12 -->
+
+            </div> <!-- /.row -->
+
+        </div> <!-- /.container -->
+    </header> <!-- /.site-header -->
+
+    @RenderBody()
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="footer-nav clearfix">
+                        <ul class="footer-menu">
+                            <li>@Html.ActionLink("الرئيسية", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>
+                            <li>@Html.ActionLink("العروض", "Blog", "Home")</li>
+                            <li>@Html.ActionLink("عن الشركة", "About", "Home")</li>
+                            <li>@Html.ActionLink("اتصل بنا", "Contact", "Home")</li>
+                        </ul> <!-- /.footer-menu -->
+                    </nav> <!-- /.footer-nav -->
+                </div> <!-- /.col-md-12 -->
+            </div> <!-- /.row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="copyright-text">Copyright &copy; 2017 SmartGate</p>
+                </div> <!-- /.col-md-12 -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </footer> <!-- /.site-footer -->
+
+
+
+
+
+</body>
+</html>

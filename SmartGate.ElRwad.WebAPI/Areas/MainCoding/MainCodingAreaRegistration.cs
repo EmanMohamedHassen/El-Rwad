@@ -2,17 +2,17 @@
 
 namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding
 {
-    public class MainCodingAreaRegistration : AreaRegistration 
+    public class MainCodingAreaRegistration : AreaRegistration
     {
-        public override string AreaName 
+        public override string AreaName
         {
-            get 
+            get
             {
                 return "MainCoding";
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
                 "MainCoding_default",

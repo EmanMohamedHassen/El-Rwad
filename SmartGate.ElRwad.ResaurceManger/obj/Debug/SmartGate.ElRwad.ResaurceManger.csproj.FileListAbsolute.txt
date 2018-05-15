@@ -2,7 +2,7 @@ D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ResaurceManger\bin\Debug\Sma
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ResaurceManger\bin\Debug\SmartGate.ElRwad.ResaurceManger.pdb
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ResaurceManger\obj\Debug\SmartGate.ElRwad.ResaurceManger.Common.resources
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ResaurceManger\obj\Debug\SmartGate.ElRwad.ResaurceManger.GlobalResource.resources
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ResaurceManger\obj\Debug\SmartGate.ElRwad.ResaurceManger.Resource1.resources
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ResaurceManger\obj\Debug\SmartGate.ElRwad.ResaurceManger.csproj.GenerateResource.Cache
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ResaurceManger\obj\Debug\SmartGate.ElRwad.ResaurceManger.dll
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ResaurceManger\obj\Debug\SmartGate.ElRwad.ResaurceManger.pdb
-D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ResaurceManger\obj\Debug\SmartGate.ElRwad.ResaurceManger.Resource1.resources

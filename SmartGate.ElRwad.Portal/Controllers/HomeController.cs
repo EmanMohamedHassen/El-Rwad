@@ -20,12 +20,18 @@ namespace SmartGate.ElRwad.Portal.Controllers
             return View();
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "superadmin")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
             return View();
         }
+
+        public ActionResult Start()
+        {
+            return View();
+        }
+
     }
 }

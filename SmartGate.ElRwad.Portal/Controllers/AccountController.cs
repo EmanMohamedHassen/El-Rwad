@@ -136,7 +136,7 @@ namespace SmartGate.ElRwad.Portal.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [Authorize(Roles = "superadminVIP")]
         public ActionResult Register()
         {
             return View();

@@ -23,6 +23,11 @@ namespace SmartGate.ElRwad.Portal.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        //public ApplicationDbContext()
+        //    : base("AuthConnection", throwIfV1Schema: false)
+        //{
+        //}
+
         public ApplicationDbContext()
             : base("AuthConnection", throwIfV1Schema: false)
         {

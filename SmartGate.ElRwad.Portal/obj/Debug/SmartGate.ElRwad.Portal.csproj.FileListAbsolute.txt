@@ -41,6 +41,7 @@ D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\Microsoft.Web.Inf
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\Newtonsoft.Json.dll
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\Owin.dll
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\SmartGate.ElRwad.ResaurceManger.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\SmartGate.ElRwad.ViewModel.dll
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\System.Web.Helpers.dll
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\System.Web.Mvc.dll
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\System.Web.Optimization.dll
@@ -50,6 +51,7 @@ D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\System.Web.WebPag
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\System.Web.WebPages.Razor.dll
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\WebGrease.dll
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\SmartGate.ElRwad.ResaurceManger.pdb
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\SmartGate.ElRwad.ViewModel.pdb
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\Microsoft.AI.DependencyCollector.xml
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\Microsoft.AI.Web.xml
@@ -82,3 +84,7 @@ D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\Microsoft.Owin.Se
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\obj\Debug\SmartGate.ElRwad.Portal.csprojResolveAssemblyReference.cache
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\obj\Debug\SmartGate.ElRwad.Portal.dll
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\obj\Debug\SmartGate.ElRwad.Portal.pdb
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\SmartGate.ElRwad.BLL.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\SmartGate.ElRwad.DAL.dll
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\SmartGate.ElRwad.BLL.pdb
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.Portal\bin\SmartGate.ElRwad.DAL.pdb

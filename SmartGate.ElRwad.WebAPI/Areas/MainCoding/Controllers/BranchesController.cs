@@ -25,56 +25,15 @@ namespace SmartGate.ElRwad.WebAPI.Areas.MainCoding.Controllers
         }
 
         [HttpPost]
-        public dynamic PostBranch(
-            int companyId,
-            string branchArName,
-            string branchEnName,
-            string branchLocation,
-            string branchDescription,
-            string branchImage,
-            int managerId,
-            int userId
-
-            )
+        public dynamic PostBranch(BranchesVM b )
         {
-            BranchesVM b = new BranchesVM();
-            b.CompanyId = companyId;
-            b.BranchName_A = branchArName;
-            b.BranchNameE = branchEnName;
-            b.BranchLocation = branchLocation;
-            b.BranchDescription = branchDescription;
-            b.BranchImage = branchImage;
-            b.ManagerId = managerId;
-            b.UserId = userId;
-
+            
             return BranchesManager.Instance.PostBranch(b);
         }
         [HttpPut]
         [AcceptVerbs("GET", "POST")]
-        public dynamic PutBranch(
-            int branchId,
-            int companyId,
-            string branchArName,
-            string branchEnName,
-            string branchLocation,
-            string branchDescription,
-            string branchImage,
-            int managerId,
-            int userId
-
-            )
+        public dynamic PutBranch(BranchesVM b)
         {
-            BranchesVM b = new BranchesVM();
-            b.Id = branchId;
-            b.CompanyId = companyId;
-            b.BranchName_A = branchArName;
-            b.BranchNameE = branchEnName;
-            b.BranchLocation = branchLocation;
-            b.BranchDescription = branchDescription;
-            b.BranchImage = branchImage;
-            b.ManagerId = managerId;
-            b.UserId = userId;
-
             return BranchesManager.Instance.PutBranch(b);
         }
         [HttpDelete]
