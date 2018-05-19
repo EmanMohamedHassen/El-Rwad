@@ -1,6 +1,8 @@
 ﻿
-@inherits System.Web.Mvc.WebViewPage
-    @model SmartGate.ElRwad.ViewModel.BranchesVM
+@inherits System.Web.Mvc.WebViewPage<SmartGate.ElRwad.ViewModel.BranchesVM>
+
+
+        
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -40,104 +42,8 @@
     </div>
 </div>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-md" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">إضافه /تعديل فرع</h4>
-            </div>
-            <div class="modal-body">
-                <form id="Branch-form" method="post" enctype="multipart/form-data">
-                    <div class="row">
-                        <input type="hidden" id="branchId" name="branchId" />
-                        <div class="form-group col-md-6">
-                            <label>
-                                اسم الفرع بالعربي
-                            </label>
-                            <input type="text" class="form-control" id="branchArName" name="branchArName" required />
-                        </div>
 
-                        <div class="col-md-6">
-                            <label>
-                                اسم الفرع بالانجليزى
-                            </label>
-
-                            <input type="text" class="form-control" id="branchEnName" name="branchEnName" required />
-                        </div>
-
-                        <div class="col-md-6">
-                            <label>
-                                إسم الشركة
-                            </label>
-
-                            <select id="branchCompanyId" class="form-control" name="branchCompanyId">
-                                <option selected disabled hidden style='display: none' value=''>
-                                    اختار شركة ....
-                                </option>
-                            </select>
-
-                        </div>
-                        <div class="col-md-6">
-                            <label>
-                                مسئول الفرع
-                            </label>
-                            <select class="form-control" id="branchManager" name="branchManager">
-                                <option selected disabled hidden style='display: none' value=''>
-                                    اختار مسئول للفرع ....
-                                </option>
-                            </select>
-
-                        </div>
-
-                        <div class="col-md-12">
-                            <label>
-                                العنوان
-                            </label>
-                            <textarea id="branchLocation" name="branchLocation" class="form-control"></textarea>
-
-                        </div>
-
-                        <div class="col-md-12">
-                            <label>
-                                الوصف
-                            </label>
-                            <textarea id="branchDescription" name="branchDescription" class="form-control"></textarea>
-                        </div>
-                        <div class="col-md-12">
-                            <label>
-                                صورة
-                            </label>
-                            <input type="file" id="branchImage" name="branchImage" class="form-control" />
-                        </div>
-
-                        @*<div class="col-md-6">
-                                <label>
-                                    الصورة
-                                </label>
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <input type="file" name="branchImage" id="branchImage" />
-                                    </div>
-                                    <div class="col-md-4">
-                                        <img src="" id="Image_Path_show" style="width:40px;height:40px;border-radius:3px !important" />
-                                    </div>
-                                </div>
-                            </div>*@
-                    </div>
-
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>
-                <button type="button" class="btn btn-success" id="btn-save" onclick="Branch.save()">حفظ</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+@Html.Partial("~/Areas/Corporation/Views/Shared/BranchesShared/_BrancheR.cshtml")
 
 @section scripts{
     <script src="~/Areas/Corporation/Scripts/Branch.js"></script>

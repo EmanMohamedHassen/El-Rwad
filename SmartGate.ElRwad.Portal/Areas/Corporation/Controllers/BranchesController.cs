@@ -18,25 +18,26 @@ namespace SmartGate.ElRwad.Portal.Areas.Corporation.Controllers
             return View();
         }
 
-        public dynamic Save(BranchesVM branchesVM)
+
+        public JsonResult Save(BranchesVM branchesVM)
         {
             var msgModel = BranchesManager.Instance.PostBranch(branchesVM);
 
             return Json(msgModel, JsonRequestBehavior.AllowGet);
         }
-        public dynamic GetAll()
+        public JsonResult GetAll()
         {
             var branches= BranchesManager.Instance.GetBranches();
             return Json(branches, JsonRequestBehavior.AllowGet);
         }
 
-        public dynamic GetAllEmployees()
+        public JsonResult GetAllEmployees()
         {
             var employee = EmployeeManager.Instance.GetActiveEmployees();
             return Json(employee, JsonRequestBehavior.AllowGet);
         }
 
-        public dynamic GetAllCompanies()
+        public JsonResult GetAllCompanies()
         {
             var companies = CompaniesManager.Instance.GetAllCompanies();
             return Json(companies, JsonRequestBehavior.AllowGet);

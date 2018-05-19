@@ -11698,6 +11698,8 @@
     <Content Include="Areas\Coding\HR\Views\web.config" />
     <Content Include="Areas\Corporation\Views\web.config" />
     <Content Include="Areas\Corporation\Views\Branches\Index.cshtml" />
+    <Content Include="Areas\Corporation\Views\Shared\BranchesShared\_BranchModel.cshtml" />
+    <Content Include="Areas\Corporation\Views\Shared\BranchesShared\_BrancheR.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -11760,8 +11762,7 @@
     <Folder Include="Areas\Coding\HR\Models\" />
     <Folder Include="Areas\Coding\HR\Views\Shared\" />
     <Folder Include="Areas\Coding\Views\" />
-    <Folder Include="Areas\Corporation\Models\" />
-    <Folder Include="Areas\Corporation\Views\Shared\" />
+    <Folder Include="Areas\Corporation\Styles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

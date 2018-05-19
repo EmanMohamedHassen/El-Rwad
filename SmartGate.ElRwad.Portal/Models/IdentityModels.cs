@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Security.Principal;
 
 namespace SmartGate.ElRwad.Portal.Models
 {
@@ -36,6 +37,34 @@ namespace SmartGate.ElRwad.Portal.Models
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+    }
+
+
+    public static class IdentityExtensions
+    {
+        public static string GetEmPId(this IIdentity identity)
+        {
+            var userId = identity.GetUserId();
+            using (var context = new ApplicationDbContext())
+            {
+                var user = context.Users.FirstOrDefaultAsync(m => m.Id == userId);
+                return user.Result.EmpId.ToString();
+            }
+
+
+        }
+
+        public static string GetDep(this IIdentity identity)
+        {
+            var userId = identity.GetUserId();
+            using (var context = new ApplicationDbContext())
+            {
+                var user = context.Users.FirstOrDefaultAsync(m => m.Id == userId);
+                return user.Result.DepId.ToString();
+            }
+
+
         }
     }
 }

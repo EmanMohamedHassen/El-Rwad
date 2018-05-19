@@ -86,15 +86,17 @@ namespace SmartGate.ElRwad.BLL
         {
             var branch = db.Branches.Add(new Branch
             {
-                Company_ID = b.CompanyId,
+                Company_ID =b.CompanyId,
                 Branch_A_Title = b.BranchName_A,
                 Branch_E_Name = b.BranchNameE,
                 Branch_Location = b.BranchLocation,
                 Branch_Image = b.BranchImage,
                 Branch_Description = b.BranchDescription,
-                Manager_ID = b.ManagerId,
-                User_ID = b.UserId,
-                Last_Update = DateTime.Now
+                Manager_ID =b.ManagerId,
+                User_ID = 124,
+                Last_Update = DateTime.Now,
+                RegionId = 1,
+                CityId = 1
 
             });
             var result = db.SaveChanges() > 0 ? true : false;

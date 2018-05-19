@@ -6,3 +6,4 @@ D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ResaurceManger\obj\Debug\Sma
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ResaurceManger\obj\Debug\SmartGate.ElRwad.ResaurceManger.csproj.GenerateResource.Cache
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ResaurceManger\obj\Debug\SmartGate.ElRwad.ResaurceManger.dll
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ResaurceManger\obj\Debug\SmartGate.ElRwad.ResaurceManger.pdb
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.ResaurceManger\obj\Debug\SmartGate.ElRwad.ResaurceManger.csprojResolveAssemblyReference.cache

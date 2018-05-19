@@ -198,8 +198,9 @@ var Branch = function () {
                         return;
                 }
             });
+            debugger;
             var BranchForm = $("#Branch-form").serializeArray();
-            var branchVM = new BranchesVM();
+            var branchVm = {};
             $.each(BranchForm, (index, element) => {
                 branchVm[element.name] = element.value;
             });
@@ -212,7 +213,7 @@ var Branch = function () {
             if ($('#btn-save').val() != "create") {
                 //console.log('This is update condition ', id)
                 $.ajax({
-                    url: '/Branches/PutBranch/' + branchVM ,
+                    url: '/Branches/PutBranch/' + frm,
                     data: JSON.stringify(branchVm),
                     contentType: false,
                     processData: false,
@@ -233,8 +234,8 @@ var Branch = function () {
                 console.log('This is  post condition')
                 if ($("#Branch-form").valid()) {
                     $.ajax({
-                        url: 'http://api.rwad.smart-gate.net/api/Branches/PostBranch?companyId=' + branchVm.branchCompanyId + '&branchArName=' + branchVm.branchArName + '&branchEnName=' + branchVm.branchEnName + '&branchLocation=' + branchVm.branchLocation + '&branchDescription=' + branchVm.branchDescription + '&branchImage=ttt&managerId=' + branchVm.branchManager + '&userId=1',
-                        data: JSON.stringify(branchVm),
+                        url: ' /Branches/Save/',
+                        data: branchVm,
                         contentType: false,
                         processData: false,
                         dataType: 'JSON',

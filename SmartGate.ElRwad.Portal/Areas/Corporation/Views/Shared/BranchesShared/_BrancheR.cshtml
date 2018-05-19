@@ -1,0 +1,98 @@
+﻿
+@inherits System.Web.Mvc.WebViewPage<SmartGate.ElRwad.ViewModel.BranchesVM>
+@using Microsoft.AspNet.Identity;
+
+@using SmartGate.ElRwad.Portal.Models
+@using SmartGate.ElRwad.ResaurceManger
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="height: auto">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">إضافه /تعديل فرع</h4>
+            </div>
+            <div class="modal-body" style="height: 500px">
+                @using (@Html.BeginForm("Save", "Branches", new { @method = "post", @enctype = "multipart/form-data" }))
+                {
+                    //if (Request.IsAuthenticated)
+                    //{
+                    //    var manager = new UserManager<AplicationUser>(new Microsoft.AspNet.Identity.EntityFramework.UserStore<ApplicationUser>(new ApplicationDBContext()));
+
+                    //}
+                    <label>@HttpContext.Current.User.Identity.GetEmPId()</label>
+                    <label> @HttpContext.Current.User.Identity.GetUserId()</label>
+                    <label> @HttpContext.Current.User.Identity.Name</label>
+                    <label>@HttpContext.Current.User.Identity.GetDep()</label>
+
+                    @Html.HiddenFor(m => m.Id, new { @id = "branchId", @name = "branchId" })
+
+                    <div class="form-group col-md-6">
+                        @Common.BranchNameAR
+
+                        @Html.TextBoxFor(m => m.BranchName_A, new { @class = "form-control", @id = "branchArName", @name = "branchArName" })
+
+                    </div>
+                    <div class="form-group col-md-6">
+                        @Common.BranchNameEN
+
+                        @Html.TextBoxFor(m => m.BranchNameE, new { @class = "form-control", @id = "BranchNameE", @name = "BranchNameE" })
+
+                    </div>
+                    <div class="col-md-6">
+                        @Common.CompanyName
+                        <select id="branchCompanyId" class="form-control" name="branchCompanyId">
+                            <option selected disabled hidden style='display: none' value=''>
+                                اختار شركة ....
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        @Common.BranchManager
+                        <select class="form-control" id="branchManager" name="branchManager">
+                            <option selected disabled hidden style='display: none' value=''>
+                                اختار مسئول للفرع ....
+                            </option>
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-12">
+                        @Common.Address
+
+                        @Html.TextAreaFor(m => m.BranchLocation, new { @class = "form-control", @id = "branchLocation", @name = "branchLocation" })
+
+                    </div>
+
+                    <div class="col-md-12">
+                        @Common.Description
+
+                        @Html.TextAreaFor(m => m.BranchDescription, new { @class = "form-control", @id = "branchDescription", @name = "branchDescription" })
+
+                    </div>
+
+                    <div class="col-md-12">
+                        @Common.Image
+
+                        <input type="file" id="branchImage" name="branchImage" class="form-control" />
+
+                    </div>
+                    <br />
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success" id="btn-save">حفظ</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>
+                        </div>
+                        }
+
+                    </div>
+                   
+
+                </div>
+            </div>
+        </div>
+
+        @section scripts{
+            <script src="~/Areas/Corporation/Scripts/Branch.js"></script>
+
+        }

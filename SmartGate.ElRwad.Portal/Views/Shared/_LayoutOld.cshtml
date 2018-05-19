@@ -28,6 +28,7 @@
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         if (HttpContext.Current.User.IsInRole("admin"))
                         {
+                            HttpContext.Current.User.Identity.
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         }
                         if (HttpContext.Current.User.IsInRole("superadmin"))
@@ -36,6 +37,7 @@
                         }
                     }
                 </ul>
+
                 @Html.Partial("_LoginPartial")
 
             </div>

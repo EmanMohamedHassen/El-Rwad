@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Common.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GlobalResource.resx">

@@ -7,3 +7,4 @@ D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.DAL\bin\Debug\EntityFramewor
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.DAL\bin\Debug\EntityFramework.SqlServer.xml
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.DAL\obj\Debug\SmartGate.ElRwad.DAL.dll
 D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.DAL\obj\Debug\SmartGate.ElRwad.DAL.pdb
+D:\Project\Elrwad\SmartGate.ElRwad\SmartGate.ElRwad.DAL\obj\Debug\SmartGate.ElRwad.DAL.csprojResolveAssemblyReference.cache
